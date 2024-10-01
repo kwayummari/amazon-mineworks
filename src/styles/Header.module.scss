@@ -1,0 +1,81 @@
+.carousel {
+    background-color: rgba(0, 1, 84, 0.54);
+    color: #fff;
+    padding: 0 60px 202px 0;
+    font: 400 32px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  
+  .navigation {
+    display: flex;
+    align-items: center;
+    gap: 40px 62px;
+    text-align: center;
+  }
+  
+  .logo {
+    aspect-ratio: 1.7;
+    object-fit: contain;
+    width: 400px;
+    max-width: 100%;
+  }
+  
+  .navLink {
+    flex-grow: 1;
+    margin: auto 0;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .heroContent {
+    border-radius: 18px;
+    background-color: #da0b19;
+    max-width: 795px;
+    margin: 230px 0 -40px 95px;
+    padding: 57px 44px 27px;
+  }
+  
+  .heroTitle {
+    font-size: 48px;
+    margin: 0;
+  }
+  
+  .heroDescription {
+    margin-top: 27px;
+  }
+  
+  .ctaButton {
+    border-radius: 6px;
+    margin-top: 54px;
+    padding: 27px 17px;
+    border: 3px solid #fff;
+    background: none;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 991px) {
+    .carousel {
+      max-width: 100%;
+      padding: 0 20px 100px 0;
+    }
+  
+    .navigation {
+      max-width: 100%;
+      flex-wrap: wrap;
+    }
+  
+    .heroContent {
+      margin: 40px 0 10px;
+      padding: 0 20px;
+    }
+  
+    .heroTitle {
+      font-size: 40px;
+    }
+  
+    .ctaButton {
+      padding-right: 20px;
+      margin-top: 40px;
+    }
+  }

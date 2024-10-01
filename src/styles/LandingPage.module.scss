@@ -1,0 +1,12 @@
+.landingPage {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  @media (max-width: 991px) {
+    .landingPage {
+      max-width: 100%;
+    }
+  }
