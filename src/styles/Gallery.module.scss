@@ -42,9 +42,10 @@
         object-position: center;
       }
       .imageEllipsis {
-        position: relative;
-        z-index: 1;
+        // position: relative;
+        // z-index: 1;
         font-size: 100px;
+        font-weight: 900;
       }
     }
   }
