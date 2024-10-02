@@ -16,7 +16,7 @@ const Gallery = () => (
       />
     </div>
     {/* <span className={styles.imageDot}>.</span> */}
-    <p className={styles.imageEllipsis}>...</p>
+    <span className={styles.imageEllipsis}>...</span>
   </section>
 );
 
