@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import About from './components/About';
 import Services from './components/Service';
-// import Gallery from './Gallery';
+import Gallery from './components/Gallery';
 // import News from './News';
 // import FAQ from './FAQ';
 // import Footer from './Footer';
@@ -13,7 +13,7 @@ const LandingPage = () => (
     <Header />
     <About />
     <Services />
-    {/* <Gallery /> */}
+    <Gallery />
     {/* <News /> */}
     {/* <FAQ /> */}
     {/* <Footer /> */}
