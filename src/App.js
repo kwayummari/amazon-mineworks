@@ -4,7 +4,7 @@ import About from './components/About';
 import Services from './components/Service';
 import Gallery from './components/Gallery';
 import News from './components/News';
-// import FAQ from './FAQ';
+import FAQ from './components/FAQ';
 // import Footer from './Footer';
 import styles from './styles/LandingPage.module.scss';
 
@@ -15,7 +15,7 @@ const LandingPage = () => (
     <Services />
     <Gallery />
     <News />
-    {/* <FAQ /> */}
+    <FAQ />
     {/* <Footer /> */}
   </div>
 );

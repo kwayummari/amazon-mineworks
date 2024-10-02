@@ -1,0 +1,73 @@
+.faqSection {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    color: #000154;
+    padding: 89px 63px;
+    font: 400 32px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  
+    .sectionTitle {
+      font-size: 64px;
+      text-align: center;
+      margin: 0;
+    }
+  
+    .sectionDescription {
+      color: rgba(0, 1, 84, 0.54);
+      font-size: 40px;
+      letter-spacing: 1.2px;
+      text-align: center;
+      margin-top: 44px;
+    }
+  
+    .faqList {
+      margin-top: 104px;
+    }
+  
+    .faqItem {
+      margin-bottom: 30px;
+    }
+  
+    .faqQuestion {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      letter-spacing: 0.96px;
+    }
+  
+    .faqIcon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      width: 96px;
+    }
+  
+    .faqAnswer {
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px solid rgba(0, 1, 84, 0.54);
+    }
+  
+    @media (max-width: 991px) {
+      max-width: 100%;
+      padding: 0 20px;
+  
+      .sectionTitle {
+        font-size: 40px;
+      }
+  
+      .sectionDescription {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+  
+      .faqList {
+        margin-top: 40px;
+      }
+  
+      .faqQuestion {
+        max-width: 100%;
+      }
+    }
+  }
+  
