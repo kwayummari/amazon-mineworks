@@ -1,0 +1,12 @@
+.image {
+    aspect-ratio: 3.55;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+  }
+  
+  @media (max-width: 991px) {
+    .image {
+      max-width: 100%;
+    }
+  }
