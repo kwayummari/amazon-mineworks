@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import About from './components/About';
-// import Services from './Services';
+import Services from './components/Service';
 // import Gallery from './Gallery';
 // import News from './News';
 // import FAQ from './FAQ';
@@ -12,7 +12,7 @@ const LandingPage = () => (
   <div className={styles.landingPage}>
     <Header />
     <About />
-    {/* <Services /> */}
+    <Services />
     {/* <Gallery /> */}
     {/* <News /> */}
     {/* <FAQ /> */}
