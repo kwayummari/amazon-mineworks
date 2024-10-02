@@ -41,12 +41,10 @@
         object-fit: cover;
         object-position: center;
       }
-  
-      .imageDot,
       .imageEllipsis {
         position: relative;
         z-index: 1;
-        font-size: 40px;
+        font-size: 100px;
       }
     }
   }

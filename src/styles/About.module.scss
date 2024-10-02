@@ -13,7 +13,13 @@
     justify-content: space-between;
     padding: 40px 64px;
     color: #fff;
+    text-align: center;
     font: 400 32px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+
+  .vl {
+    border-left: 2px solid #ffffff;
+    height: 100px;
   }
   
   .statItem {
