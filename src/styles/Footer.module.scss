@@ -1,0 +1,119 @@
+.footer {
+    background-color: #f3f3ff;
+    padding-bottom: 92px;
+  
+    .footerContent {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1675px;
+      margin: 0 auto;
+      padding: 0 20px;
+  
+      .logoSection {
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .footerLogo {
+        aspect-ratio: 2.34;
+        object-fit: contain;
+        width: 100%;
+      }
+  
+      .footerTagline {
+        color: #9591c5;
+        letter-spacing: 0.96px;
+        margin-top: 83px;
+        font: 400 32px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+      }
+  
+      .socialIcons {
+        aspect-ratio: 5.88;
+        object-fit: contain;
+        width: 277px;
+        align-self: flex-end;
+        margin-top: 92px;
+      }
+  
+      .footerDecoration {
+        aspect-ratio: 2.75;
+        object-fit: contain;
+        width: 100%;
+        margin-top: 68px;
+      }
+  
+      .footerBottom {
+        display: flex;
+        flex-direction: column;
+        letter-spacing: 0.72px;
+        padding: 0 37px;
+        font: 400 24px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+        margin-top: 106px;
+  
+        .copyright {
+          color: #9591c5;
+        }
+  
+        .footerLinks {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 23px;
+  
+          .designCredit {
+            color: #9591c5;
+          }
+  
+          .legalLinks {
+            display: flex;
+            gap: 77px;
+            color: #000154;
+  
+            .legalLink {
+              color: inherit;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 991px) {
+      max-width: 100%;
+  
+      .footerContent {
+        flex-direction: column;
+  
+        .footerTagline {
+          max-width: 100%;
+          margin-top: 40px;
+        }
+  
+        .socialIcons {
+          align-self: flex-start;
+          margin-top: 40px;
+        }
+  
+        .footerDecoration {
+          max-width: 100%;
+          margin: 40px 9px 0 0;
+        }
+  
+        .footerBottom {
+          max-width: 100%;
+          margin-top: 40px;
+          padding: 0 20px;
+  
+          .footerLinks {
+            flex-direction: column;
+            gap: 20px;
+          }
+  
+          .legalLinks {
+            flex-direction: column;
+            gap: 20px;
+          }
+        }
+      }
+    }
+  }
+  
