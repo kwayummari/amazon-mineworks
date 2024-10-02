@@ -121,8 +121,16 @@ function Footer() {
             Website designed by{" "}
             <span className={styles.designerName}>Aurorawave labs</span>
           </p>
+          {/* <nav className={styles.footerNav}> */}
+          <a href="#" className={styles.footerNavLink}>
+            Terms of service
+          </a>
+          <a href="#" className={styles.footerNavLink}>
+            Privacy Policy
+          </a>
+        {/* </nav> */}
         </div>
-        <div className={styles.latestNews}>
+        {/* <div className={styles.latestNews}>
           <h3 className={styles.latestNewsTitle}>DONT MISS THESE LATEST</h3>
           <div className={styles.latestNewsContent}>
             <div className={styles.newsColumn}>
@@ -190,15 +198,8 @@ function Footer() {
               </a>
             </div>
           </div>
-        </div>
-        <nav className={styles.footerNav}>
-          <a href="#" className={styles.footerNavLink}>
-            Terms of service
-          </a>
-          <a href="#" className={styles.footerNavLink}>
-            Privacy Policy
-          </a>
-        </nav>
+        </div> */}
+       
       </div>
     </footer>
   );
