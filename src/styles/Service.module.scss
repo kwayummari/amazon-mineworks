@@ -1,96 +1,98 @@
 .services {
-    background-color: #fff;
-    font-family: Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-    font-weight: 400;
-    padding: 84px 30px 45px;
-  }
-  
-  .sectionTitle {
-    color: #000154;
-    font-size: 64px;
-    text-align: center;
-    margin: 0;
-  }
-  
-  .sectionDescription {
-    color: rgba(0, 1, 84, 0.54);
-    font-size: 40px;
-    letter-spacing: 1.2px;
-    text-align: center;
-    margin-top: 84px;
-  }
-  
-  .servicesList {
+  background-color: #fff;
+  font-family: Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 400;
+  padding: 84px 30px 45px;
+}
+
+.sectionTitle {
+  color: #000154;
+  font-size: 40px;
+  text-align: center;
+  margin: 0;
+}
+
+.sectionDescription {
+  color: rgba(0, 1, 84, 0.54);
+  font-size: 25px;
+  width: 900px;
+  letter-spacing: 1.2px;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.servicesList {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  margin-top: 56px;
+
+  .serviceItem {
     display: flex;
-    flex-direction: column;
-    gap: 56px;
-    margin-top: 56px;
-  
-    .serviceItem {
-      display: flex;
-      gap: 16px;
-  
-      .serviceNumber {
-        border-radius: 41px;
-        background-color: #000154;
-        font-size: 96px;
-        color: #fff;
+    gap: 16px;
+
+    .serviceNumber {
+      border-radius: 41px;
+      background-color: #000154;
+      font-size: 96px;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 2.88px;
+      padding: 15px 55px 92px;
+    }
+
+    .serviceContent {
+      border-radius: 49px;
+      background-color: #ddddef;
+      flex-grow: 1;
+      padding: 17px 80px 42px;
+
+      .serviceTitle {
+        color: #000154;
+        font-size: 36px;
+        letter-spacing: 1.08px;
         text-align: center;
-        letter-spacing: 2.88px;
-        padding: 15px 55px 92px;
+        margin: 0 0 28px;
       }
-  
+
+      .serviceDescription {
+        color: rgba(0, 1, 84, 0.54);
+        font-size: 24px;
+        letter-spacing: 0.72px;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .services {
+    padding: 0 20px;
+  }
+
+  .sectionTitle {
+    font-size: 40px;
+  }
+
+  .sectionDescription {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+
+  .servicesList {
+    margin-top: 40px;
+
+    .serviceItem {
+      .serviceNumber {
+        font-size: 40px;
+        padding: 0 20px;
+      }
+
       .serviceContent {
-        border-radius: 49px;
-        background-color: #ddddef;
-        flex-grow: 1;
-        padding: 17px 80px 42px;
-  
-        .serviceTitle {
-          color: #000154;
-          font-size: 36px;
-          letter-spacing: 1.08px;
-          text-align: center;
-          margin: 0 0 28px;
-        }
-  
-        .serviceDescription {
-          color: rgba(0, 1, 84, 0.54);
-          font-size: 24px;
-          letter-spacing: 0.72px;
-        }
+        max-width: 100%;
+        padding: 0 20px;
       }
     }
   }
-  
-  @media (max-width: 991px) {
-    .services {
-      padding: 0 20px;
-    }
-  
-    .sectionTitle {
-      font-size: 40px;
-    }
-  
-    .sectionDescription {
-      max-width: 100%;
-      margin-top: 40px;
-    }
-  
-    .servicesList {
-      margin-top: 40px;
-  
-      .serviceItem {
-        .serviceNumber {
-          font-size: 40px;
-          padding: 0 20px;
-        }
-  
-        .serviceContent {
-          max-width: 100%;
-          padding: 0 20px;
-        }
-      }
-    }
-  }
-  
+}
