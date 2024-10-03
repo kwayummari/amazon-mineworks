@@ -7,7 +7,7 @@ import News from './components/News';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import styles from './styles/LandingPage.module.scss';
-import ImageComponent from './components/ImageCompenent';
+import ImageComponent from './components/ImageComponents';
 
 const LandingPage = () => (
   <div className={styles.landingPage}>
