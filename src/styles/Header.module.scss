@@ -2,20 +2,20 @@
     background-color: rgba(0, 1, 84, 0.54);
     color: #fff;
     padding: 0 60px 202px 0;
-    font: 400 32px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+    font: 400 20px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
   }
   
   .navigation {
     display: flex;
     align-items: center;
-    gap: 40px 62px;
+    gap: 20px 42px;
     text-align: center;
   }
   
   .logo {
     aspect-ratio: 1.7;
     object-fit: contain;
-    width: 400px;
+    width: 200px;
     max-width: 100%;
   }
   
@@ -29,13 +29,13 @@
   .heroContent {
     border-radius: 18px;
     background-color: #da0b19;
-    max-width: 795px;
+    max-width: 595px;
     margin: 230px 0 -40px 95px;
     padding: 57px 44px 27px;
   }
   
   .heroTitle {
-    font-size: 48px;
+    font-size: 38px;
     margin: 0;
   }
   
@@ -56,26 +56,55 @@
   
   @media (max-width: 991px) {
     .carousel {
-      max-width: 100%;
-      padding: 0 20px 100px 0;
+      background-color: rgba(0, 1, 84, 0.54);
+      color: #fff;
+      padding: 0 60px 202px 0;
+      font: 400 15px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
     }
-  
+    
     .navigation {
+      display: flex;
+      align-items: center;
+      gap: 20px 42px;
+      text-align: center;
+    }
+    
+    .logo {
+      aspect-ratio: 1.7;
+      object-fit: contain;
+      width: 150px;
       max-width: 100%;
-      flex-wrap: wrap;
     }
-  
+    
+    .navLink {
+      display: none;
+    }
+    
     .heroContent {
-      margin: 40px 0 10px;
-      padding: 0 20px;
+      border-radius: 18px;
+      background-color: #da0b19;
+      max-width: 495px;
+      margin: 230px 0 0 25px;
+      padding: 27px 44px 27px;
     }
-  
+    
     .heroTitle {
-      font-size: 40px;
+      font-size: 20px;
+      margin: 0;
     }
-  
+    
+    .heroDescription {
+      margin-top: 17px;
+    }
+    
     .ctaButton {
-      padding-right: 20px;
-      margin-top: 40px;
+      border-radius: 6px;
+      margin-top: 24px;
+      padding: 17px 17px;
+      border: 3px solid #fff;
+      background: none;
+      color: #fff;
+      font: inherit;
+      cursor: pointer;
     }
   }
