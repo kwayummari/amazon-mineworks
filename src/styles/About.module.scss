@@ -118,37 +118,40 @@
     }
     
     .contentContainer {
-      display: flex;
-      margin-top: 202px;
+      display: block;
+      margin-top: 50px;
       padding: 0 30px;
       
       .textContent {
-        width: 50%;
+        width: 100%;
         color: rgba(0, 1, 84, 0.54);
-        font: 400 32px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+        font: 400 18px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
         
         .title {
           color: #000154;
-          font-size: 64px;
+          font-size: 30px;
+          font-weight: 900;
           margin: 0;
         }
-    
         .description {
           letter-spacing: 0.96px;
-          margin-top: 56px;
+          margin-top: 26px;
         }
-    
         .trustedBy {
           letter-spacing: 1.92px;
-          margin-top: 36px;
+          display: none;
         }
       }
-    
+      .trustedBy1 {
+        letter-spacing: 1.92px;
+        font-size: 18px;
+        color: rgba(0, 1, 84, 0.54);
+      }
       .image {
         aspect-ratio: 1.58;
         object-fit: contain;
-        width: 50%;
-        border-radius: 70px;
+        width: 100%;
+        border-radius: 5px;
         margin: auto 0;
       }
     }

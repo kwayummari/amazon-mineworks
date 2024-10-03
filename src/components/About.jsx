@@ -44,6 +44,7 @@ const About = () => (
         alt="Amazon Mineworks operations"
         className={styles.image}
       />
+      <p className={styles.trustedBy1}>Trusted by</p>
     </div>
     <img
       loading="lazy"
