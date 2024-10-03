@@ -2,7 +2,6 @@
     background-color: #f3f3ff;
     padding-bottom: 81px;
   }
-  
   .statsContainer {
     border-radius: 25px;
     background-color: #da0b19;
@@ -11,30 +10,29 @@
     width: 1304px;
     max-width: 100%;
     justify-content: space-between;
-    padding: 40px 64px;
+    padding: 30px 20px 20px 20px;
     color: #fff;
     text-align: center;
     font: 400 32px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+    position: relative;
+    z-index: 10;
   }
-
   .vl {
     border-left: 2px solid #ffffff;
-    height: 100px;
+    height: 50px;
   }
-  
   .statItem {
     display: flex;
     flex-direction: column;
     white-space: nowrap;
   }
-  
   .statLabel {
-    font-size: 32px;
+    font-size: 18px;
   }
-  
   .statValue {
-    font-size: 48px;
+    font-size: 30px;
     margin-top: 15px;
+    font-weight: 700;
   }
   
   .contentContainer {
@@ -82,37 +80,85 @@
   }
   
   @media (max-width: 991px) {
-    .statsContainer {
-      padding: 0 20px;
+    .about {
+      background-color: #f3f3ff;
+      padding-bottom: 81px;
     }
-  
-    .contentContainer {
-      flex-direction: column;
+    .statsContainer {
+      border-radius: 10px;
+      background-color: #da0b19;
+      display: flex;
+      margin: -32px auto 0;
+      width: 300px;
       max-width: 100%;
-      margin-top: 40px;
-      padding: 0 20px;
-  
-      .textContent,
+      justify-content: space-between;
+      padding: 20px 10px 10px 10px;
+      color: #fff;
+      text-align: center;
+      font: 400 32px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+      position: relative;
+      z-index: 10;
+    }
+    .vl {
+      border-left: 2px solid #ffffff;
+      height: 50px;
+    }
+    .statItem {
+      display: flex;
+      flex-direction: column;
+      white-space: nowrap;
+    }
+    .statLabel {
+      font-size: 10px;
+    }
+    .statValue {
+      font-size: 15px;
+      margin-top: 15px;
+      font-weight: 700;
+    }
+    
+    .contentContainer {
+      display: flex;
+      margin-top: 202px;
+      padding: 0 30px;
+      
+      .textContent {
+        width: 50%;
+        color: rgba(0, 1, 84, 0.54);
+        font: 400 32px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+        
+        .title {
+          color: #000154;
+          font-size: 64px;
+          margin: 0;
+        }
+    
+        .description {
+          letter-spacing: 0.96px;
+          margin-top: 56px;
+        }
+    
+        .trustedBy {
+          letter-spacing: 1.92px;
+          margin-top: 36px;
+        }
+      }
+    
       .image {
-        width: 100%;
+        aspect-ratio: 1.58;
+        object-fit: contain;
+        width: 50%;
+        border-radius: 70px;
+        margin: auto 0;
       }
-  
-      .title {
-        font-size: 40px;
-      }
-  
-      .description,
-      .trustedBy {
-        margin-top: 40px;
-      }
-  
-      .image {
-        margin-top: 40px;
-      }
-  
-      .partnersLogo {
-        margin-top: 40px;
-      }
+    }
+    
+    .partnersLogo {
+      aspect-ratio: 10.31;
+      object-fit: contain;
+      width: 823px;
+      margin-top: 45px;
+      max-width: 100%;
     }
   }
   
