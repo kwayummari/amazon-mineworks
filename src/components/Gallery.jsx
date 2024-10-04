@@ -24,7 +24,7 @@ const Gallery = () => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === imageList.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000);
+    }, 6000);
     return () => clearInterval(interval);
   }, []);
 
