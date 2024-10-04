@@ -1,192 +1,155 @@
 import React from "react";
 import styles from "./../styles/Footer.module.scss";
 
-function Footer() {
-  const footerSections = [
-    {
-      title: "ABOUT COMPANY",
-      items: [
-        "Subsidiary Overview",
-        "Organization structure",
-        "Vision and Mission",
-        "Management",
-        "Gallery",
-      ],
-    },
-    {
-      title: "COMMODITY",
-      items: [
-        "Our Resources",
-        "Specification Details",
-        "Portfolio",
-        "Mining Operations",
-        "Extracted Resources",
-      ],
-    },
-    {
-      title: "INVESTORS",
-      items: [
-        "Investors Relations",
-        "Finance Report",
-        "Stock Information",
-        "Event and Presentation",
-      ],
-    },
-    {
-      title: "OTHERS",
-      items: [
-        "Partnership",
-        "Industry Insights",
-        "Legal and Compliance",
-        "Corporate Events",
-      ],
-    },
-    {
-      title: "MEDIA",
-      items: [
-        "Our Resources",
-        "Specification Details",
-        "Portfolio",
-        "Mining Operations",
-        "Extracted Resources",
-      ],
-    },
-    {
-      title: "LEGAL",
-      items: [
-        "Documentation",
-        "Compliance Document",
-        "Permits and Authorization",
-        "Regulatory Filings",
-      ],
-    },
-  ];
-
+const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footerContent}>
-        <div className={styles.footerMain}>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/03fe40c5938eaa9db6f9ecaae69d2c1d7c6269b20162b94395d0d39335108a08?placeholderIfAbsent=true&apiKey=69c943fd599c485fb32c02233b347491"
-            alt="Amazon Mineworks logo"
-            className={styles.footerLogo}
-          />
-          <p className={styles.footerSlogan}>
-            We are professionals for building constructions
-          </p>
-          <div className={styles.socialIcons}>
-          <i className="bi bi-facebook" />
-          <i className="bi bi-linkedin" />
-          <i className="bi bi-instagram" />
-          <i className="bi bi-twitter" />
-          </div>
-        </div>
-        <div className={styles.footerLinks}>
-          {footerSections.map((section, index) => (
-            <div key={index} className={styles.footerSection}>
-              <h3 className={styles.footerSectionTitle}>{section.title}</h3>
-              <ul className={styles.footerSectionList}>
-                {section.items.map((item, itemIndex) => (
-                  <li key={itemIndex}>
-                    <a href="#" className={styles.footerLink}>
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div className={styles.footerBottom}>
-          <p className={styles.copyright}>
-            Copyright Amazon mineworks. All rights Reserved.
-          </p>
-          <p className={styles.designCredit}>
-            Website designed by{" "}
-            <span className={styles.designerName}>Aurorawave labs</span>
-          </p>
-          {/* <nav className={styles.footerNav}> */}
-          <a href="#" className={styles.footerNavLink}>
-            Terms of service
-          </a>
-          <a href="#" className={styles.footerNavLink}>
-            Privacy Policy
-          </a>
-        {/* </nav> */}
-        </div>
-        {/* <div className={styles.latestNews}>
-          <h3 className={styles.latestNewsTitle}>DONT MISS THESE LATEST</h3>
-          <div className={styles.latestNewsContent}>
-            <div className={styles.newsColumn}>
-              <article className={styles.newsItem}>
-                <h4 className={styles.newsItemTitle}>
-                  Sustainability Energy Talks
-                </h4>
-                <p className={styles.newsItemDescription}>
-                  In an impressive feat Amazon mineworks reported record
-                  breaking coal production in its latest mining ...
-                </p>
-                <a href="#" className={styles.readNowLink}>
-                  Read Now
-                </a>
-              </article>
-              <article className={styles.newsItem}>
-                <h4 className={styles.newsItemTitle}>
-                  Sustainability Energy Talks
-                </h4>
-                <p className={styles.newsItemDescription}>
-                  In an impressive feat Amazon mineworks reported record
-                  breaking coal production in its latest mining ...
-                </p>
-                <a href="#" className={styles.readNowLink}>
-                  Read Now
-                </a>
-              </article>
-            </div>
-            <div className={styles.newsColumn}>
-              <div className={styles.smallNewsItem}>
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/d64bbf8ebb60902fee4b89cc7e28675702637381f3fd1925d5e83d3b83325ebd?placeholderIfAbsent=true&apiKey=69c943fd599c485fb32c02233b347491"
-                  alt="News thumbnail"
-                  className={styles.smallNewsImage}
-                />
-                <p className={styles.smallNewsDescription}>
-                  In an impressive feat Amazon mineworks reported record bre
-                </p>
-              </div>
-              <hr className={styles.newsDivider} />
-              <div className={styles.smallNewsItem}>
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/d64bbf8ebb60902fee4b89cc7e28675702637381f3fd1925d5e83d3b83325ebd?placeholderIfAbsent=true&apiKey=69c943fd599c485fb32c02233b347491"
-                  alt="News thumbnail"
-                  className={styles.smallNewsImage}
-                />
-                <p className={styles.smallNewsDescription}>
-                  In an impressive feat Amazon mineworks reported record bre
-                </p>
-              </div>
-              <hr className={styles.newsDivider} />
-              <div className={styles.smallNewsItem}>
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/d64bbf8ebb60902fee4b89cc7e28675702637381f3fd1925d5e83d3b83325ebd?placeholderIfAbsent=true&apiKey=69c943fd599c485fb32c02233b347491"
-                  alt="News thumbnail"
-                  className={styles.smallNewsImage}
-                />
-                <p className={styles.smallNewsDescription}>
-                  In an impressive feat Amazon mineworks reported record bre
-                </p>
-              </div>
-              <hr className={styles.newsDivider} />
-              <a href="#" className={styles.seeMoreLink}>
-                See More
+    <footer className={`${styles.footer} footer`}>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-2 mb-4">
+            <img
+              src="./images/logo/logo1.png"
+              alt="Amazon Mineworks"
+              className={styles.logo}
+            />
+            <p className={styles.tagline}>
+              We are professionals for building constructions
+            </p>
+            <div className={styles.socialIcons}>
+              <a href="#">
+                <i className="bi bi-facebook"></i>
+              </a>
+              <a href="#">
+                <i className="bi bi-linkedin"></i>
+              </a>
+              <a href="#">
+                <i className="bi bi-instagram"></i>
+              </a>
+              <a href="#">
+                <i className="bi bi-twitter"></i>
               </a>
             </div>
           </div>
-        </div> */}
-       
+          <div className="col-md-2 footer-links">
+            <h5 className={styles.listTitle}>ABOUT COMPANY</h5>
+            <ul>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Subsidiary Overview</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Organization structure</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Vision and Mission</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Management</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Gallery</a>
+              </li>
+            </ul>
+          </div>
+          <div className="col-md-2 footer-links">
+            <h5 className={styles.listTitle}>COMMODITY</h5>
+            <ul>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Our Resources</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Specification Details</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Portfolio</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Mining Operations</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Extracted Resources</a>
+              </li>
+            </ul>
+          </div>
+          <div className="col-md-2 footer-links">
+            <h5 className={styles.listTitle}>MEDIA</h5>
+            <ul>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Our Resources</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Specification Details</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Portfolio</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Mining Operations</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Extracted Resources</a>
+              </li>
+            </ul>
+          </div>
+          <div className="col-md-2 footer-links">
+            <h5 className={styles.listTitle}>INVESTORS</h5>
+            <ul>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Investors Relations</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Finance Report</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Stock Information</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Event and Presentation</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>News and Updates</a>
+              </li>
+            </ul>
+          </div>
+          <div className="col-md-2 footer-links">
+            <h5 className={styles.listTitle}>OTHERS</h5>
+            <ul>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Partnership</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Industry Insights</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Legal and Compliance</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Corporate Events</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Terms of service</a>
+              </li>
+              <li className={styles.list}>
+                <a href="#" className={styles.anchor}>Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="row copyright mt-2">
+          <div className={`${styles.copyright} col-md-6`}>
+            <p>Copyright Amazon mineworks. All rights Reserved.</p>
+          </div>
+          <div className={`${styles.designed} col-md-6 text-end bottom-links`}>
+            <p>
+              Website designed by{" "}
+              <strong>
+                <a href="https://aurorawavelabs.com/" className={styles.anchor}>Aurorawave labs</a>
+              </strong>
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
