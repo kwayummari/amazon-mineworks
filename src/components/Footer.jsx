@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className={`${styles.footer} footer`}>
       <div className="container">
         <div className="row">
-          <div className="col-md-2 mb-4">
+          <div className="col-md-2 mb-4 text-center text-md-start">
             <img
               src="./images/logo/logo1.png"
               alt="Amazon Mineworks"
@@ -30,7 +30,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="col-md-2 footer-links">
+          <div className="col-md-2 footer-links text-center text-md-start">
             <h5 className={styles.listTitle}>ABOUT COMPANY</h5>
             <ul>
               <li className={styles.list}>
@@ -50,7 +50,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-md-2 footer-links">
+          <div className="col-md-2 footer-links text-center text-md-start">
             <h5 className={styles.listTitle}>COMMODITY</h5>
             <ul>
               <li className={styles.list}>
@@ -70,7 +70,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-md-2 footer-links">
+          <div className="col-md-2 footer-links text-center text-md-start">
             <h5 className={styles.listTitle}>MEDIA</h5>
             <ul>
               <li className={styles.list}>
@@ -90,7 +90,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-md-2 footer-links">
+          <div className="col-md-2 footer-links text-center text-md-start">
             <h5 className={styles.listTitle}>INVESTORS</h5>
             <ul>
               <li className={styles.list}>
@@ -110,7 +110,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-md-2 footer-links">
+          <div className="col-md-2 footer-links text-center text-md-start">
             <h5 className={styles.listTitle}>OTHERS</h5>
             <ul>
               <li className={styles.list}>
@@ -135,10 +135,10 @@ const Footer = () => {
           </div>
         </div>
         <div className="row copyright mt-2">
-          <div className={`${styles.copyright} col-md-6`}>
+          <div className={`${styles.copyright} col-md-6 text-center text-md-start`}>
             <p>Copyright Amazon mineworks. All rights Reserved.</p>
           </div>
-          <div className={`${styles.designed} col-md-6 text-end bottom-links`}>
+          <div className={`${styles.designed} col-md-6 text-center text-md-end bottom-links`}>
             <p>
               Website designed by{" "}
               <strong>
