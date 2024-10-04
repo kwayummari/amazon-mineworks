@@ -30,7 +30,7 @@
 }
 .newsItem {
   flex: 0 0 calc((100% - 400px) / 3);
-  border-radius: 20px;
+  border-radius: 25px;
   background-color: #ddddef;
   display: flex;
   flex-direction: column;
@@ -42,7 +42,6 @@
   scroll-snap-align: start;
 }
 .newsImage {
-  aspect-ratio: 1.65;
   object-fit: contain;
   width: 100%;
   border-radius: 10px;
