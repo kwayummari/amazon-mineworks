@@ -31,12 +31,16 @@
 
   .serviceItem {
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
     gap: 16px;
+    width: 80%;
+    height: 180px;
 
     .serviceNumber {
-      border-radius: 20px;
+      border-radius: 15px;
       background-color: #000154;
-      font-size: 56px;
+      font-size: 36px;
       color: #fff;
       text-align: center;
       letter-spacing: 2.88px;
@@ -44,14 +48,14 @@
     }
 
     .serviceContent {
-      border-radius: 49px;
+      border-radius: 20px;
       background-color: #ddddef;
       flex-grow: 1;
       padding: 17px 80px 42px;
 
       .serviceTitle {
         color: #000154;
-        font-size: 36px;
+        font-size: 26px;
         letter-spacing: 1.08px;
         text-align: left;
         margin: 0 0 28px;
@@ -59,7 +63,7 @@
 
       .serviceDescription {
         color: rgba(0, 1, 84, 0.54);
-        font-size: 24px;
+        font-size: 18px;
         letter-spacing: 0.72px;
       }
     }
@@ -68,31 +72,74 @@
 
 @media (max-width: 991px) {
   .services {
-    padding: 0 20px;
+    background-color: #fff;
+    font-family: Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+    font-weight: 400;
+    padding: 84px 30px 45px;
   }
-
+  
   .sectionTitle {
-    font-size: 40px;
+    color: #000154;
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
   }
-
+  
   .sectionDescription {
-    max-width: 100%;
-    margin-top: 40px;
+    color: rgba(0, 1, 84, 0.54);
+    font-size: 15px;
+    width: 300px;
+    letter-spacing: 1.2px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
-
+  
   .servicesList {
-    margin-top: 40px;
-
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    margin-top: 56px;
+  
     .serviceItem {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      gap: 16px;
+      width: 80%;
+      height: 180px;
+  
       .serviceNumber {
-        font-size: 40px;
-        padding: 0 20px;
+        border-radius: 15px;
+        background-color: #000154;
+        font-size: 36px;
+        color: #fff;
+        text-align: center;
+        letter-spacing: 2.88px;
+        padding: 15px 35px 22px 35px;
       }
-
+  
       .serviceContent {
-        max-width: 100%;
-        padding: 0 20px;
+        border-radius: 20px;
+        background-color: #ddddef;
+        flex-grow: 1;
+        padding: 17px 80px 42px;
+  
+        .serviceTitle {
+          color: #000154;
+          font-size: 26px;
+          letter-spacing: 1.08px;
+          text-align: left;
+          margin: 0 0 28px;
+        }
+  
+        .serviceDescription {
+          color: rgba(0, 1, 84, 0.54);
+          font-size: 18px;
+          letter-spacing: 0.72px;
+        }
       }
     }
   }
-}
+  }
