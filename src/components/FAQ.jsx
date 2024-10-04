@@ -5,7 +5,7 @@ const FAQItem = ({ question, icon }) => (
   <details className={styles.faqItem}>
     <summary className={styles.faqQuestion}>
       {question}
-      <img loading="lazy" src={icon} alt="Toggle FAQ" className={styles.faqIcon} />
+      <i className="bi bi-arrow-down-circle-fill" />
     </summary>
     <p className={styles.faqAnswer}>Answer to the question goes here.</p>
   </details>

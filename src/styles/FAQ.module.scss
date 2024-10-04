@@ -3,37 +3,38 @@
     display: flex;
     flex-direction: column;
     color: #000154;
-    padding: 89px 63px;
-    font: 400 32px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  
+    padding: 60px 93px;
+    font: 400 20px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
     .sectionTitle {
-      font-size: 64px;
+      font-size: 40px;
       text-align: center;
       margin: 0;
     }
-  
     .sectionDescription {
       color: rgba(0, 1, 84, 0.54);
-      font-size: 40px;
+      font-size: 25px;
       letter-spacing: 1.2px;
       text-align: center;
-      margin-top: 44px;
+      margin-top: 20px;
     }
-  
     .faqList {
-      margin-top: 104px;
+      margin-top: 40px;
     }
-  
     .faqItem {
-      margin-bottom: 30px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
+      margin-bottom: 40px;
+      margin-top: 20px;
+      border-bottom: #0000005e solid 0.6px;
     }
-  
     .faqQuestion {
       display: flex;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
       letter-spacing: 0.96px;
+      margin-bottom: 20px;
     }
   
     .faqIcon {
