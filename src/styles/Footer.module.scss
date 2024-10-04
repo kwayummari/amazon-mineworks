@@ -21,10 +21,16 @@
   }
 }
 .listTitle {
+  padding-left: 20px;
   font-weight: 700;
 }
 .list {
   list-style: none;
+  padding: 2px;
+}
+.list:hover {
+  color: #000154;
+  cursor: pointer;
 }
 .anchor {
   font-weight: 500;
