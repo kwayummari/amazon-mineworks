@@ -103,27 +103,28 @@
 
   .sectionDescription {
     max-width: 100%;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   .newsGrid {
     flex-direction: row;
     max-width: 100%;
-    margin-top: 40px;
-    overflow-x: auto; /* Horizontal scroll on mobile */
+    margin-top: 10px;
+    overflow-x: auto;
   }
 
   .newsItem {
-    flex: 0 0 80%; /* Adjust item width for smaller screens */
-    margin-top: 37px;
+    flex: 0 0 80%;
+    margin-top: 20px;
     padding-left: 20px;
   }
 
   .readMore {
-    padding: 0 20px;
+    padding: 10px 20px;
   }
 
   .readAllNews {
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
   }
 }

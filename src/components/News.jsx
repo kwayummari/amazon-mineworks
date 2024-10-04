@@ -60,6 +60,12 @@ const News = () => {
           title="Amazon mineworks Achieve Record Production in Coal Mining Operation"
           excerpt="In an impressive feat Amazon mineworks reported record breaking coal production in its latest mining ..."
         />
+        <NewsItem
+          image="https://cdn.builder.io/api/v1/image/assets/TEMP/4af0a96aa13996746e8ab9e61e55b1d90e17a9f47cd672f096b348d2d8e2a7ad?apiKey=69c943fd599c485fb32c02233b347491&"
+          date="13 December 2023"
+          title="Global Expansion: DEF Resources secure Mining Rights in New Territory"
+          excerpt="In an impressive feat Amazon mineworks reported record breaking coal production in its latest mining ..."
+        />
       </div>
       <div className={styles.readAllNews}>
         <a href="#" className={styles.readAllLink}>Read all news</a>
