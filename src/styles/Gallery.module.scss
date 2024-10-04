@@ -86,57 +86,58 @@
     align-items: center;
     font-family: Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
     font-weight: 400;
-    padding: 48px 80px;
-
+    padding: 48px 20px;
+  
     .title {
       color: #000154;
-      font-size: 40px;
+      font-size: 30px;
       margin: 0;
     }
-
+  
     .description {
       color: rgba(0, 1, 84, 0.54);
-      font-size: 25px;
+      font-size: 16px;
       letter-spacing: 1.2px;
       text-align: center;
       margin-top: 20px;
     }
-
+  
     .carousel {
       position: relative;
       margin-top: 20px;
       width: 100%;
-
+  
       .imageContainer {
         position: relative;
-        height: 700px;
+        height: 500px;
         width: 100%;
         overflow: hidden;
-        border-radius: 50px;
-
+        border-radius: 20px;
+  
         .galleryImage {
           position: absolute;
           top: 0;
-          left: 100%;
+          left: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;
           object-position: center;
           opacity: 0;
           transition: opacity 1s ease-in-out;
-          border-radius: 50px;
+          border-radius: 20px;
         }
-
+  
         .active {
           opacity: 1;
           z-index: 1;
         }
       }
+  
       .dots {
         display: flex;
         justify-content: center;
         margin-top: 20px;
-
+  
         .dot {
           height: 15px;
           width: 15px;
@@ -145,11 +146,12 @@
           margin: 0 8px;
           cursor: pointer;
           transition: background-color 0.3s ease;
-
+  
           &:hover {
             background-color: #000154;
           }
         }
+  
         .activeDot {
           background-color: #000154;
         }
