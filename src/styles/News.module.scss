@@ -1,133 +1,130 @@
 .newsSection {
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px 18px;
-    margin-top: 55px;
-  }
-  
-  .sectionTitle {
-    color: #000154;
-    font: 900 64px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-    margin: 0;
-  }
-  
-  .sectionDescription {
-    color: rgba(0, 1, 84, 0.54);
-    letter-spacing: 1.2px;
-    text-align: center;
-    margin-top: 72px;
-    font: 400 40px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  }
-  
-  .newsGrid {
-    display: flex;
-    gap: 20px;
-    margin-top: 95px;
-  }
-  
-  .newsItem {
-    border-radius: 50px;
-    background-color: #ddddef;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    color: rgba(0, 1, 84, 0.54);
-    letter-spacing: 0.72px;
-    padding: 25px;
-    font: 400 24px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  }
-  
-  .newsImage {
-    aspect-ratio: 1.65;
-    object-fit: contain;
-    width: 100%;
-    border-radius: 50px;
-  }
-  
-  .newsDate {
-    text-align: center;
-    margin-top: 18px;
-  }
-  
-  .newsTitle {
-    color: #000154;
-    font-size: 32px;
-    letter-spacing: 0.96px;
-    margin-top: 26px;
-  }
-  
-  .newsExcerpt {
-    margin-top: 33px;
-  }
-  
-  .readMore {
-    border-radius: 20px;
-    background-color: #000154;
-    margin-top: 26px;
-    width: 206px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 18px;
+  margin-top: 55px;
+}
+.sectionTitle {
+  color: #000154;
+  font: 900 40px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  margin: 0;
+}
+.sectionDescription {
+  color: rgba(0, 1, 84, 0.54);
+  letter-spacing: 1.2px;
+  text-align: center;
+  margin-top: 20px;
+  font: 400 25px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+}
+.newsGrid {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 20px;
+  max-width: 90%;
+}
+.newsItem {
+  flex: 0 0 calc((100% - 400px) / 3);
+  border-radius: 20px;
+  background-color: #ddddef;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  color: rgba(0, 1, 84, 0.54);
+  letter-spacing: 0.72px;
+  padding: 10px;
+  font: 400 18px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  scroll-snap-align: start;
+}
+.newsImage {
+  aspect-ratio: 1.65;
+  object-fit: contain;
+  width: 100%;
+  border-radius: 10px;
+}
+.newsDate {
+  text-align: center;
+  margin-top: 18px;
+}
+.newsTitle {
+  color: #000154;
+  font-size: 20px;
+  letter-spacing: 0.96px;
+  margin-top: 16px;
+}
+.newsExcerpt {
+  margin-top: 5px;
+}
+.readMore {
+  border-radius: 10px;
+  background-color: #000154;
+  margin-top: 5px;
+  width: 100px;
+  max-width: 100%;
+  color: #fff;
+  font-weight: 900;
+  padding: 15px 15px 15px 15px;
+  text-decoration: none;
+}
+.readAllNews {
+  display: flex;
+  margin-top: 43px;
+  align-items: center;
+  gap: 27px;
+  color: #000154;
+  text-align: center;
+  letter-spacing: 1.08px;
+  font: 900 20px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+}
+.readAllLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.arrowIcon {
+  aspect-ratio: 1.5;
+  object-fit: contain;
+  width: 60px;
+}
+
+@media (max-width: 991px) {
+  .newsSection {
     max-width: 100%;
-    color: #fff;
-    padding: 19px 32px 32px;
-    text-decoration: none;
+    margin-top: 40px;
   }
-  
+
+  .sectionTitle {
+    font-size: 40px;
+  }
+
+  .sectionDescription {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+
+  .newsGrid {
+    flex-direction: row;
+    max-width: 100%;
+    margin-top: 40px;
+    overflow-x: auto; /* Horizontal scroll on mobile */
+  }
+
+  .newsItem {
+    flex: 0 0 80%; /* Adjust item width for smaller screens */
+    margin-top: 37px;
+    padding-left: 20px;
+  }
+
+  .readMore {
+    padding: 0 20px;
+  }
+
   .readAllNews {
-    display: flex;
-    margin-top: 43px;
-    align-items: center;
-    gap: 27px;
-    color: #000154;
-    text-align: center;
-    letter-spacing: 1.08px;
-    font: 400 36px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+    margin-top: 40px;
   }
-  
-  .readAllLink {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .arrowIcon {
-    aspect-ratio: 1.5;
-    object-fit: contain;
-    width: 60px;
-  }
-  
-  @media (max-width: 991px) {
-    .newsSection {
-      max-width: 100%;
-      margin-top: 40px;
-    }
-  
-    .sectionTitle {
-      font-size: 40px;
-    }
-  
-    .sectionDescription {
-      max-width: 100%;
-      margin-top: 40px;
-    }
-  
-    .newsGrid {
-      flex-direction: column;
-      max-width: 100%;
-      margin-top: 40px;
-    }
-  
-    .newsItem {
-      max-width: 100%;
-      margin-top: 37px;
-      padding-left: 20px;
-    }
-  
-    .readMore {
-      padding: 0 20px;
-    }
-  
-    .readAllNews {
-      margin-top: 40px;
-    }
-  }
-  
+}
