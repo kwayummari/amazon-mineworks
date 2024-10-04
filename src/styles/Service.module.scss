@@ -75,7 +75,7 @@
     background-color: #fff;
     font-family: Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
     font-weight: 400;
-    padding: 84px 30px 45px;
+    padding: 8px 0px 45px;
   }
   
   .sectionTitle {
@@ -100,43 +100,44 @@
     display: flex;
     flex-direction: column;
     gap: 56px;
-    margin-top: 56px;
+    margin-top: 30px;
   
     .serviceItem {
       display: flex;
       margin-left: auto;
       margin-right: auto;
-      gap: 16px;
+      gap: 10px;
       width: 80%;
-      height: 180px;
+      height: 250px;
   
       .serviceNumber {
-        border-radius: 15px;
+        border-radius: 10px;
         background-color: #000154;
-        font-size: 36px;
+        font-size: 16px;
         color: #fff;
         text-align: center;
         letter-spacing: 2.88px;
-        padding: 15px 35px 22px 35px;
+        padding: 10px 10px 0px 10px;
+        height: 40px;
       }
   
       .serviceContent {
         border-radius: 20px;
         background-color: #ddddef;
         flex-grow: 1;
-        padding: 17px 80px 42px;
+        padding: 17px 10px 42px;
   
         .serviceTitle {
           color: #000154;
-          font-size: 26px;
+          font-size: 16px;
           letter-spacing: 1.08px;
           text-align: left;
-          margin: 0 0 28px;
+          margin: 0;
         }
   
         .serviceDescription {
           color: rgba(0, 1, 84, 0.54);
-          font-size: 18px;
+          font-size: 15px;
           letter-spacing: 0.72px;
         }
       }
