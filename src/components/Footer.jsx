@@ -75,26 +75,10 @@ function Footer() {
             We are professionals for building constructions
           </p>
           <div className={styles.socialIcons}>
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/992c4ae50cd2f45356cb39d0d8783b847da0b199d926d9472dd30576114c1b6d?placeholderIfAbsent=true&apiKey=69c943fd599c485fb32c02233b347491"
-              alt="Social icon"
-              className={styles.socialIcon}
-            />
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/e61bbdb2011b456368c2448a2f8fe82119c47b3e35f7282a37ce15ec72f96001?placeholderIfAbsent=true&apiKey=69c943fd599c485fb32c02233b347491"
-              alt="Social icon"
-              className={styles.socialIcon}
-            />
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d81b96b36181b99f7ba733f137c280fc43ae6ebb184f990644520c739fdb6c44?placeholderIfAbsent=true&apiKey=69c943fd599c485fb32c02233b347491"
-              alt="Social icon"
-              className={styles.socialIcon}
-            />
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/e22e85e73691fa01445088dc4cbf2d200153ed1db22104d22031b0913b1e4b49?placeholderIfAbsent=true&apiKey=69c943fd599c485fb32c02233b347491"
-              alt="Social icon"
-              className={styles.socialIcon}
-            />
+          <i className="bi bi-facebook" />
+          <i className="bi bi-linkedin" />
+          <i className="bi bi-instagram" />
+          <i className="bi bi-twitter" />
           </div>
         </div>
         <div className={styles.footerLinks}>

@@ -331,28 +331,36 @@
     justify-content: space-between;
     margin: 0 auto;
     max-width: 1200px;
-    padding: 60px 20px 0;
+    padding: 40px 20px 0 0;
   }
   
   .footerMain {
+    display: flex;
+    justify-content: space-between;
     flex-basis: 100%;
     margin-bottom: 40px;
     text-align: center;
   }
   
   .footerLogo {
-    max-width: 300px;
+    max-width: 150px;
   }
   
   .footerSlogan {
     color: #9591C5;
-    font-size: 32px;
+    font-size: 25px;
     margin: 20px 0;
   }
   
   .socialIcons {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+     i {
+      font-size: 25px;
+      color: #000154;
+      padding: 10px;
+      cursor: pointer;
+     }
   }
   
   .socialIcon {
