@@ -3,15 +3,15 @@ import styles from "./../styles/Gallery.module.scss";
 
 const imageList = [
   {
-    src: "https://cdn.builder.io/api/v1/image/assets/TEMP/ee71913f5e37c88fe65c268f562f3cfee87ce6370dfe741d5ab6984c910fbcaa?apiKey=69c943fd599c485fb32c02233b347491&",
+    src: "./images/gallery1.jpeg",
     alt: "Mining operations showcase 1",
   },
   {
-    src: "https://cdn.builder.io/api/v1/image/assets/TEMP/0a6e8a4b3d7e8c63f8b1efc805e1c2c13c01fb858b8b6a92f37ba610c830b80c?apiKey=69c943fd599c485fb32c02233b347491&",
+    src: "./images/gallery2.jpeg",
     alt: "Mining operations showcase 2",
   },
   {
-    src: "https://cdn.builder.io/api/v1/image/assets/TEMP/7155ea3779f33b107ba2479f9f4e9cbaebf28d43df836fb81596e3e85db23453?apiKey=69c943fd599c485fb32c02233b347491&",
+    src: "./images/gallery3.jpeg",
     alt: "Mining operations showcase 3",
   },
 ];
@@ -24,8 +24,8 @@ const Gallery = () => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === imageList.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Change image every 3 seconds
-    return () => clearInterval(interval); // Clean up the interval on component unmount
+    }, 3000);
+    return () => clearInterval(interval);
   }, []);
 
   const selectImage = (index) => {

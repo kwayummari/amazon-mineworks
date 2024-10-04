@@ -9,25 +9,26 @@
 
   .title {
     color: #000154;
-    font-size: 64px;
+    font-size: 40px;
     margin: 0;
   }
 
   .description {
     color: rgba(0, 1, 84, 0.54);
-    font-size: 40px;
+    font-size: 25px;
     letter-spacing: 1.2px;
     text-align: center;
-    margin-top: 54px;
+    margin-top: 20px;
   }
 
   .carousel {
     position: relative;
-    margin-top: 40px;
+    margin-top: 20px;
+    width: 100%;
 
     .imageContainer {
       position: relative;
-      height: 500px;
+      height: 700px;
       width: 100%;
       overflow: hidden;
       border-radius: 50px;
