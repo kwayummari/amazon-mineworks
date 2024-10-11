@@ -4,9 +4,7 @@ import Services from '../components/Service';
 import Gallery from '../components/Gallery';
 import News from '../components/News';
 import FAQ from '../components/FAQ';
-import Footer from '../components/Footer';
 import styles from '../styles/LandingPage.module.scss';
-import ImageComponent from '../components/ImageComponents';
 
 const LandingPage = () => (
   <div className={styles.landingPage}>
@@ -15,8 +13,6 @@ const LandingPage = () => (
     <Gallery />
     <News />
     <FAQ />
-    <ImageComponent />
-    <Footer />
   </div>
 );
 

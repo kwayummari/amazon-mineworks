@@ -7,14 +7,16 @@ import ImageComponent from './components/ImageComponents';
 import LandingPage from './pages/landing-page';
 
 const App = () => (
-  <div className={styles.landingPage}>
-    <Header />
-    <Routes>
-      <Route path="/" element={<LandingPage />} />
-    </Routes>
-    <ImageComponent />
-    <Footer />
-  </div>
+  <Router>
+    <div className={styles.landingPage}>
+      <Header />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+      </Routes>
+      <ImageComponent />
+      <Footer />
+    </div>
+  </Router>
 );
 
 export default App;
