@@ -1,31 +1,9 @@
 import React, { useEffect, useState } from "react";
-import styles from "./../styles/Header.module.scss";
+import styles from "./../styles/SubHeader.module.scss";
 
 const SubHeader = () => {
-  const [backgroundImage, setBackgroundImage] = useState(
-    "./images/carousel1.jpeg"
-  );
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
-
-  useEffect(() => {
-    const images = [
-      "./images/carousel1.jpeg",
-      "./images/carousel2.jpeg",
-      "./images/carousel3.jpeg",
-    ];
-
-    let currentIndex = 0;
-
-    const changeImage = () => {
-      currentIndex = (currentIndex + 1) % images.length;
-      setBackgroundImage(images[currentIndex]);
-    };
-
-    const interval = setInterval(changeImage, 10000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
@@ -36,14 +14,11 @@ const SubHeader = () => {
   };
 
   return (
-    <header
-      className={styles.carousel}
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
+    <header>
       <nav className={styles.navigation}>
         <img
           loading="lazy"
-          src="./images/logo/logo.png"
+          src="./images/logo/logo1.png"
           alt="Company logo"
           className={styles.logo}
         />
@@ -121,6 +96,15 @@ const SubHeader = () => {
           </div>
         </div>
       </nav>
+      <div className={styles.blueRectangle}>
+        <p className={styles.rectangleText}>Welcome to Our Company</p>
+      </div>
+      <img
+        loading="lazy"
+        src="./images/background.jpeg"
+        alt="Background"
+        className={styles.background}
+      />
     </header>
   );
 };
