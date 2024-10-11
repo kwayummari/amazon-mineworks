@@ -24,6 +24,84 @@
   }
 }
 
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.links {
+  display: flex;
+  padding: 10px !important;
+  justify-content: space-between;
+  width: 70%;
+}
+.menuItem {
+  position: relative;
+}
+
+.navLink {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  padding: 10px;
+  width: 200px;
+  font-size: 15px;
+  text-align: left;
+  border-radius: 5px;
+  z-index: 4;
+}
+
+.submenu a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.submenu a:hover {
+  background-color: #555;
+}
+
+.menuItem:hover .submenu {
+  display: block;
+}
+
+.drawer {
+  display: none;
+}
+
+.drawerOpen {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  width: 100%;
+  padding: 20px;
+}
+
+.menuButton {
+  display: none;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 @keyframes zoomEffect {
   0% {
     background-size: 100%;
@@ -52,6 +130,8 @@
   z-index: 4;
 }
 
+
+
 .drawer {
   position: fixed;
   top: 0;
@@ -65,13 +145,12 @@
   padding: 20px;
   transition: right 0.3s ease;
   color: #fff;
-  // z-index: 900;
 }
 
 .drawerOpen {
   right: 0;
   color: #fff;
-  z-index: 2;
+  z-index: 3;
 }
 .logo {
   aspect-ratio: 1.7;
@@ -107,13 +186,23 @@
 .ctaButton {
   border-radius: 6px;
   margin-top: 54px;
-  padding: 27px 17px;
+  padding: 17px 17px;
   border: 3px solid #fff;
   background: none;
   color: #fff;
   font: inherit;
   cursor: pointer;
 }
+.ctaButton:hover {
+  border-radius: 6px;
+  margin-top: 54px;
+  padding: 17px 17px;
+  background-color: #000154;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
 
 @media (max-width: 991px) {
   .carousel {
