@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
 import styles from "./../styles/Header.module.scss";
 
-const Header = () => {
+const SubHeader = () => {
   const [backgroundImage, setBackgroundImage] = useState(
     "./images/carousel1.jpeg"
   );
@@ -54,7 +53,7 @@ const Header = () => {
               About us
             </a>
             <div className={styles.submenu}>
-              <Link to="/at-a-glance">At a Glance</Link>
+              <a href="#at-a-glance">At a Glance</a>
               <a href="#history">Vision and Values</a>
               <a href="#our-brands">Our Projects</a>
               <a href="#board-of-directors">Board of Directors</a>
@@ -122,18 +121,8 @@ const Header = () => {
           </div>
         </div>
       </nav>
-
-      <div className={styles.heroContent}>
-        <h1 className={styles.heroTitle}>Complete Services Provider</h1>
-        <p className={styles.heroDescription}>
-          Our activities cover the full construction spectrum and are divided
-          into three main operating divisions – Building Construction, Civil
-          Engineering and Roads and Earthworks.
-        </p>
-        <button className={styles.ctaButton}>FIND OUT MORE</button>
-      </div>
     </header>
   );
 };
 
-export default Header;
+export default SubHeader;

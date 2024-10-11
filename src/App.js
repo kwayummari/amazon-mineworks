@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import styles from './styles/LandingPage.module.scss';
 import ImageComponent from './components/ImageComponents';
 import LandingPage from './pages/landing-page';
+import AtAGlance from './pages/at-a-glance';
 
 const App = () => (
   <Router>
@@ -12,6 +13,7 @@ const App = () => (
       <Header />
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/at-a-glance" element={<AtAGlance />} />
       </Routes>
       <ImageComponent />
       <Footer />
