@@ -61,7 +61,6 @@ const Header = () => {
               <a href="#company-history">Company History</a>
             </div>
           </div>
-
           <div
             className={styles.menuItem}
             onMouseEnter={() => handleSubmenuToggle("investors")}
@@ -78,7 +77,6 @@ const Header = () => {
               </div>
             )}
           </div>
-
           <div className={styles.menuItem}>
             <a href="#services" className={styles.navLink}>
               Services
