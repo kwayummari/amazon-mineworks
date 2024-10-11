@@ -13,7 +13,8 @@
   padding: 30px 20px 20px 20px;
   color: #fff;
   text-align: center;
-  font: 400 32px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 400;
   position: relative;
   z-index: 10;
 }
@@ -44,8 +45,8 @@
     padding: 0 0 0 10px;
     width: 40%;
     color: rgba(0, 1, 84, 0.54);
-    font: 400 25px Jacques Francois, -apple-system, Roboto, Helvetica,
-      sans-serif;
+    font-size: 25px;
+    font-weight: 400;
 
     .title {
       color: #000154;
@@ -100,8 +101,8 @@
     padding: 20px 10px 10px 10px;
     color: #fff;
     text-align: center;
-    font: 400 32px Jacques Francois, -apple-system, Roboto, Helvetica,
-      sans-serif;
+    font-size: 32px;
+    font-weight: 400;
     position: relative;
     z-index: 10;
   }
@@ -131,8 +132,8 @@
     .textContent {
       width: 100%;
       color: rgba(0, 1, 84, 0.54);
-      font: 400 18px Jacques Francois, -apple-system, Roboto, Helvetica,
-        sans-serif;
+      font-size: 18px;
+      font-weight: 400;
 
       .title {
         color: #000154;
