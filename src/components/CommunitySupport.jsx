@@ -38,7 +38,25 @@ const CommunitySupport = () => (
     <div className={styles.ListImages}>
       <img
         loading="lazy"
-        src="./images/background.jpeg"
+        src="./images/LImage1.png"
+        alt="Background"
+        className={styles.LImage}
+      />
+      <img
+        loading="lazy"
+        src="./images/LImage2.png"
+        alt="Background"
+        className={styles.LImage}
+      />
+      <img
+        loading="lazy"
+        src="./images/LImage3.png"
+        alt="Background"
+        className={styles.LImage}
+      />
+      <img
+        loading="lazy"
+        src="./images/LImage4.png"
         alt="Background"
         className={styles.LImage}
       />
