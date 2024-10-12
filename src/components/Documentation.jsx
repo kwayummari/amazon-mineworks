@@ -21,8 +21,9 @@ const Documentation = () => (
         </p>
       </div>
       <div className={styles.downloadsPart}>
-        <button className={styles.downloadButton}>COMPANY OVERVIEW</button>
-        <button className={styles.downloadButton}>DRILLING OVERVIEW</button>
+        <button className={styles.downloadButton}><p>COMPANY OVERVIEW</p> <i className="bi bi-download"></i></button>
+        <button className={styles.downloadButton}><p>DRILLING OVERVIEW </p><i className="bi bi-download"></i></button>
+        <button className={styles.downloadButton}><p>MINING OVERVIEW </p><i className="bi bi-download"></i></button>
       </div>
     </div>
   </section>
