@@ -1,23 +1,24 @@
 import React from "react";
-import styles from "./../styles/Documentation.module.scss";
+import styles from "./../styles/Data.module.scss";
 
 const Data = () => (
   <section>
     <div className={styles.documentation}>
       <div className={styles.textPart}>
         <p className={styles.header}>
-          We provide full-service mining, drilling, maintenance and geochemical
-          analysis solutions to customers within the minerals industry.
+        Fully Integrated Range of Mining Services
         </p>
         <p className={styles.subText}>
-          Our services extend across the mining value chain, from initial
-          exploration drilling to load and haul, providing our customers with a
-          fully integrated mining services solution.
+          We have the capacity to offer a fully integrated mining services
+          solution from first stage exploration drilling to delivery of ore to
+          the mill.
         </p>
         <p className={styles.subText}>
-          Our reputation is built on an unwavering commitment to safety,
-          delivering professional mining solutions and working closely with our
-          customers to deliver operational efficiencies.
+          This means we have the capacity to work across all facets of your
+          project delivering greater management and communication efficiencies,
+          identification and faster implementation of improvements or changes
+          and a flexible, coordinated approach to ensuring the program remains
+          on schedule.
         </p>
       </div>
       <div className={styles.downloadsPart}>
