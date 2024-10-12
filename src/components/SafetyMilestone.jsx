@@ -32,7 +32,7 @@ const SafetyMilestone = () => (
           <strong>2 Years LTI Free Bulyanhulu Gold Mine</strong>
           <ul>
             <li>Tanzania (September 2023)</li>
-            <li>Kabanga Nickel Project, Tanzania (December 2023</li>
+            <li>Kabanga Nickel Project, Tanzania (December 2023)</li>
             <li>Goulamina Gold Mine</li>
             <li>Mali (December 2023)</li>
           </ul>
