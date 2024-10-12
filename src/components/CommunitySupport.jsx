@@ -14,14 +14,34 @@ const CommunitySupport = () => (
           local communities and charity organizations.
         </p>
       </div>
-      <div className={styles.downloadsPart}>
-        <img
-          loading="lazy"
-          src="./images/image3.jpeg"
-          alt="Amazon Mineworks operations"
-          className={styles.image}
-        />
+    </div>
+    <div className={styles.downloadsPart}>
+      <div className={styles.Rectangle}>
+        <p className={styles.rectangleText}>
+          In my experience of using theAmazon Mineworks teams over the last 10 
+          years or so I can honestly say they have some of the best and most
+          positively impactful social programmes for their staff and the
+          communities in which they operate. It is a comfort to know that your
+          ‘contractors’ are just as focussed on developing and maintaining a
+          project's social license to operate as the owner's teams are. Well
+          done again to Capital Drilling, setting the standard for the industry.
+          Tim Livesey Director and Group CEO, Oriole Resource
+        </p>
       </div>
+      <img
+        loading="lazy"
+        src="./images/background.jpeg"
+        alt="Background"
+        className={styles.image}
+      />
+    </div>
+    <div className={styles.ListImages}>
+      <img
+        loading="lazy"
+        src="./images/background.jpeg"
+        alt="Background"
+        className={styles.LImage}
+      />
     </div>
     <hr />
   </section>
