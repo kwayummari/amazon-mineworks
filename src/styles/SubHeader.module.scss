@@ -197,8 +197,25 @@
     cursor: pointer;
     display: block;
   }
-  .blueRectangle { 
-    display: none;
+  .blueRectangle {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    background-color: #000154ca;
+    width: 80%;
+    height: 40px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    color: #ffffff;
+    border-radius: 1px;
+  }
+  
+  .rectangleText {
+    font-size: 15px;
+    font-weight: bold;
   }
   .navigation {
     display: flex;
