@@ -5,6 +5,7 @@ import Data from '../components/Data';
 import Data2 from '../components/Data2';
 import CommunitySupport from '../components/CommunitySupport';
 import Data3 from '../components/Data3';
+import Partners from '../components/Partners';
 
 const AtAGlance = () => (
   <div className={styles.landingPage}>
@@ -13,6 +14,7 @@ const AtAGlance = () => (
     <Data2 />
     <CommunitySupport />
     <Data3 />
+    <Partners />
   </div>
 );
 
