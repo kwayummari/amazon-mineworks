@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import styles from "./../styles/SubHeader.module.scss";
 
-const SubHeader = ({title}) => {
+const SubHeader = ({ title }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
 
@@ -17,12 +17,14 @@ const SubHeader = ({title}) => {
   return (
     <header>
       <nav className={styles.navigation}>
-        <img
-          loading="lazy"
-          src="./images/logo/logo1.png"
-          alt="Company logo"
-          className={styles.logo}
-        />
+        <Link to="/">
+          <img
+            loading="lazy"
+            src="./images/logo/logo1.png"
+            alt="Company logo"
+            className={styles.logo}
+          />
+        </Link>
         <div className={styles.links}>
           <div className={styles.menuItem}>
             <a href="#about" className={styles.navLink}>
@@ -63,7 +65,7 @@ const SubHeader = ({title}) => {
             </div>
           </div>
           <div className={styles.menuItem}>
-          <Link to="/safety" className={styles.navLink}>
+            <Link to="/safety" className={styles.navLink}>
               Safety
             </Link>
           </div>
