@@ -63,3 +63,72 @@
   width: 20%;
   height: auto;
 }
+
+@media (max-width: 991px) { 
+  .documentation {
+    display: block;
+    justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    position: relative;
+  }
+  .textPart {
+    width: 100%;
+    text-align: center;
+  }
+  .header{
+    font-size: 20px;
+    color: #141e50;
+    font-weight: 700;
+  }
+  .subText{
+    font-size: 10px;
+    color: #000000;
+    font-weight: 200;
+  }
+  .downloadsPart {
+    margin-top: 0px;
+    width: 100%;
+    position: relative;
+  }
+  .image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .Rectangle {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 1, 84, 0.6); 
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    border-radius: 1px;
+  }
+  
+  .rectangleText {
+    line-height: inherit;
+    text-align: center;
+    width: 100%;
+    font-size: 10px;
+    font-weight: 500;
+  }
+  
+  .ListImages {
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    justify-content: space-between;
+  }
+  .LImage {
+    width: 20%;
+    height: auto;
+  }
+}
