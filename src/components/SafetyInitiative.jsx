@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./../styles/Partners.module.scss";
+import styles from "./../styles/SafetyInitiative.module.scss";
 
 const SafetyInitiative = () => (
-  <section>
+  <section className={styles.initiative}>
     <div className={`container ${styles.ListImages}`}>
       <div className="row">
-        <div className="col-md-3 col-sm-6">
+        <div className="col-md-4 col-sm-6">
           <p className={styles.subText}>
             Golden Safety Rules <br /> Overarching guidelines for employee
             behavior to prevent harm to themselves or others in the workplace.
@@ -28,7 +28,7 @@ const SafetyInitiative = () => (
             themselves or others at risk of harm.
           </p>
         </div>
-        <div className="col-md-3 col-sm-6">
+        <div className="col-md-4 col-sm-6">
           <p className={styles.subText}>
             Class 1 Risk Program
             <br />
@@ -48,41 +48,54 @@ const SafetyInitiative = () => (
             competency and safety of our employees.
           </p>
         </div>
-        <div className="col-md-3 col-sm-6">
-          <img
-            loading="lazy"
-            src="./images/partners/preseus.png"
-            alt="Preseus"
-            className={`img-fluid ${styles.LImage}`}
-          />
-        </div>
-        <div className="col-md-3 col-sm-6">
-          <img
-            loading="lazy"
-            src="./images/partners/peak.png"
-            alt="Peak"
-            className={`img-fluid ${styles.LImage}`}
-          />
-        </div>
-        <div className="col-md-3 col-sm-6">
-          <img
-            loading="lazy"
-            src="./images/partners/shanta.png"
-            alt="Shanta"
-            className={`img-fluid ${styles.LImage}`}
-          />
-        </div>
-        <div className="col-md-3 col-sm-6">
-          <img
-            loading="lazy"
-            src="./images/partners/nile.jpg"
-            alt="Nile"
-            className={`img-fluid ${styles.LImage}`}
-          />
+        <div className="col-md-4 col-sm-6">
+          <p className={styles.subText}>
+            Safety Monitoring <br />
+            Site safety dashboards monitor the safety performance of individual
+            operational sites enabling tracking against targets, trend
+            identification and implementation of pre-emptive corrective actions.
+          </p>
+          <p className={styles.subText}>
+            Mobilization and Journey Management Safety During mobilization or
+            other equipment and personnel transport, stringent safety processes
+            ensure their safety, security and on-time arrival for project start
+            up.
+          </p>
+          <p className={styles.subText}>
+            Drilling Equipment Standards
+            <br />
+            Drilling Equipment Standards (DES), provide minimum safety and
+            operational features for all rigs and equipment - brand new rigs may
+            be modified to meet our high safety requirements.
+          </p>
         </div>
       </div>
     </div>
-    <hr />
+    <div className={styles.documentation}>
+      <div className={styles.textPart}>
+        <p className={styles.header}>Local Community Support</p>
+        <p className={styles.subText}>
+          We embrace our role in the communities where we work and recognize the
+          impact our operations can have on local society. We strive to develop
+          strong relationships with these communities and build sustainable
+          value in local regions by providing a range of support to residents,
+          local communities and charity organizations.
+        </p>
+      </div>
+    </div>
+    <div className={styles.downloadsPart}>
+      <div className={styles.Rectangle}>
+        <p className={styles.rectangleText}>
+        <i className="bi bi-youtube"></i>
+        </p>
+      </div>
+      <img
+        loading="lazy"
+        src="./images/background.jpeg"
+        alt="Background"
+        className={styles.image}
+      />
+    </div>
   </section>
 );
 
