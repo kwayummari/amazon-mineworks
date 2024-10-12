@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./../styles/SubHeader.module.scss";
 
-const SubHeader = () => {
+const SubHeader = ({title}) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
 
@@ -97,7 +97,7 @@ const SubHeader = () => {
         </div>
       </nav>
       <div className={styles.blueRectangle}>
-        <p className={styles.rectangleText}>Welcome to Our Company</p>
+        <p className={styles.rectangleText}>{title}</p>
       </div>
       <img
         loading="lazy"

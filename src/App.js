@@ -10,7 +10,21 @@ import SubHeader from './components/SubHeader';
 
 const ConditionalHeader = () => {
   const location = useLocation();
-  return location.pathname === '/' ? <Header /> : <SubHeader />;
+
+  const formatTitle = (path) => {
+    if (path === "/") {
+      return "";
+    }
+    return path
+      .replace(/\//g, "") 
+      .split("-")
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
+  const pathTitle = formatTitle(location.pathname);
+
+  return location.pathname === '/' ? <Header /> : <SubHeader title={pathTitle} />;
 };
 
 const App = () => (
