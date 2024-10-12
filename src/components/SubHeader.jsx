@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import styles from "./../styles/SubHeader.module.scss";
 
 const SubHeader = ({title}) => {
@@ -28,7 +29,7 @@ const SubHeader = ({title}) => {
               About us
             </a>
             <div className={styles.submenu}>
-              <a href="#at-a-glance">At a Glance</a>
+              <Link to="at-a-glance">At a Glance</Link>
               <a href="#history">Vision and Values</a>
               <a href="#our-brands">Our Projects</a>
               <a href="#board-of-directors">Board of Directors</a>
@@ -62,9 +63,9 @@ const SubHeader = ({title}) => {
             </div>
           </div>
           <div className={styles.menuItem}>
-            <a href="#safety" className={styles.navLink}>
+          <Link to="/safety" className={styles.navLink}>
               Safety
-            </a>
+            </Link>
           </div>
           <div className={styles.menuItem}>
             <a href="#careers" className={styles.navLink}>
