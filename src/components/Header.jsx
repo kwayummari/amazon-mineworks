@@ -58,10 +58,7 @@ const Header = () => {
             <div className={styles.submenu}>
               <Link to="/company-profile">Company Profile</Link>
               <a href="#history">Vision and Values</a>
-              <a href="#our-brands">Our Projects</a>
-              <a href="#board-of-directors">Board of Directors</a>
               <a href="#management-team">Management Team</a>
-              <a href="#company-history">Company History</a>
             </div>
           </div>
           <div
