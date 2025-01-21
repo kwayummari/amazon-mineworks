@@ -67,38 +67,74 @@ const Header = () => {
             onMouseLeave={() => handleSubmenuToggle(null)}
           >
             <a href="#investors" className={styles.navLink}>
-              Investors
+              Drilling Services
             </a>
             {activeSubmenu === "investors" && (
               <div className={styles.submenu}>
-                <a href="#financial">Announcement</a>
-                <a href="#financial-results">Financial Result</a>
-                <a href="#presentations">Presentations</a>
+                <a href="#financial">Exploration Drilling</a>
+                <a href="#financial-results">Grade Control Drilling</a>
+                <a href="#presentations">Blast Hole Drilling</a>
+                <a href="#presentations">Underground Drilling</a>
+                <a href="#presentations">Geothermal Drilling</a>
+                <a href="#presentations">Water Boreholes Drilling</a>
               </div>
             )}
           </div>
           <div className={styles.menuItem}>
             <a href="#services" className={styles.navLink}>
-              Services
+              Mining Services
             </a>
             <div className={styles.submenu}>
-              <a href="#exploration-services">Exploration Services</a>
-              <a href="#mining-services">Mining Services</a>
+              <a href="#exploration-services">Construction Works</a>
+              <a href="#mining-services">Mine Earthworks</a>
+              <a href="#mining-services">Load and Haul</a>
+              <a href="#mining-services">Building Works</a>
+              <a href="#mining-services">Survey Services</a>
             </div>
           </div>
           <div className={styles.menuItem}>
-            <Link to="/safety" className={styles.navLink}>
-              Safety
-            </Link>
+            <a href="#services" className={styles.navLink}>
+              Safety/OHSEQ
+            </a>
+            <div className={styles.submenu}>
+              <Link to="/safety">Occupation</Link>
+              <a href="#mining-services">Health</a>
+              <a href="#mining-services">Safety</a>
+              <a href="#mining-services">Environment</a>
+              <a href="#mining-services">Quality Management</a>
+            </div>
           </div>
           <div className={styles.menuItem}>
-            <a href="#careers" className={styles.navLink}>
-              Careers
+            <a href="#services" className={styles.navLink}>
+              Operations
+            </a>
+            <div className={styles.submenu}>
+              <Link to="/safety">Tanzania</Link>
+              <a href="#mining-services">Namibia</a>
+            </div>
+          </div>
+          <div className={styles.menuItem}>
+            <a href="#services" className={styles.navLink}>
+              Investors
+            </a>
+            <div className={styles.submenu}>
+              <Link to="/safety">Announcements</Link>
+              <a href="#mining-services">Presentations</a>
+              <a href="#mining-services">Corporate Governance</a>
+              <a href="#mining-services">
+                Corporate Social Responsibility (CSR)
+              </a>
+              <a href="#mining-services">Certifications</a>
+            </div>
+          </div>
+          <div className={styles.menuItem}>
+            <a href="#news" className={styles.navLink}>
+              Blog
             </a>
           </div>
           <div className={styles.menuItem}>
             <a href="#news" className={styles.navLink}>
-              News & Media
+              Contact Us
             </a>
           </div>
         </div>

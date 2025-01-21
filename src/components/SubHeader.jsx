@@ -42,7 +42,7 @@ const SubHeader = ({ title }) => {
             onMouseLeave={() => handleSubmenuToggle(null)}
           >
             <a href="#investors" className={styles.navLink}>
-              Investors
+              Drilling Services
             </a>
             {activeSubmenu === "investors" && (
               <div className={styles.submenu}>
