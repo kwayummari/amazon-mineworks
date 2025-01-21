@@ -7,7 +7,7 @@ import CommunitySupport from '../components/CommunitySupport';
 import Data3 from '../components/Data3';
 import Partners from '../components/Partners';
 
-const AtAGlance = () => (
+const CompanyProfile = () => (
   <div className={styles.landingPage}>
     <Documentation />
     <Data />
@@ -18,4 +18,4 @@ const AtAGlance = () => (
   </div>
 );
 
-export default AtAGlance;
+export default CompanyProfile;

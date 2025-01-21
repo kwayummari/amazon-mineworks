@@ -5,9 +5,9 @@ import Footer from './components/Footer';
 import styles from './styles/LandingPage.module.scss';
 import ImageComponent from './components/ImageComponents';
 import LandingPage from './pages/landing-page';
-import AtAGlance from './pages/at-a-glance';
 import SubHeader from './components/SubHeader';
 import Safety from './pages/Safety';
+import CompanyProfile from './pages/company-profile';
 
 const ConditionalHeader = () => {
   const location = useLocation();
@@ -34,7 +34,7 @@ const App = () => (
       <ConditionalHeader />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/at-a-glance" element={<AtAGlance />} />
+        <Route path="/company-profile" element={<CompanyProfile />} />
         <Route path="/safety" element={<Safety />} />
       </Routes>
       <ImageComponent />
