@@ -6,22 +6,23 @@ const ExplorationDrillingDocumentation = () => (
     <div className={styles.documentation}>
       <div className={styles.textPart}>
         <p className={styles.header}>
-          We provide full-service mining, drilling, maintenance and geochemical
-          analysis solutions to customers within the minerals industry.
+          Explore advanced techniques and cutting-edge technology in exploration
+          drilling.
         </p>
         <p className={styles.subText}>
-          At Amazon Mineworks we have an uncompromising commitment to the
-          occupational health and safety of our employees and others where we
-          work.
+          At Amazon Mineworks, we are committed to delivering efficient and
+          sustainable drilling solutions tailored to the unique needs of the
+          minerals industry.
         </p>
         <p className={styles.subText}>
-          We operate in many diverse, remote and often difficult locations, and
-          our employees’ wellbeing, regardless of where they work, is paramount.
+          Our expertise ensures precision and reliability, even in the most
+          challenging environments, helping you unlock the full potential of
+          your resources.
         </p>
       </div>
       <div className={styles.downloadsPart}>
         <button className={styles.downloadButton}>
-          <p>GOLDEN SAFETY RULES</p> <i className="bi bi-download"></i>
+          <p>DRILLING BEST PRACTICES</p> <i className="bi bi-download"></i>
         </button>
       </div>
     </div>
