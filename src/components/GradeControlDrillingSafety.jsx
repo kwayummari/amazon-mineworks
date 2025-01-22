@@ -5,18 +5,17 @@ const GradeControlDrillingSafety = () => (
   <section>
     <div className={styles.documentation}>
       <div className={styles.textPart}>
-        <p className={styles.header}>Safety leadership</p>
+        <p className={styles.header}>Precision in Grade Control</p>
         <p className={styles.subText}>
-          We are committed to advancing the boundaries of exploration drilling
-          by leveraging cutting-edge technology and innovative techniques. Our
-          focus is on providing efficient, reliable, and sustainable solutions
-          that meet the evolving needs of the minerals industry.
+          At Amazon Mineworks, we specialize in grade control drilling to help
+          our clients maximize resource recovery and optimize mining operations.
+          Our advanced techniques ensure precise ore boundary definition and
+          accurate sampling for better decision-making.
         </p>
         <p className={styles.subText}>
-          Our clients trust us to deliver precision-driven drilling operations
-          that exceed expectations. With a dedicated team of experts and a
-          relentless pursuit of excellence, we ensure the highest standards of
-          performance and continuous improvement in every project.
+          By combining expertise, technology, and innovation, we deliver
+          reliable data that supports efficient extraction, reduces waste, and
+          enhances the profitability of your mining projects.
         </p>
       </div>
       <div className={styles.downloadsPart}>
@@ -39,18 +38,16 @@ const GradeControlDrillingSafety = () => (
         />
       </div>
       <div className={styles.textPart}>
-        <p className={styles.header}>Advancing Drilling Excellence</p>
+        <p className={styles.header}>Optimizing Resource Recovery</p>
         <p className={styles.subText}>
-          We have implemented state-of-the-art techniques and methodologies
-          designed to optimize drilling efficiency and minimize environmental
-          impact. Our tailored solutions address the unique challenges of each
-          project, ensuring consistent and dependable results.
+          Our grade control drilling services are tailored to meet the unique
+          challenges of each site. We provide accurate, real-time data that
+          helps streamline operations and improve ore recovery rates.
         </p>
         <p className={styles.subText}>
-          Collaboration with our clients is key to success. We empower our team
-          and stakeholders to identify opportunities for innovation and to
-          implement strategies that enhance operational outcomes and resource
-          recovery.
+          Collaboration is at the heart of what we do. We work closely with our
+          clients to implement customized solutions that align with their
+          operational goals, ensuring both efficiency and sustainability.
         </p>
       </div>
     </div>
