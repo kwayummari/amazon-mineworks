@@ -46,9 +46,12 @@ const SubHeader = ({ title }) => {
             </a>
             {activeSubmenu === "investors" && (
               <div className={styles.submenu}>
-                <a href="#financial">Announcement</a>
-                <a href="#financial-results">Financial Result</a>
-                <a href="#presentations">Presentations</a>
+                <a href="#financial">Exploration Drilling</a>
+                <a href="#financial-results">Grade Control Drilling</a>
+                <a href="#presentations">Blast Hole Drilling</a>
+                <a href="#presentations">Underground Drilling</a>
+                <a href="#presentations">Geothermal Drilling</a>
+                <a href="#presentations">Water Boreholes Drilling</a>
               </div>
             )}
           </div>
