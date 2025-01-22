@@ -6,7 +6,7 @@ import SafetyData from '../components/SafetyData';
 import SafetyNeck from '../components/SafetyNeck';
 import SafetyInitiative from '../components/SafetyInitiative';
 
-const Safety = () => (
+const ExplorationDrilling = () => (
   <div className={styles.landingPage}>
     <SafetyDocumentation />
     <SafetyMilestone />
@@ -16,4 +16,4 @@ const Safety = () => (
   </div>
 );
 
-export default Safety;
+export default ExplorationDrilling;
