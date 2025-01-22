@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from '../styles/LandingPage.module.scss';
 import SafetyNeck from '../components/SafetyNeck';
-import ExplorationDrillingSafety from '../components/ExplorationDrillingSafety';
+import GradeControlDrillingSafety from '../components/GradeControlDrillingSafety';
 import GradeControlDrillingDocumentation from '../components/GradeControlDrillingDocumentation';
 
 const GradeControlDrilling = () => (
   <div className={styles.landingPage}>
     <GradeControlDrillingDocumentation />
-    <ExplorationDrillingSafety />
+    <GradeControlDrillingSafety />
     <SafetyNeck />
   </div>
 );
