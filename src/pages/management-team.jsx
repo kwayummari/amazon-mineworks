@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from '../styles/LandingPage.module.scss';
+import ManagementTeam from '../components/team';
 
-const ManagementTeam = () => (
-  <div className={styles.landingPage}>
+const Team = () => (
+    <div className={styles.landingPage}>
+        <ManagementTeam />
   </div>
 );
 
-export default ManagementTeam;
+export default Team;
