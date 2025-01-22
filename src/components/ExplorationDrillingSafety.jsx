@@ -7,18 +7,16 @@ const ExplorationDrillingSafety = () => (
       <div className={styles.textPart}>
         <p className={styles.header}>Safety leadership</p>
         <p className={styles.subText}>
-          We have a genuine commitment to keeping our employees safe and to
-          continually reduce their exposure to risk while performing their work.
-          We expect visible safety leadership across all levels of our company
-          and operations, from our Executive Leadership Team to our drill crews
-          on site.
+          We are committed to advancing the boundaries of exploration drilling
+          by leveraging cutting-edge technology and innovative techniques. Our
+          focus is on providing efficient, reliable, and sustainable solutions
+          that meet the evolving needs of the minerals industry.
         </p>
         <p className={styles.subText}>
-          We also understand the importance our customers place on safe
-          operations – free of incidents, hazards and near misses. Our clients
-          can be confident that we will exceed the most stringent safety
-          requirements, and deliver safe, and productive drilling solutions
-          while diligently focusing on continuous improvement.
+          Our clients trust us to deliver precision-driven drilling operations
+          that exceed expectations. With a dedicated team of experts and a
+          relentless pursuit of excellence, we ensure the highest standards of
+          performance and continuous improvement in every project.
         </p>
       </div>
       <div className={styles.downloadsPart}>
@@ -41,18 +39,18 @@ const ExplorationDrillingSafety = () => (
         />
       </div>
       <div className={styles.textPart}>
-        <p className={styles.header}>How we keep our people safe</p>
+        <p className={styles.header}>Advancing Drilling Excellence</p>
         <p className={styles.subText}>
-          We have numerous safety initiatives, training programs, policies and
-          procedures designed to ensure all our employees have the knowledge to
-          conduct their work safely and to address Class 1 Risks in our
-          business.
+          We have implemented state-of-the-art techniques and methodologies
+          designed to optimize drilling efficiency and minimize environmental
+          impact. Our tailored solutions address the unique challenges of each
+          project, ensuring consistent and dependable results.
         </p>
         <p className={styles.subText}>
-          Most importantly we work with our employees to ensure they understand
-          the controls to mitigate any risk and are empowered to act if they are
-          unsafe in their workplace or they identify an unsafe condition or
-          behavior.
+          Collaboration with our clients is key to success. We empower our team
+          and stakeholders to identify opportunities for innovation and to
+          implement strategies that enhance operational outcomes and resource
+          recovery.
         </p>
       </div>
     </div>
