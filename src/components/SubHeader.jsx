@@ -80,9 +80,13 @@ const SubHeader = ({ title }) => {
             </div>
           </div>
           <div className={styles.menuItem}>
-            <a href="#careers" className={styles.navLink}>
-              Careers
+            <a href="#services" className={styles.navLink}>
+              Operations
             </a>
+            <div className={styles.submenu}>
+              <Link to="/safety">Tanzania</Link>
+              <a href="#mining-services">Namibia</a>
+            </div>
           </div>
           <div className={styles.menuItem}>
             <a href="#news" className={styles.navLink}>
