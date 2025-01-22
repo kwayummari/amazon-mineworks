@@ -6,58 +6,65 @@
   margin-right: auto;
   padding-top: 50px;
   position: relative;
-}
-.textPart {
-  width: 100%;
-}
-.header {
-  font-size: 30px;
-  color: #141e50;
-  font-weight: 700;
-}
-.subText {
-  font-size: 20px;
-  color: #000000;
-  font-weight: 200;
-}
-.downloadsPart {
-  margin-top: 50px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
-.image {
-  width: 100%;
-  height: 200px;
-}
 
-.Rectangle {
-  position: absolute;
-  bottom: 0;
-  background-color: rgba(0, 1, 84, 0.6);
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
-  z-index: 2;
-  align-items: center;
-  color: #ffffff;
+  .textPart {
+    width: 100%;
+    text-align: center; // Center align text for consistency
+  }
+
   .header {
-    padding-top: 50px;
-    justify-content: center;
-    align-items: center;
     font-size: 30px;
-    color: #fff;
+    color: #141e50;
     font-weight: 700;
+  }
+
+  .subText {
+    font-size: 20px;
+    color: #000000;
+    font-weight: 200;
   }
 }
 
-.rectangleText {
-  line-height: 30px;
-  width: 60%;
-  font-size: 15px;
-  font-weight: 900;
+.downloadsPart {
+  margin-top: 50px;
+  width: 80%; // Match the width of .documentation
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+
+  .image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .Rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 1, 84, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; // Center align text
+    color: #ffffff;
+
+    .header {
+      padding-top: 0; // Remove padding-top to align with .documentation
+      font-size: 30px;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .rectangleText {
+      line-height: 30px;
+      width: 60%;
+      font-size: 15px;
+      font-weight: 900;
+    }
+  }
 }
 
 .ListImages {
@@ -67,77 +74,50 @@
   margin-right: auto;
   margin-top: 20px;
   justify-content: space-between;
-}
-.LImage {
-  width: 20%;
-  height: auto;
+
+  .LImage {
+    width: 20%;
+    height: auto;
+  }
 }
 
 @media (max-width: 991px) {
   .documentation {
-    display: block;
-    justify-content: center;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 50px;
-    position: relative;
+
+    .header {
+      font-size: 20px;
+    }
+
+    .subText {
+      font-size: 10px;
+    }
   }
-  .textPart {
-    width: 100%;
-    text-align: center;
-  }
-  .header {
-    font-size: 20px;
-    color: #141e50;
-    font-weight: 700;
-  }
-  .subText {
-    font-size: 10px;
-    color: #000000;
-    font-weight: 200;
-  }
+
   .downloadsPart {
-    margin-top: 0px;
     width: 100%;
-    position: relative;
-  }
-  .image {
-    width: 100%;
-    height: auto;
-  }
 
-  .Rectangle {
-    position: absolute;
-    bottom: 0;
-    background-color: rgba(0, 1, 84, 0.6);
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    color: #ffffff;
-    border-radius: 1px;
-  }
+    .image {
+      height: auto;
+    }
 
-  .rectangleText {
-    line-height: inherit;
-    text-align: center;
-    width: 100%;
-    font-size: 10px;
-    font-weight: 500;
+    .Rectangle {
+      .header {
+        font-size: 20px;
+      }
+
+      .rectangleText {
+        font-size: 10px;
+        width: 80%; // Adjust width for smaller screens
+      }
+    }
   }
 
   .ListImages {
-    display: flex;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    justify-content: space-between;
-  }
-  .LImage {
-    width: 20%;
-    height: auto;
+    width: 100%;
+
+    .LImage {
+      width: 20%;
+    }
   }
 }
