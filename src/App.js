@@ -11,6 +11,7 @@ import CompanyProfile from './pages/company-profile';
 import VisionValues from './pages/vision-values';
 import Team from './pages/management-team';
 import ExplorationDrilling from './pages/exploration-drilling';
+import GradeControlDrilling from './pages/grade-control-drilling';
 
 const ConditionalHeader = () => {
   const location = useLocation();
@@ -41,6 +42,7 @@ const App = () => (
         <Route path="/vision-values" element={<VisionValues />} />
         <Route path="/management-team" element={<Team />} />
         <Route path="/exploration-drilling" element={<ExplorationDrilling />} />
+        <Route path="/grade-control-drilling" element={<GradeControlDrilling />} />
         <Route path="/safety" element={<Safety />} />
       </Routes>
       <ImageComponent />
