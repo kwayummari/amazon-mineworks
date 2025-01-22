@@ -3,10 +3,11 @@ import styles from '../styles/LandingPage.module.scss';
 import SafetyNeck from '../components/SafetyNeck';
 import ExplorationDrillingDocumentation from '../components/explorationDrillingDocumentation';
 import ExplorationDrillingSafety from '../components/ExplorationDrillingSafety';
+import GradeControlDrillingDocumentation from '../components/GradeControlDrillingDocumentation';
 
 const GradeControlDrilling = () => (
   <div className={styles.landingPage}>
-    <ExplorationDrillingDocumentation />
+    <GradeControlDrillingDocumentation />
     <ExplorationDrillingSafety />
     <SafetyNeck />
   </div>
