@@ -71,7 +71,7 @@ const Header = () => {
             </a>
             {activeSubmenu === "investors" && (
               <div className={styles.submenu}>
-                <a href="#financial">Exploration Drilling</a>
+                <Link to="exploration-drilling">Exploration Drilling</Link>
                 <a href="#financial-results">Grade Control Drilling</a>
                 <a href="#presentations">Blast Hole Drilling</a>
                 <a href="#presentations">Underground Drilling</a>
