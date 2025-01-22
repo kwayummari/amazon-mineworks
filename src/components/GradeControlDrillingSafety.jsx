@@ -21,7 +21,7 @@ const GradeControlDrillingSafety = () => (
       <div className={styles.downloadsPart}>
         <img
           loading="lazy"
-          src="./images/image3.jpeg"
+          src="./images/WhatsApp Image 2024-08-29 at 16.22.55.jpeg"
           alt="Amazon Mineworks operations"
           className={styles.image}
         />
@@ -32,7 +32,7 @@ const GradeControlDrillingSafety = () => (
       <div className={styles.downloadsPart2}>
         <img
           loading="lazy"
-          src="./images/image4.jpeg"
+          src="./images/WhatsApp Image 2024-08-29 at 16.44.57 (2).jpeg"
           alt="Amazon Mineworks operations"
           className={styles.image}
         />
