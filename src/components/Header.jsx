@@ -58,7 +58,7 @@ const Header = () => {
             <div className={styles.submenu}>
               <Link to="/company-profile">Company Profile</Link>
               <Link to="/vision-values">Vision and Values</Link>
-              <Link href="management-team">Management Team</Link>
+              <Link href="/management-team">Management Team</Link>
             </div>
           </div>
           <div
