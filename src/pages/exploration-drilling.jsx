@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from '../styles/LandingPage.module.scss';
-import SafetyData from '../components/SafetyData';
 import SafetyNeck from '../components/SafetyNeck';
 import ExplorationDrillingDocumentation from '../components/explorationDrillingDocumentation';
+import ExplorationDrillingSafety from '../components/ExplorationDrillingSafety';
 
 const ExplorationDrilling = () => (
   <div className={styles.landingPage}>
     <ExplorationDrillingDocumentation />
-    <SafetyData />
+    <ExplorationDrillingSafety />
     <SafetyNeck />
   </div>
 );
