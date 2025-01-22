@@ -89,8 +89,27 @@ const SubHeader = ({ title }) => {
             </div>
           </div>
           <div className={styles.menuItem}>
+            <a href="#services" className={styles.navLink}>
+              Investors
+            </a>
+            <div className={styles.submenu}>
+              <Link to="/safety">Announcements</Link>
+              <a href="#mining-services">Presentations</a>
+              <a href="#mining-services">Corporate Governance</a>
+              <a href="#mining-services">
+                Corporate Social Responsibility (CSR)
+              </a>
+              <a href="#mining-services">Certifications</a>
+            </div>
+          </div>
+          <div className={styles.menuItem}>
             <a href="#news" className={styles.navLink}>
-              News & Media
+              Blog
+            </a>
+          </div>
+          <div className={styles.menuItem}>
+            <a href="#news" className={styles.navLink}>
+              Contact Us
             </a>
           </div>
         </div>
