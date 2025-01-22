@@ -57,10 +57,10 @@ const SubHeader = ({ title }) => {
           </div>
           <div className={styles.menuItem}>
             <a href="#services" className={styles.navLink}>
-            Mining Services
+              Mining Services
             </a>
             <div className={styles.submenu}>
-            <a href="#exploration-services">Construction Works</a>
+              <a href="#exploration-services">Construction Works</a>
               <a href="#mining-services">Mine Earthworks</a>
               <a href="#mining-services">Load and Haul</a>
               <a href="#mining-services">Building Works</a>
@@ -68,9 +68,16 @@ const SubHeader = ({ title }) => {
             </div>
           </div>
           <div className={styles.menuItem}>
-            <Link to="/safety" className={styles.navLink}>
-              Safety
-            </Link>
+            <a href="#services" className={styles.navLink}>
+              Safety/OHSEQ
+            </a>
+            <div className={styles.submenu}>
+              <Link to="/safety">Occupation</Link>
+              <a href="#mining-services">Health</a>
+              <a href="#mining-services">Safety</a>
+              <a href="#mining-services">Environment</a>
+              <a href="#mining-services">Quality Management</a>
+            </div>
           </div>
           <div className={styles.menuItem}>
             <a href="#careers" className={styles.navLink}>
