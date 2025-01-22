@@ -9,6 +9,7 @@ import SubHeader from './components/SubHeader';
 import Safety from './pages/Safety';
 import CompanyProfile from './pages/company-profile';
 import VisionValues from './pages/vision-values';
+import ManagementTeam from './pages/management-team';
 
 const ConditionalHeader = () => {
   const location = useLocation();
@@ -37,6 +38,7 @@ const App = () => (
         <Route path="/" element={<LandingPage />} />
         <Route path="/company-profile" element={<CompanyProfile />} />
         <Route path="/vision-values" element={<VisionValues />} />
+        <Route path="/management-team" element={<ManagementTeam />} />
         <Route path="/safety" element={<Safety />} />
       </Routes>
       <ImageComponent />
