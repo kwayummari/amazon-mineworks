@@ -57,11 +57,14 @@ const SubHeader = ({ title }) => {
           </div>
           <div className={styles.menuItem}>
             <a href="#services" className={styles.navLink}>
-              Services
+            Mining Services
             </a>
             <div className={styles.submenu}>
-              <a href="#exploration-services">Exploration Services</a>
-              <a href="#mining-services">Mining Services</a>
+            <a href="#exploration-services">Construction Works</a>
+              <a href="#mining-services">Mine Earthworks</a>
+              <a href="#mining-services">Load and Haul</a>
+              <a href="#mining-services">Building Works</a>
+              <a href="#mining-services">Survey Services</a>
             </div>
           </div>
           <div className={styles.menuItem}>
