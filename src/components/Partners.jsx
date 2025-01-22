@@ -8,7 +8,7 @@ const Partners = () => (
         <div className="col-md-3 col-sm-6">
           <img
             loading="lazy"
-            src="./images/partners/bhp.png"
+            src="./images/bhp.png"
             alt="BHP"
             className={`${styles.LImage}`}
           />
@@ -16,7 +16,7 @@ const Partners = () => (
         <div className="col-md-3 col-sm-6">
           <img
             loading="lazy"
-            src="./images/partners/BARRICK.png"
+            src="./images/BARRICK.png"
             alt="Barrick"
             className={`${styles.LImage}`}
           />
@@ -24,7 +24,7 @@ const Partners = () => (
         <div className="col-md-3 col-sm-6">
           <img
             loading="lazy"
-            src="./images/partners/preseus.png"
+            src="./images/preseus.png"
             alt="Preseus"
             className={`${styles.LImage}`}
           />
@@ -32,7 +32,7 @@ const Partners = () => (
         <div className="col-md-3 col-sm-6">
           <img
             loading="lazy"
-            src="./images/partners/peak.png"
+            src="./images/peak.png"
             alt="Peak"
             className={`${styles.LImage}`}
           />
@@ -40,7 +40,7 @@ const Partners = () => (
         <div className="col-md-3 col-sm-6">
           <img
             loading="lazy"
-            src="./images/partners/shanta.png"
+            src="./images/shanta.png"
             alt="Shanta"
             className={`${styles.LImage}`}
           />
@@ -48,7 +48,7 @@ const Partners = () => (
         <div className="col-md-3 col-sm-6">
           <img
             loading="lazy"
-            src="./images/partners/blackRock.png"
+            src="./images/blackRock.png"
             alt="Nile"
             className={`${styles.LImage}`}
           />
@@ -56,7 +56,7 @@ const Partners = () => (
         <div className="col-md-3 col-sm-6">
           <img
             loading="lazy"
-            src="./images/partners/resources.png"
+            src="./images/resources.png"
             alt="Nile"
             className={`${styles.LImage}`}
           />
@@ -64,7 +64,7 @@ const Partners = () => (
         <div className="col-md-3 col-sm-6">
           <img
             loading="lazy"
-            src="./images/partners/armdale.png"
+            src="./images/armdale.png"
             alt="Nile"
             className={`${styles.LImage}`}
           />
@@ -72,7 +72,7 @@ const Partners = () => (
                 <div className="col-md-3 col-sm-6">
           <img
             loading="lazy"
-            src="./images/partners/katoro.png"
+            src="./images/katoro.png"
             alt="Nile"
             className={`${styles.LImage}`}
           />
