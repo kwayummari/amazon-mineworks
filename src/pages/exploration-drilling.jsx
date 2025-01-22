@@ -9,10 +9,8 @@ import SafetyInitiative from '../components/SafetyInitiative';
 const ExplorationDrilling = () => (
   <div className={styles.landingPage}>
     <SafetyDocumentation />
-    <SafetyMilestone />
     <SafetyData />
     <SafetyNeck />
-    <SafetyInitiative />
   </div>
 );
 
