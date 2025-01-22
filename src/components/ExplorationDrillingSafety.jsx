@@ -5,7 +5,7 @@ const ExplorationDrillingSafety = () => (
   <section>
     <div className={styles.documentation}>
       <div className={styles.textPart}>
-        <p className={styles.header}>Safety leadership</p>
+        <p className={styles.header}>Innovative Leadership</p>
         <p className={styles.subText}>
           We are committed to advancing the boundaries of exploration drilling
           by leveraging cutting-edge technology and innovative techniques. Our
