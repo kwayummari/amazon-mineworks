@@ -99,10 +99,10 @@ const Header = () => {
         { title: "Certifications", href: "#certifications" },
       ],
     },
-    {
-      title: "Blog",
-      link: "/blog",
-    },
+    // {
+    //   title: "Blog",
+    //   link: "/blog",
+    // },
     {
       title: "Opportunities",
       link: "/careers",
