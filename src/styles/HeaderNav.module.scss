@@ -26,7 +26,7 @@
   }
 
   .logoImage {
-    height: 60px;
+    height: 80px;
     width: auto;
     filter: brightness(0) invert(1);
   }
@@ -55,7 +55,7 @@
     padding: 10px 15px;
 
     &:hover {
-      color: #37aba6;
+      color: #da0b19;
     }
 
     &::after {
@@ -65,7 +65,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #37aba6;
+      background: #da0b19;
       transition: width 0.3s ease;
     }
 
@@ -122,9 +122,9 @@
     border-left: 3px solid transparent;
 
     &:hover {
-      color: #37aba6;
-      background: rgba(55, 171, 166, 0.1);
-      border-left-color: #37aba6;
+      color: #da0b19;
+      background: rgba(218, 11, 25, 0.1);
+      border-left-color: #da0b19;
     }
   }
 }
