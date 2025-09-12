@@ -48,7 +48,7 @@ const Announcements = () => {
   return (
     <div className={styles.announcements}>
       {/* Hero Section */}
-      <div className={styles.hero}>
+      {/* <div className={styles.hero}>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>Announcements</h1>
           <p className={styles.heroDescription}>
@@ -56,7 +56,7 @@ const Announcements = () => {
             corporate updates from Amazon Mineworks.
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Filter Section */}
       <div className={styles.filterSection}>

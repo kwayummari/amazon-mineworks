@@ -121,7 +121,10 @@
 
 .partnersContainer {
   margin-top: 40px;
-  padding: 0 40px;
+  padding: 0 60px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .partnersGrid {
@@ -153,11 +156,11 @@
   max-width: 100%;
   max-height: 80px;
   object-fit: contain;
-  filter: grayscale(100%) brightness(0.7);
+  filter: grayscale(100%) opacity(0.7);
   transition: filter 0.3s ease;
 
   &:hover {
-    filter: grayscale(0%) brightness(1);
+    filter: grayscale(0%) opacity(1);
   }
 }
 
@@ -325,7 +328,8 @@
 
   .partnersContainer {
     margin-top: 30px;
-    padding: 0 20px;
+    padding: 0 30px;
+    max-width: 100%;
   }
 
   .partnersGrid {
@@ -409,7 +413,8 @@
 
   .partnersContainer {
     margin-top: 25px;
-    padding: 0 15px;
+    padding: 0 20px;
+    max-width: 100%;
   }
 
   .partnersGrid {
@@ -483,7 +488,8 @@
 
   .partnersContainer {
     margin-top: 20px;
-    padding: 0 10px;
+    padding: 0 15px;
+    max-width: 100%;
   }
 
   .partnersGrid {

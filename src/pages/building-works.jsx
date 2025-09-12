@@ -76,7 +76,7 @@ const BuildingWorks = () => {
   return (
     <div className={styles.buildingWorks}>
       {/* Hero Section */}
-      <div className={styles.hero}>
+      {/* <div className={styles.hero}>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>Building Works</h1>
           <p className={styles.heroDescription}>
@@ -85,7 +85,7 @@ const BuildingWorks = () => {
             infrastructure development.
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Services Section */}
       <div className={styles.servicesSection}>

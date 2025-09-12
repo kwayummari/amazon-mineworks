@@ -144,10 +144,10 @@ const Careers = () => {
 
   return (
     <div className={styles.careersPage}>
-      <div className={styles.hero}>
+      {/* <div className={styles.hero}>
         <h1>Career Opportunities</h1>
         <p>Join our team and be part of the future of sustainable mining</p>
-      </div>
+      </div> */}
 
       <div className={styles.jobsContainer}>
         {jobs.length === 0 ? (
