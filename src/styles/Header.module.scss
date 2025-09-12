@@ -527,12 +527,15 @@
 
 @media (max-width: 768px) {
   .carousel {
-    padding: 0 20px 100px 20px;
+    padding: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
   }
 
   .navigation {
@@ -547,8 +550,8 @@
   .heroContent {
     position: relative;
     z-index: 5;
-    max-width: 100%;
-    margin: 0 auto 40px auto;
+    max-width: 90%;
+    margin: 0 auto 30px auto;
     padding: 25px 20px;
     background: rgba(218, 11, 25, 0.9);
     border-radius: 15px;
@@ -607,8 +610,11 @@
 
 @media (max-width: 480px) {
   .carousel {
-    padding: 0 15px 80px 15px;
+    padding: 0;
     min-height: 100vh;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
   }
 
   .navigation {
