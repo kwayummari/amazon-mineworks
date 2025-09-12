@@ -99,7 +99,7 @@ const Header = () => {
 
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
@@ -230,6 +230,9 @@ const Header = () => {
     <header
       className={styles.carousel}
       style={{ backgroundImage: `url(${images[currentSlide]})` }}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       <nav className={styles.navigation}>
         <Link to="/">
