@@ -527,13 +527,12 @@
 
 @media (max-width: 768px) {
   .carousel {
-    padding: 0;
+    padding: 0 20px 100px 20px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    text-align: center;
   }
 
   .navigation {
@@ -543,36 +542,34 @@
     right: 0;
     z-index: 10;
     padding: 15px 20px;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent);
   }
 
   .heroContent {
     position: relative;
     z-index: 5;
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 30px 20px;
-    background: rgba(218, 11, 25, 0.95);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    margin: 0 auto 40px auto;
+    padding: 25px 20px;
+    background: rgba(218, 11, 25, 0.9);
+    border-radius: 15px;
+    text-align: center;
 
     h1 {
-      font-size: 28px;
-      margin: 0 0 15px 0;
-      line-height: 1.2;
+      font-size: 24px;
+      margin: 0 0 12px 0;
+      line-height: 1.3;
     }
 
     p {
-      font-size: 16px;
-      margin: 15px 0 25px 0;
-      line-height: 1.5;
+      font-size: 15px;
+      margin: 12px 0 20px 0;
+      line-height: 1.4;
     }
 
     .ctaButton {
-      padding: 12px 24px;
-      font-size: 14px;
-      border-radius: 25px;
+      padding: 10px 20px;
+      font-size: 13px;
+      border-radius: 20px;
       font-weight: 600;
     }
   }
@@ -583,19 +580,19 @@
 
   .carouselDots {
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
     display: flex;
-    gap: 10px;
+    gap: 8px;
   }
 
   .dot {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.6);
     border: 2px solid transparent;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -603,14 +600,14 @@
     &.activeDot {
       background: #fff;
       border-color: #da0b19;
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   }
 }
 
 @media (max-width: 480px) {
   .carousel {
-    padding: 0;
+    padding: 0 15px 80px 15px;
     min-height: 100vh;
   }
 
@@ -619,33 +616,33 @@
   }
 
   .heroContent {
-    max-width: 95%;
-    padding: 25px 15px;
-    border-radius: 15px;
+    max-width: 100%;
+    padding: 20px 15px;
+    border-radius: 12px;
 
     h1 {
-      font-size: 24px;
-      margin: 0 0 12px 0;
+      font-size: 20px;
+      margin: 0 0 10px 0;
     }
 
     p {
-      font-size: 14px;
-      margin: 12px 0 20px 0;
+      font-size: 13px;
+      margin: 10px 0 15px 0;
     }
 
     .ctaButton {
-      padding: 10px 20px;
-      font-size: 13px;
+      padding: 8px 16px;
+      font-size: 12px;
     }
   }
 
   .carouselDots {
-    bottom: 20px;
+    bottom: 15px;
   }
 
   .dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
   }
 
   .drawerContent {
