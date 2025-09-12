@@ -26,6 +26,8 @@
   }
 
   .logoImage {
+    aspect-ratio: 1.7;
+    object-fit: contain;
     height: 80px;
     width: auto;
     filter: brightness(0) invert(1);

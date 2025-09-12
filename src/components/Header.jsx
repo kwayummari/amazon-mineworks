@@ -163,7 +163,7 @@ const Header = () => {
           <Link to="/">
             <img
               loading="lazy"
-              src="./images/logo/logo.png"
+              src="./images/logo/logo1.png"
               alt="Company logo"
               className={styles.logoImage}
             />
