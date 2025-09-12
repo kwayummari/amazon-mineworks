@@ -1,0 +1,315 @@
+// Modern Carousel Styles
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+// Navigation Header
+.navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+  transition: all 0.3s ease;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    z-index: 101;
+  }
+
+  .logoImage {
+    height: 50px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  .navLinks {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  .navLink {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+
+    &:hover {
+      color: #37aba6;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #37aba6;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  .menuButton {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 992px) {
+      display: block;
+    }
+  }
+}
+
+// Carousel Container
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+// Individual Slide
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+// Slide Content
+.slideContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  max-width: 1200px;
+  padding: 0 40px;
+}
+
+.contentWrapper {
+  background: rgba(218, 11, 25, 0.9);
+  padding: 40px 50px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.slideTitle {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    margin: 0 0 15px 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+    margin: 0 0 12px 0;
+  }
+}
+
+.slideDescription {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 30px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    margin: 0 0 25px 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    margin: 0 0 20px 0;
+  }
+}
+
+.slideButton {
+  display: inline-block;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  &:hover {
+    background: white;
+    color: #da0b19;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+// Navigation Buttons
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.prevButton {
+  left: 30px;
+}
+
+.nextButton {
+  right: 30px;
+}
+
+// Dots Container
+.dotsContainer {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 20;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.2);
+  }
+
+  &.activeDot {
+    background: white;
+    border-color: #da0b19;
+    transform: scale(1.3);
+  }
+
+  @media (max-width: 480px) {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+// Mobile Responsive
+@media (max-width: 768px) {
+  .navigation {
+    padding: 15px 20px;
+  }
+
+  .contentWrapper {
+    padding: 30px 25px;
+    border-radius: 15px;
+    margin: 0 20px;
+  }
+
+  .dotsContainer {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation {
+    padding: 10px 15px;
+  }
+
+  .contentWrapper {
+    padding: 25px 20px;
+    border-radius: 12px;
+    margin: 0 15px;
+  }
+
+  .dotsContainer {
+    bottom: 15px;
+    gap: 8px;
+  }
+}
