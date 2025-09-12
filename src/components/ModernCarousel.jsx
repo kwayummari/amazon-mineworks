@@ -84,40 +84,6 @@ const ModernCarousel = () => {
 
   return (
     <div className={styles.carouselContainer}>
-      {/* Navigation Header */}
-      <nav className={styles.navigation}>
-        <Link to="/" className={styles.logo}>
-          <img
-            loading="lazy"
-            src="./images/logo/logo.png"
-            alt="Amazon Mineworks Logo"
-            className={styles.logoImage}
-          />
-        </Link>
-
-        <div className={styles.navLinks}>
-          <Link to="/company-profile" className={styles.navLink}>
-            About
-          </Link>
-          <Link to="/services" className={styles.navLink}>
-            Services
-          </Link>
-          <Link to="/operations" className={styles.navLink}>
-            Operations
-          </Link>
-          <Link to="/careers" className={styles.navLink}>
-            Careers
-          </Link>
-          <Link to="/contact-us" className={styles.navLink}>
-            Contact
-          </Link>
-        </div>
-
-        <button className={styles.menuButton}>
-          <i className="bi bi-list"></i>
-        </button>
-      </nav>
-
       {/* Carousel Slides */}
       <div
         className={styles.carousel}

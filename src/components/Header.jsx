@@ -80,14 +80,14 @@ const Header = () => {
         { title: "Quality Management", link: "/quality-management" },
       ],
     },
-    // {
-    //   title: "Operations",
-    //   link: "/operations",
-    //   submenu: [
-    //     { title: "Tanzania", href: "#tanzania" },
-    //     { title: "Namibia", href: "#namibia" },
-    //   ],
-    // },
+    {
+      title: "Operations",
+      link: "/operations",
+      submenu: [
+        { title: "Tanzania", href: "#tanzania" },
+        { title: "Namibia", href: "#namibia" },
+      ],
+    },
     {
       title: "Investors",
       link: "/investors",
