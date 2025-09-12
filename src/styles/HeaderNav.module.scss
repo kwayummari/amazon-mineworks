@@ -26,7 +26,7 @@
   }
 
   .logoImage {
-    height: 50px;
+    height: 60px;
     width: auto;
     filter: brightness(0) invert(1);
   }
@@ -41,13 +41,18 @@
     }
   }
 
+  .menuItem {
+    position: relative;
+  }
+
   .navLink {
     color: white;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 18px;
     transition: color 0.3s ease;
     position: relative;
+    padding: 10px 15px;
 
     &:hover {
       color: #37aba6;
@@ -88,6 +93,47 @@
       display: block;
     }
   }
+}
+
+// Submenu Styles
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.95);
+  min-width: 250px;
+  padding: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+
+  a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+
+    &:hover {
+      color: #37aba6;
+      background: rgba(55, 171, 166, 0.1);
+      border-left-color: #37aba6;
+    }
+  }
+}
+
+// Show submenu on hover
+.menuItem:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 // Mobile Drawer Styles
