@@ -90,12 +90,28 @@
 
 .drawerOpen {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  background-color: #333;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
-  padding: 20px;
+  height: 100vh;
+  z-index: 9999;
+  padding: 0;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .menuButton {
@@ -141,13 +157,14 @@
   right: -100%;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 1, 84, 0.95);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px;
+  padding: 0;
   transition: right 0.3s ease;
   color: #fff;
+  z-index: 9999;
 }
 
 .logo {
@@ -401,12 +418,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: #2c3e50;
+  background: #000154;
   color: white;
+  position: relative;
+  z-index: 10000;
 
   h3 {
     margin: 0;
     font-size: 20px;
+    font-weight: 900;
   }
 }
 
@@ -422,13 +442,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #da0b19;
+  }
 }
 
 .drawerContent {
   padding: 20px;
-  background: #34495e;
+  background: #000154;
   height: calc(100vh - 80px);
   overflow-y: auto;
+  position: relative;
+  z-index: 10000;
 }
 
 .drawerMenuItem {
@@ -500,24 +527,53 @@
 
 @media (max-width: 768px) {
   .carousel {
-    padding: 0 20px 150px 0;
-    min-height: 80vh;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 15px 20px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent);
   }
 
   .heroContent {
-    max-width: 85%;
-    margin: 40px auto 60px auto;
-    padding: 25px 20px;
-    text-align: center;
+    position: relative;
+    z-index: 5;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background: rgba(218, 11, 25, 0.95);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
     h1 {
-      font-size: 24px;
+      font-size: 28px;
       margin: 0 0 15px 0;
+      line-height: 1.2;
     }
 
     p {
       font-size: 16px;
-      margin: 15px 0 20px 0;
+      margin: 15px 0 25px 0;
+      line-height: 1.5;
+    }
+
+    .ctaButton {
+      padding: 12px 24px;
+      font-size: 14px;
+      border-radius: 25px;
+      font-weight: 600;
     }
   }
 
@@ -526,30 +582,70 @@
   }
 
   .carouselDots {
-    bottom: 15px;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.activeDot {
+      background: #fff;
+      border-color: #da0b19;
+      transform: scale(1.2);
+    }
   }
 }
 
 @media (max-width: 480px) {
   .carousel {
-    padding: 0 15px 120px 0;
-    min-height: 70vh;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  .navigation {
+    padding: 10px 15px;
   }
 
   .heroContent {
-    max-width: 90%;
-    margin: 30px auto 50px auto;
-    padding: 20px 15px;
+    max-width: 95%;
+    padding: 25px 15px;
+    border-radius: 15px;
 
     h1 {
-      font-size: 20px;
-      margin: 0 0 10px 0;
+      font-size: 24px;
+      margin: 0 0 12px 0;
     }
 
     p {
       font-size: 14px;
-      margin: 10px 0 15px 0;
+      margin: 12px 0 20px 0;
     }
+
+    .ctaButton {
+      padding: 10px 20px;
+      font-size: 13px;
+    }
+  }
+
+  .carouselDots {
+    bottom: 20px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
   }
 
   .drawerContent {

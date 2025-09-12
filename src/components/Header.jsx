@@ -6,6 +6,8 @@ const Header = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
   const images = [
     "./images/carousel1.jpeg",
@@ -56,8 +58,57 @@ const Header = () => {
     setDrawerOpen(!drawerOpen);
   };
 
+  const closeDrawer = () => {
+    setDrawerOpen(false);
+  };
+
+  // Handle body scroll lock when drawer is open
+  useEffect(() => {
+    if (drawerOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [drawerOpen]);
+
+  // Handle click outside to close drawer
+  const handleDrawerClick = (e) => {
+    if (e.target.classList.contains(styles.drawerOpen)) {
+      closeDrawer();
+    }
+  };
+
   const handleSubmenuToggle = (menu) => {
     setActiveSubmenu(activeSubmenu === menu ? null : menu);
+  };
+
+  // Touch handlers for mobile carousel
+  const handleTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      goToNext();
+    } else if (isRightSwipe) {
+      goToPrevious();
+    }
   };
 
   const menuItems = [
@@ -201,56 +252,62 @@ const Header = () => {
         </button>
 
         {/* Mobile Drawer */}
-        <div
-          className={`${styles.drawer} ${drawerOpen ? styles.drawerOpen : ""}`}
-        >
-          <div className={styles.drawerHeader}>
-            <h3>Menu</h3>
-            <button onClick={toggleDrawer} className={styles.closeButton}>
-              ×
-            </button>
+        {drawerOpen && (
+          <div
+            className={`${styles.drawer} ${styles.drawerOpen}`}
+            onClick={handleDrawerClick}
+          >
+            <div className={styles.drawerHeader}>
+              <h3>Menu</h3>
+              <button onClick={closeDrawer} className={styles.closeButton}>
+                ×
+              </button>
+            </div>
+            <div className={styles.drawerContent}>
+              {menuItems.map((item, index) => (
+                <div key={index} className={styles.drawerMenuItem}>
+                  {item.link ? (
+                    <Link
+                      to={item.link}
+                      className={styles.drawerNavLink}
+                      onClick={closeDrawer}
+                    >
+                      {item.title}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className={styles.drawerNavLink}
+                      onClick={closeDrawer}
+                    >
+                      {item.title}
+                    </a>
+                  )}
+                  {item.submenu && item.submenu.length > 0 && (
+                    <div className={styles.drawerSubmenu}>
+                      {item.submenu.map((subItem, subIndex) => (
+                        <div
+                          key={subIndex}
+                          className={styles.drawerSubmenuItem}
+                        >
+                          {subItem.link ? (
+                            <Link to={subItem.link} onClick={closeDrawer}>
+                              {subItem.title}
+                            </Link>
+                          ) : (
+                            <a href={subItem.href} onClick={closeDrawer}>
+                              {subItem.title}
+                            </a>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className={styles.drawerContent}>
-            {menuItems.map((item, index) => (
-              <div key={index} className={styles.drawerMenuItem}>
-                {item.link ? (
-                  <Link
-                    to={item.link}
-                    className={styles.drawerNavLink}
-                    onClick={toggleDrawer}
-                  >
-                    {item.title}
-                  </Link>
-                ) : (
-                  <a
-                    href={item.href}
-                    className={styles.drawerNavLink}
-                    onClick={toggleDrawer}
-                  >
-                    {item.title}
-                  </a>
-                )}
-                {item.submenu && item.submenu.length > 0 && (
-                  <div className={styles.drawerSubmenu}>
-                    {item.submenu.map((subItem, subIndex) => (
-                      <div key={subIndex} className={styles.drawerSubmenuItem}>
-                        {subItem.link ? (
-                          <Link to={subItem.link} onClick={toggleDrawer}>
-                            {subItem.title}
-                          </Link>
-                        ) : (
-                          <a href={subItem.href} onClick={toggleDrawer}>
-                            {subItem.title}
-                          </a>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
+        )}
       </nav>
 
       {/* Carousel Navigation Arrows */}
