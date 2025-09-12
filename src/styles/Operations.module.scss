@@ -1,0 +1,559 @@
+.operationsPage {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.heroSection {
+  background: linear-gradient(135deg, #37aba6 0%, #2a8a85 100%);
+  color: white;
+  padding: 100px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("../../public/images/background.jpeg") center/cover;
+    opacity: 0.1;
+    z-index: 1;
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.heroTitle {
+  font: 700 48px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.heroDescription {
+  font: 400 18px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.operationsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.locationSelector {
+  margin-bottom: 40px;
+  text-align: center;
+
+  h2 {
+    font: 700 32px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    color: #2c3e50;
+    margin-bottom: 30px;
+  }
+}
+
+.locationTabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.locationTab {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 150px;
+
+  &:hover {
+    border-color: #37aba6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.activeLocationTab {
+  border-color: #37aba6;
+  background: linear-gradient(135deg, #37aba6 0%, #2a8a85 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(55, 171, 166, 0.3);
+
+  &:hover {
+    border-color: #37aba6;
+    background: linear-gradient(135deg, #37aba6 0%, #2a8a85 100%);
+    color: white;
+  }
+}
+
+.flag {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.locationName {
+  font: 600 18px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  color: #2c3e50;
+}
+
+.activeLocationTab .locationName {
+  color: white;
+}
+
+.established {
+  font: 400 14px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  color: #6c757d;
+}
+
+.activeLocationTab .established {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.locationOverview {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.locationHeader {
+  margin-bottom: 40px;
+}
+
+.locationInfo h3 {
+  font: 700 28px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.locationDescription {
+  font: 400 16px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.locationDetails {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  span {
+    font: 500 14px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    color: #495057;
+  }
+}
+
+.statisticsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.statCard {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 8px;
+  padding: 25px;
+  text-align: center;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.statNumber {
+  font: 700 36px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  color: #37aba6;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  font: 500 14px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.projectsSection {
+  margin-bottom: 40px;
+
+  h4 {
+    font: 700 24px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    color: #2c3e50;
+    margin-bottom: 25px;
+  }
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.projectCard {
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 25px;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #37aba6;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+.projectCard h5 {
+  font: 600 20px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  color: #2c3e50;
+  margin: 0;
+  flex: 1;
+}
+
+.projectMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-end;
+}
+
+.projectType {
+  background: #6c757d;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font: 500 12px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.projectStatus {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font: 500 12px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+
+  &.active {
+    background: #d4edda;
+    color: #155724;
+  }
+
+  &.completed {
+    background: #cce5ff;
+    color: #004085;
+  }
+}
+
+.projectDescription {
+  font: 400 14px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  color: #6c757d;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.projectDuration {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: 500 14px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  color: #37aba6;
+  margin-bottom: 15px;
+
+  i {
+    font-size: 14px;
+  }
+}
+
+.projectServices {
+  h6 {
+    font: 600 14px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+}
+
+.servicesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.serviceTag {
+  background: #37aba6;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font: 500 12px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.facilitiesSection {
+  margin-bottom: 40px;
+
+  h4 {
+    font: 700 24px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    color: #2c3e50;
+    margin-bottom: 25px;
+  }
+}
+
+.facilitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.facilityCard {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #37aba6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  i {
+    font-size: 20px;
+    color: #37aba6;
+  }
+
+  span {
+    font: 500 14px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    color: #495057;
+  }
+}
+
+.safetySection {
+  margin-bottom: 40px;
+}
+
+.safetyCard {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.safetyIcon {
+  i {
+    font-size: 48px;
+    opacity: 0.9;
+  }
+}
+
+.safetyContent {
+  flex: 1;
+
+  h5 {
+    font: 700 24px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font: 400 16px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    margin-bottom: 15px;
+    opacity: 0.9;
+  }
+}
+
+.safetyFeatures {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font: 500 12px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+  }
+}
+
+.globalSection {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.globalContent {
+  max-width: 800px;
+  margin: 0 auto;
+
+  h2 {
+    font: 700 36px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font: 400 18px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0.9;
+  }
+}
+
+.globalStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+}
+
+.globalStat {
+  text-align: center;
+}
+
+.globalNumber {
+  font: 700 48px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  color: #37aba6;
+  margin-bottom: 10px;
+}
+
+.globalLabel {
+  font: 500 16px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 36px;
+  }
+
+  .heroDescription {
+    font-size: 16px;
+  }
+
+  .locationTabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .locationTab {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .locationOverview {
+    padding: 20px;
+  }
+
+  .locationInfo h3 {
+    font-size: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .locationDetails {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .statisticsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .projectMeta {
+    align-items: flex-start;
+  }
+
+  .facilitiesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .safetyCard {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .safetyFeatures {
+    justify-content: center;
+  }
+
+  .globalStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding: 60px 0 40px;
+  }
+
+  .heroTitle {
+    font-size: 28px;
+  }
+
+  .operationsContainer {
+    padding: 40px 15px;
+  }
+
+  .statisticsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .globalStats {
+    grid-template-columns: 1fr;
+  }
+}

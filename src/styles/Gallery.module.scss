@@ -79,6 +79,68 @@
   }
 }
 
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  margin-top: 20px;
+}
+
+.loadingSpinner {
+  text-align: center;
+  color: #666;
+
+  i {
+    font-size: 48px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+    display: block;
+    color: #da0b19;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+  margin-top: 20px;
+
+  i {
+    font-size: 64px;
+    color: #d1d5db;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  h3 {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+  }
+
+  p {
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
 @media (max-width: 991px) {
   .gallery {
     background-color: #fff;
@@ -88,13 +150,13 @@
     font-family: Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
     font-weight: 400;
     padding: 48px 20px;
-  
+
     .title {
       color: #000154;
       font-size: 30px;
       margin: 0;
     }
-  
+
     .description {
       color: rgba(0, 1, 84, 0.54);
       font-size: 16px;
@@ -102,19 +164,19 @@
       text-align: center;
       margin-top: 20px;
     }
-  
+
     .carousel {
       position: relative;
       margin-top: 20px;
       width: 100%;
-  
+
       .imageContainer {
         position: relative;
         height: 500px;
         width: 100%;
         overflow: hidden;
         border-radius: 20px;
-  
+
         .galleryImage {
           position: absolute;
           top: 0;
@@ -127,18 +189,18 @@
           transition: opacity 1s ease-in-out;
           border-radius: 20px;
         }
-  
+
         .active {
           opacity: 1;
           z-index: 1;
         }
       }
-  
+
       .dots {
         display: flex;
         justify-content: center;
         margin-top: 20px;
-  
+
         .dot {
           height: 15px;
           width: 15px;
@@ -147,12 +209,12 @@
           margin: 0 8px;
           cursor: pointer;
           transition: background-color 0.3s ease;
-  
+
           &:hover {
             background-color: #000154;
           }
         }
-  
+
         .activeDot {
           background-color: #000154;
         }

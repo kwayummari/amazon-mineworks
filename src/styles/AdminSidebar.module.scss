@@ -1,0 +1,157 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+
+  &.collapsed {
+    width: 70px;
+
+    .logo span {
+      display: none;
+    }
+
+    .navButton span {
+      display: none;
+    }
+
+    .userInfo span {
+      display: none;
+    }
+  }
+}
+
+.sidebarHeader {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 700;
+
+  i {
+    font-size: 24px;
+    color: #da0b19;
+  }
+
+  span {
+    transition: opacity 0.3s ease;
+  }
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.sidebarNav {
+  flex: 1;
+  padding: 20px 0;
+}
+
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  margin: 0;
+}
+
+.navButton {
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &.active {
+    background-color: rgba(218, 11, 25, 0.2);
+    border-left-color: #da0b19;
+    color: #da0b19;
+  }
+
+  i {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+  }
+
+  span {
+    transition: opacity 0.3s ease;
+  }
+}
+
+.sidebarFooter {
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #bdc3c7;
+  font-size: 14px;
+
+  i {
+    font-size: 20px;
+  }
+
+  span {
+    transition: opacity 0.3s ease;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+}
+
+
+

@@ -1,0 +1,181 @@
+.header {
+  background: white;
+  padding: 0 30px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e1e5e9;
+  z-index: 100;
+}
+
+.headerLeft {
+  h1 {
+    color: #333;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+  }
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.notifications {
+  position: relative;
+}
+
+.notificationButton {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  position: relative;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+.notificationBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #da0b19;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 16px;
+  text-align: center;
+}
+
+.userMenu {
+  position: relative;
+}
+
+.userButton {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  i:first-child {
+    font-size: 20px;
+    color: #666;
+  }
+
+  i:last-child {
+    font-size: 12px;
+    color: #999;
+  }
+}
+
+.userDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e1e5e9;
+  min-width: 200px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.userInfo {
+  padding: 16px;
+  border-bottom: 1px solid #e1e5e9;
+  background: #f8f9fa;
+
+  .userName {
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 4px 0;
+    font-size: 14px;
+  }
+
+  .userRole {
+    color: #666;
+    margin: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.userActions {
+  padding: 8px 0;
+}
+
+.dropdownItem {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  text-align: left;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  i {
+    font-size: 16px;
+    color: #666;
+    width: 20px;
+  }
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background: #e1e5e9;
+  margin: 8px 0;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+    height: 60px;
+  }
+
+  .headerLeft h1 {
+    font-size: 20px;
+  }
+
+  .headerRight {
+    gap: 15px;
+  }
+}
+
+
+

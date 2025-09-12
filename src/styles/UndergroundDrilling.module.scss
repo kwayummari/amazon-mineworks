@@ -1,0 +1,175 @@
+.undergroundDrillingPage {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.heroSection {
+  background: linear-gradient(135deg, #37aba6 0%, #2a8a85 100%);
+  color: white;
+  padding: 100px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("../../public/images/background.jpeg") center/cover;
+    opacity: 0.1;
+    z-index: 1;
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.heroTitle {
+  font: 700 48px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.heroDescription {
+  font: 400 18px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.contentContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.servicesSection {
+  margin-bottom: 80px;
+
+  h2 {
+    font: 700 36px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.serviceCard {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    border-color: #37aba6;
+  }
+
+  h3 {
+    font: 700 24px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font: 400 16px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    color: #6c757d;
+    line-height: 1.6;
+  }
+}
+
+.ctaSection {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 60px 40px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+
+  h2 {
+    font: 700 32px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font: 400 18px Jacques Francois, -apple-system, Roboto, Helvetica,
+      sans-serif;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+}
+
+.primaryBtn {
+  background: linear-gradient(135deg, #37aba6 0%, #2a8a85 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 6px;
+  font: 600 16px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(55, 171, 166, 0.4);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 36px;
+  }
+
+  .heroDescription {
+    font-size: 16px;
+  }
+
+  .contentContainer {
+    padding: 40px 15px;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding: 60px 0 40px;
+  }
+
+  .heroTitle {
+    font-size: 28px;
+  }
+
+  .ctaSection {
+    padding: 40px 20px;
+  }
+}

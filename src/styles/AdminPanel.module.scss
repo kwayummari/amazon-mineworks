@@ -1,0 +1,39 @@
+.adminPanel {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.loadingContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.loadingSpinner {
+  text-align: center;
+  color: white;
+
+  i {
+    font-size: 48px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

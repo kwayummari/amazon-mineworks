@@ -1,0 +1,18 @@
+# Redirect all requests to build folder
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/build/
+RewriteCond %{REQUEST_URI} !^/backend/
+RewriteCond %{REQUEST_URI} !^/src/
+RewriteRule ^(.*)$ /build/$1 [L]
+
+# Handle React Router for build folder
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^/build/
+RewriteRule ^build/(.*)$ /build/index.html [QSA,L]
+
+# Handle CORS for API calls
+Header always set Access-Control-Allow-Origin "*"
+Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+Header always set Access-Control-Allow-Headers "Content-Type, Authorization"

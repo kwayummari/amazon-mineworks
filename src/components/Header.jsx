@@ -1,32 +1,56 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./../styles/Header.module.scss";
 
 const Header = () => {
-  const [backgroundImage, setBackgroundImage] = useState(
-    "./images/carousel1.jpeg"
-  );
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
 
+  const images = [
+    "./images/carousel1.jpeg",
+    "./images/carousel2.jpeg",
+    "./images/carousel3.jpeg",
+  ];
+
+  const carouselContent = [
+    {
+      title: "Complete Services Provider",
+      description:
+        "Our activities cover the full construction spectrum and are divided into three main operating divisions – Building Construction, Civil Engineering and Roads and Earthworks.",
+    },
+    {
+      title: "Exploration & Drilling Excellence",
+      description:
+        "Advanced exploration and drilling services with state-of-the-art equipment and experienced professionals ensuring precision and safety in every project.",
+    },
+    {
+      title: "Mining & Construction Solutions",
+      description:
+        "Comprehensive mining and construction solutions delivering excellence, safety, and environmental responsibility across all operations.",
+    },
+  ];
+
   useEffect(() => {
-    const images = [
-      "./images/carousel1.jpeg",
-      "./images/carousel2.jpeg",
-      "./images/carousel3.jpeg",
-    ];
-
-    let currentIndex = 0;
-
-    const changeImage = () => {
-      currentIndex = (currentIndex + 1) % images.length;
-      setBackgroundImage(images[currentIndex]);
-    };
-
-    const interval = setInterval(changeImage, 10000);
-
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+    }, 6000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
+  const goToPrevious = () => {
+    setCurrentSlide(
+      (prevSlide) => (prevSlide - 1 + images.length) % images.length
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+  };
 
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
@@ -36,10 +60,125 @@ const Header = () => {
     setActiveSubmenu(activeSubmenu === menu ? null : menu);
   };
 
+  const menuItems = [
+    {
+      title: "About us",
+      href: "#about",
+      submenu: [
+        { title: "Company Profile", link: "/company-profile" },
+        { title: "Vision and Values", link: "/vision-values" },
+        { title: "Management Team", link: "/management-team" },
+      ],
+    },
+    {
+      title: "Services",
+      link: "/services",
+      submenu: [
+        // Drilling Services
+        { title: "Exploration Drilling", link: "/exploration-drilling" },
+        { title: "Grade Control Drilling", link: "/grade-control-drilling" },
+        { title: "Blast Hole Drilling", link: "/blast-hole-drilling" },
+        { title: "Underground Drilling", link: "/underground-drilling" },
+        { title: "Geothermal Drilling", link: "/geothermal-drilling" },
+        { title: "Water Boreholes Drilling", link: "/water-borehole-drilling" },
+        // Mining Services
+        { title: "Construction Works", link: "/construction-works" },
+        { title: "Mine Earthworks", link: "/mine-earthworks" },
+        { title: "Load and Haul", link: "/load-and-haul" },
+        { title: "Building Works", link: "/building-works" },
+        { title: "Survey Services", link: "/survey-services" },
+      ],
+    },
+    {
+      title: "Safety/OHSEQ",
+      href: "#safety",
+      submenu: [
+        { title: "Occupation", link: "/safety" },
+        { title: "Health", link: "/health" },
+        { title: "Safety", link: "/safety" },
+        { title: "Environment", link: "/environment" },
+        { title: "Quality Management", link: "/quality-management" },
+      ],
+    },
+    // {
+    //   title: "Operations",
+    //   link: "/operations",
+    //   submenu: [
+    //     { title: "Tanzania", href: "#tanzania" },
+    //     { title: "Namibia", href: "#namibia" },
+    //   ],
+    // },
+    {
+      title: "Investors",
+      link: "/investors",
+      submenu: [
+        { title: "Announcements", link: "/announcements" },
+        { title: "Presentations", href: "#presentations" },
+        { title: "Corporate Governance", href: "#governance" },
+        { title: "Corporate Social Responsibility (CSR)", href: "#csr" },
+        { title: "Certifications", href: "#certifications" },
+      ],
+    },
+    {
+      title: "Blog",
+      link: "/blog",
+    },
+    {
+      title: "Opportunities",
+      link: "/careers",
+    },
+    {
+      title: "Contact Us",
+      link: "/contact-us",
+    },
+  ];
+
+  const renderMenuItem = (item, index) => {
+    const hasSubmenu = item.submenu && item.submenu.length > 0;
+    const isActive =
+      activeSubmenu === item.title.toLowerCase().replace(/\s+/g, "-");
+
+    return (
+      <div
+        key={index}
+        className={styles.menuItem}
+        onMouseEnter={() =>
+          hasSubmenu &&
+          handleSubmenuToggle(item.title.toLowerCase().replace(/\s+/g, "-"))
+        }
+        onMouseLeave={() => hasSubmenu && handleSubmenuToggle(null)}
+      >
+        {item.link ? (
+          <Link to={item.link} className={styles.navLink}>
+            {item.title}
+          </Link>
+        ) : (
+          <a href={item.href} className={styles.navLink}>
+            {item.title}
+          </a>
+        )}
+
+        {hasSubmenu && isActive && (
+          <div className={styles.submenu}>
+            {item.submenu.map((subItem, subIndex) => (
+              <div key={subIndex}>
+                {subItem.link ? (
+                  <Link to={subItem.link}>{subItem.title}</Link>
+                ) : (
+                  <a href={subItem.href}>{subItem.title}</a>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
     <header
       className={styles.carousel}
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      style={{ backgroundImage: `url(${images[currentSlide]})` }}
     >
       <nav className={styles.navigation}>
         <Link to="/">
@@ -50,120 +189,107 @@ const Header = () => {
             className={styles.logo}
           />
         </Link>
+
+        {/* Desktop Navigation */}
         <div className={styles.links}>
-          <div className={styles.menuItem}>
-            <a href="#about" className={styles.navLink}>
-              About us
-            </a>
-            <div className={styles.submenu}>
-              <Link to="/company-profile">Company Profile</Link>
-              <Link to="/vision-values">Vision and Values</Link>
-              <Link to="/management-team">Management Team</Link>
-            </div>
-          </div>
-          <div
-            className={styles.menuItem}
-            onMouseEnter={() => handleSubmenuToggle("investors")}
-            onMouseLeave={() => handleSubmenuToggle(null)}
-          >
-            <a href="#investors" className={styles.navLink}>
-              Drilling Services
-            </a>
-            {activeSubmenu === "investors" && (
-              <div className={styles.submenu}>
-                <Link to="exploration-drilling">Exploration Drilling</Link>
-                <Link href="grade-control-drilling">Grade Control Drilling</Link>
-                <a href="#presentations">Blast Hole Drilling</a>
-                <a href="#presentations">Underground Drilling</a>
-                <a href="#presentations">Geothermal Drilling</a>
-                <a href="#presentations">Water Boreholes Drilling</a>
-              </div>
-            )}
-          </div>
-          <div className={styles.menuItem}>
-            <a href="#services" className={styles.navLink}>
-              Mining Services
-            </a>
-            <div className={styles.submenu}>
-              <a href="#exploration-services">Construction Works</a>
-              <a href="#mining-services">Mine Earthworks</a>
-              <a href="#mining-services">Load and Haul</a>
-              <a href="#mining-services">Building Works</a>
-              <a href="#mining-services">Survey Services</a>
-            </div>
-          </div>
-          <div className={styles.menuItem}>
-            <a href="#services" className={styles.navLink}>
-              Safety/OHSEQ
-            </a>
-            <div className={styles.submenu}>
-              <Link to="/safety">Occupation</Link>
-              <a href="#mining-services">Health</a>
-              <a href="#mining-services">Safety</a>
-              <a href="#mining-services">Environment</a>
-              <a href="#mining-services">Quality Management</a>
-            </div>
-          </div>
-          <div className={styles.menuItem}>
-            <a href="#services" className={styles.navLink}>
-              Operations
-            </a>
-            <div className={styles.submenu}>
-              <Link to="/safety">Tanzania</Link>
-              <a href="#mining-services">Namibia</a>
-            </div>
-          </div>
-          <div className={styles.menuItem}>
-            <a href="#services" className={styles.navLink}>
-              Investors
-            </a>
-            <div className={styles.submenu}>
-              <Link to="/safety">Announcements</Link>
-              <a href="#mining-services">Presentations</a>
-              <a href="#mining-services">Corporate Governance</a>
-              <a href="#mining-services">
-                Corporate Social Responsibility (CSR)
-              </a>
-              <a href="#mining-services">Certifications</a>
-            </div>
-          </div>
-          <div className={styles.menuItem}>
-            <a href="#news" className={styles.navLink}>
-              Blog
-            </a>
-          </div>
-          <div className={styles.menuItem}>
-            <a href="#news" className={styles.navLink}>
-              Contact Us
-            </a>
-          </div>
+          {menuItems.map((item, index) => renderMenuItem(item, index))}
         </div>
 
+        {/* Mobile Menu Button */}
         <button onClick={toggleDrawer} className={styles.menuButton}>
           &#9776;
         </button>
 
+        {/* Mobile Drawer */}
         <div
           className={`${styles.drawer} ${drawerOpen ? styles.drawerOpen : ""}`}
         >
-          <div className={styles.menuItem}>
-            <a href="#about" className={styles.navLink}>
-              About us
-            </a>
-            <div className={styles.submenu}>
-              <a href="#team">Our Team</a>
-              <a href="#history">History</a>
-            </div>
+          <div className={styles.drawerHeader}>
+            <h3>Menu</h3>
+            <button onClick={toggleDrawer} className={styles.closeButton}>
+              ×
+            </button>
+          </div>
+          <div className={styles.drawerContent}>
+            {menuItems.map((item, index) => (
+              <div key={index} className={styles.drawerMenuItem}>
+                {item.link ? (
+                  <Link
+                    to={item.link}
+                    className={styles.drawerNavLink}
+                    onClick={toggleDrawer}
+                  >
+                    {item.title}
+                  </Link>
+                ) : (
+                  <a
+                    href={item.href}
+                    className={styles.drawerNavLink}
+                    onClick={toggleDrawer}
+                  >
+                    {item.title}
+                  </a>
+                )}
+                {item.submenu && item.submenu.length > 0 && (
+                  <div className={styles.drawerSubmenu}>
+                    {item.submenu.map((subItem, subIndex) => (
+                      <div key={subIndex} className={styles.drawerSubmenuItem}>
+                        {subItem.link ? (
+                          <Link to={subItem.link} onClick={toggleDrawer}>
+                            {subItem.title}
+                          </Link>
+                        ) : (
+                          <a href={subItem.href} onClick={toggleDrawer}>
+                            {subItem.title}
+                          </a>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </nav>
 
+      {/* Carousel Navigation Arrows */}
+      <button
+        className={`${styles.carouselNav} ${styles.prevButton}`}
+        onClick={goToPrevious}
+        aria-label="Previous slide"
+      >
+        <i className="bi bi-chevron-left"></i>
+      </button>
+
+      <button
+        className={`${styles.carouselNav} ${styles.nextButton}`}
+        onClick={goToNext}
+        aria-label="Next slide"
+      >
+        <i className="bi bi-chevron-right"></i>
+      </button>
+
+      {/* Carousel Dots Indicator */}
+      <div className={styles.carouselDots}>
+        {images.map((_, index) => (
+          <button
+            key={index}
+            className={`${styles.dot} ${
+              currentSlide === index ? styles.activeDot : ""
+            }`}
+            onClick={() => goToSlide(index)}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+
       <div className={styles.heroContent}>
-        <h1 className={styles.heroTitle}>Complete Services Provider</h1>
+        <h1 className={styles.heroTitle}>
+          {carouselContent[currentSlide].title}
+        </h1>
         <p className={styles.heroDescription}>
-          Our activities cover the full construction spectrum and are divided
-          into three main operating divisions – Building Construction, Civil
-          Engineering and Roads and Earthworks.
+          {carouselContent[currentSlide].description}
         </p>
         <button className={styles.ctaButton}>FIND OUT MORE</button>
       </div>
