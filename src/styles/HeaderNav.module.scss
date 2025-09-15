@@ -1,15 +1,14 @@
 // Header Navigation Styles
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+  position: relative;
   width: 100%;
 }
 
 .navigation {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   display: flex;
   justify-content: space-between;
@@ -269,20 +268,13 @@
 
 // Page Title Section Styles (for non-homepage routes)
 .pageTitleSection {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 300px;
-  overflow: hidden;
-
-  .background {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
+  height: 100%;
+  z-index: 10;
+  pointer-events: none; // Allow clicks to pass through to carousel
 
   .blueRectangle {
     position: absolute;
@@ -293,7 +285,7 @@
     width: 80%;
     max-width: 600px;
     height: 100px;
-    z-index: 2;
+    z-index: 11;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -301,6 +293,7 @@
     color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    pointer-events: auto; // Allow clicks on the title
 
     .rectangleText {
       font-size: 28px;
@@ -311,8 +304,6 @@
   }
 
   @media (max-width: 768px) {
-    height: 200px;
-
     .blueRectangle {
       height: 60px;
       width: 90%;
@@ -324,8 +315,6 @@
   }
 
   @media (max-width: 480px) {
-    height: 150px;
-
     .blueRectangle {
       height: 50px;
       width: 95%;

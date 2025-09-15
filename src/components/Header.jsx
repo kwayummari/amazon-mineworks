@@ -157,7 +157,7 @@ const Header = ({ showPageTitle = false, pageTitle = "" }) => {
 
   return (
     <>
-      {!showPageTitle && <ModernCarousel />}
+      <ModernCarousel />
       <header className={styles.header}>
         <nav className={styles.navigation}>
           <Link to="/">
@@ -242,12 +242,6 @@ const Header = ({ showPageTitle = false, pageTitle = "" }) => {
             <div className={styles.blueRectangle}>
               <p className={styles.rectangleText}>{pageTitle}</p>
             </div>
-            <img
-              loading="lazy"
-              src="./images/background.jpeg"
-              alt="Background"
-              className={styles.background}
-            />
           </div>
         )}
       </header>
