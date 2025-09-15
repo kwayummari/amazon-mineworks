@@ -6,7 +6,6 @@ import Footer from './components/Footer';
 import styles from './styles/LandingPage.module.scss';
 import ImageComponent from './components/ImageComponents';
 import LandingPage from './pages/landing-page';
-import SubHeader from './components/SubHeader';
 import Safety from './pages/Safety';
 import CompanyProfile from './pages/company-profile';
 import VisionValues from './pages/vision-values';
@@ -55,7 +54,7 @@ const ConditionalHeader = () => {
 
   const pathTitle = formatTitle(location.pathname);
 
-  return location.pathname === '/' ? <Header /> : <SubHeader title={pathTitle} />;
+  return <Header showPageTitle={location.pathname !== '/'} pageTitle={pathTitle} />;
 };
 
 const App = () => (

@@ -11,7 +11,7 @@ const ModernCarousel = () => {
     {
       id: 1,
       image: "./images/carousel1.jpeg",
-      title: "Complete Services Provider",
+      title: "Integrated Services Provider",
       description:
         "Our activities cover the full construction spectrum and are divided into three main operating divisions – Building Construction, Civil Engineering and Roads and Earthworks.",
       buttonText: "FIND OUT MORE",

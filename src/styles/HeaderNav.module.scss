@@ -266,3 +266,73 @@
     font-size: 16px;
   }
 }
+
+// Page Title Section Styles (for non-homepage routes)
+.pageTitleSection {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+
+  .background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .blueRectangle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 1, 84, 0.8);
+    width: 80%;
+    max-width: 600px;
+    height: 100px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+    .rectangleText {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 200px;
+
+    .blueRectangle {
+      height: 60px;
+      width: 90%;
+
+      .rectangleText {
+        font-size: 20px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    height: 150px;
+
+    .blueRectangle {
+      height: 50px;
+      width: 95%;
+
+      .rectangleText {
+        font-size: 16px;
+      }
+    }
+  }
+}
