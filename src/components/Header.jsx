@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ModernCarousel from "./ModernCarousel";
 import styles from "./../styles/HeaderNav.module.scss";
 
-const Header = ({ showPageTitle = false, pageTitle = "" }) => {
+const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
 
@@ -237,13 +237,6 @@ const Header = ({ showPageTitle = false, pageTitle = "" }) => {
             </div>
           )}
         </nav>
-        {showPageTitle && (
-          <div className={styles.pageTitleSection}>
-            <div className={styles.blueRectangle}>
-              <p className={styles.rectangleText}>{pageTitle}</p>
-            </div>
-          </div>
-        )}
       </header>
     </>
   );
