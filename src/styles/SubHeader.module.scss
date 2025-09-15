@@ -133,6 +133,88 @@
   color: #fff;
 }
 
+.drawerOpen {
+  right: 0;
+}
+
+.drawerHeader {
+  background: #000154;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+
+  h3 {
+    color: white;
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .closeButton {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+.drawerContent {
+  background: #000154;
+  padding: 20px;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  z-index: 10000;
+}
+
+.drawerMenuItem {
+  margin-bottom: 15px;
+}
+
+.drawerNavLink {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  display: block;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #37aba6;
+  }
+}
+
+.drawerSubmenu {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.drawerSubmenuItem {
+  margin-bottom: 8px;
+
+  a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #37aba6;
+    }
+  }
+}
+
 .logo {
   aspect-ratio: 1.7;
   object-fit: contain;
@@ -184,9 +266,7 @@
   cursor: pointer;
 }
 
-
 @media (max-width: 991px) {
-
   .menuButton {
     font-size: 28px;
     background: none;
@@ -211,7 +291,7 @@
     color: #ffffff;
     border-radius: 1px;
   }
-  
+
   .rectangleText {
     font-size: 15px;
     font-weight: bold;
@@ -227,11 +307,11 @@
     width: 100px;
     max-width: 100%;
   }
-  
+
   .navLink {
     display: none;
   }
-  
+
   .heroContent {
     border-radius: 5px;
     background-color: #da0b19;
@@ -240,16 +320,16 @@
     margin: 30px 0 50px 20px;
     padding: 10px 10px 10px;
   }
-  
+
   .heroTitle {
     font-size: 15px;
     margin: 0;
   }
-  
+
   .heroDescription {
     margin-top: 10px;
   }
-  
+
   .ctaButton {
     border-radius: 3px;
     margin-top: 1px;

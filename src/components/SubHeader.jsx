@@ -10,8 +10,123 @@ const SubHeader = ({ title }) => {
     setDrawerOpen(!drawerOpen);
   };
 
+  const closeDrawer = () => {
+    setDrawerOpen(false);
+  };
+
   const handleSubmenuToggle = (menu) => {
     setActiveSubmenu(activeSubmenu === menu ? null : menu);
+  };
+
+  const menuItems = [
+    {
+      title: "About us",
+      href: "#about",
+      submenu: [
+        { title: "Company Profile", link: "/company-profile" },
+        { title: "Vision and Values", link: "/vision-values" },
+        { title: "Management Team", link: "/management-team" },
+      ],
+    },
+    {
+      title: "Services",
+      link: "/services",
+      submenu: [
+        // Drilling Services
+        { title: "Exploration Drilling", link: "/exploration-drilling" },
+        { title: "Grade Control Drilling", link: "/grade-control-drilling" },
+        { title: "Blast Hole Drilling", link: "/blast-hole-drilling" },
+        { title: "Underground Drilling", link: "/underground-drilling" },
+        { title: "Geothermal Drilling", link: "/geothermal-drilling" },
+        { title: "Water Boreholes Drilling", link: "/water-borehole-drilling" },
+        // Mining Services
+        { title: "Construction Works", link: "/construction-works" },
+        { title: "Mine Earthworks", link: "/mine-earthworks" },
+        { title: "Load and Haul", link: "/load-and-haul" },
+        { title: "Building Works", link: "/building-works" },
+        { title: "Survey Services", link: "/survey-services" },
+      ],
+    },
+    {
+      title: "Safety/OHSEQ",
+      href: "#safety",
+      submenu: [
+        { title: "Occupation", link: "/safety" },
+        { title: "Health", link: "/health" },
+        { title: "Safety", link: "/safety" },
+        { title: "Environment", link: "/environment" },
+        { title: "Quality Management", link: "/quality-management" },
+      ],
+    },
+    {
+      title: "Operations",
+      link: "/operations",
+      submenu: [
+        { title: "Tanzania", href: "#tanzania" },
+        { title: "Namibia", href: "#namibia" },
+      ],
+    },
+    {
+      title: "Investors",
+      link: "/investors",
+      submenu: [
+        { title: "Announcements", link: "/announcements" },
+        { title: "Presentations", href: "#presentations" },
+        { title: "Corporate Governance", href: "#governance" },
+        { title: "Corporate Social Responsibility (CSR)", href: "#csr" },
+        { title: "Certifications", href: "#certifications" },
+      ],
+    },
+    {
+      title: "Opportunities",
+      link: "/careers",
+    },
+    {
+      title: "Contact Us",
+      link: "/contact-us",
+    },
+  ];
+
+  const renderMenuItem = (item, index) => {
+    const hasSubmenu = item.submenu && item.submenu.length > 0;
+    const isActive =
+      activeSubmenu === item.title.toLowerCase().replace(/\s+/g, "-");
+
+    return (
+      <div
+        key={index}
+        className={styles.menuItem}
+        onMouseEnter={() =>
+          hasSubmenu &&
+          handleSubmenuToggle(item.title.toLowerCase().replace(/\s+/g, "-"))
+        }
+        onMouseLeave={() => hasSubmenu && handleSubmenuToggle(null)}
+      >
+        {item.link ? (
+          <Link to={item.link} className={styles.navLink}>
+            {item.title}
+          </Link>
+        ) : (
+          <a href={item.href} className={styles.navLink}>
+            {item.title}
+          </a>
+        )}
+
+        {hasSubmenu && isActive && (
+          <div className={styles.submenu}>
+            {item.submenu.map((subItem, subIndex) => (
+              <div key={subIndex}>
+                {subItem.link ? (
+                  <Link to={subItem.link}>{subItem.title}</Link>
+                ) : (
+                  <a href={subItem.href}>{subItem.title}</a>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    );
   };
 
   return (
@@ -26,111 +141,73 @@ const SubHeader = ({ title }) => {
           />
         </Link>
         <div className={styles.links}>
-          <div className={styles.menuItem}>
-            <a href="#about" className={styles.navLink}>
-              About us
-            </a>
-            <div className={styles.submenu}>
-              <Link to="company-profile">Company Profile</Link>
-              <Link to="vision-values">Vision and Values</Link>
-              <Link to="management-team">Management Team</Link>
-            </div>
-          </div>
-          <div
-            className={styles.menuItem}
-            onMouseEnter={() => handleSubmenuToggle("investors")}
-            onMouseLeave={() => handleSubmenuToggle(null)}
-          >
-            <a href="#investors" className={styles.navLink}>
-              Drilling Services
-            </a>
-            {activeSubmenu === "investors" && (
-              <div className={styles.submenu}>
-                <Link to="exploration-drilling">Exploration Drilling</Link>
-                <Link to="grade-control-drilling">Grade Control Drilling</Link>
-                <a href="#presentations">Blast Hole Drilling</a>
-                <a href="#presentations">Underground Drilling</a>
-                <a href="#presentations">Geothermal Drilling</a>
-                <a href="#presentations">Water Boreholes Drilling</a>
-              </div>
-            )}
-          </div>
-          <div className={styles.menuItem}>
-            <a href="#services" className={styles.navLink}>
-              Mining Services
-            </a>
-            <div className={styles.submenu}>
-              <a href="#exploration-services">Construction Works</a>
-              <a href="#mining-services">Mine Earthworks</a>
-              <a href="#mining-services">Load and Haul</a>
-              <a href="#mining-services">Building Works</a>
-              <a href="#mining-services">Survey Services</a>
-            </div>
-          </div>
-          <div className={styles.menuItem}>
-            <a href="#services" className={styles.navLink}>
-              Safety/OHSEQ
-            </a>
-            <div className={styles.submenu}>
-              <Link to="/safety">Occupation</Link>
-              <a href="#mining-services">Health</a>
-              <a href="#mining-services">Safety</a>
-              <a href="#mining-services">Environment</a>
-              <a href="#mining-services">Quality Management</a>
-            </div>
-          </div>
-          <div className={styles.menuItem}>
-            <a href="#services" className={styles.navLink}>
-              Operations
-            </a>
-            <div className={styles.submenu}>
-              <Link to="/safety">Tanzania</Link>
-              <a href="#mining-services">Namibia</a>
-            </div>
-          </div>
-          <div className={styles.menuItem}>
-            <a href="#services" className={styles.navLink}>
-              Investors
-            </a>
-            <div className={styles.submenu}>
-              <Link to="/safety">Announcements</Link>
-              <a href="#mining-services">Presentations</a>
-              <a href="#mining-services">Corporate Governance</a>
-              <a href="#mining-services">
-                Corporate Social Responsibility (CSR)
-              </a>
-              <a href="#mining-services">Certifications</a>
-            </div>
-          </div>
-          <div className={styles.menuItem}>
-            <a href="#news" className={styles.navLink}>
-              Blog
-            </a>
-          </div>
-          <div className={styles.menuItem}>
-            <a href="#news" className={styles.navLink}>
-              Contact Us
-            </a>
-          </div>
+          {menuItems.map((item, index) => renderMenuItem(item, index))}
         </div>
 
         <button onClick={toggleDrawer} className={styles.menuButton}>
           &#9776;
         </button>
 
-        <div
-          className={`${styles.drawer} ${drawerOpen ? styles.drawerOpen : ""}`}
-        >
-          <div className={styles.menuItem}>
-            <a href="#about" className={styles.navLink}>
-              About us
-            </a>
-            <div className={styles.submenu}>
-              <a href="#team">Our Team</a>
-              <a href="#history">History</a>
+        {drawerOpen && (
+          <div
+            className={`${styles.drawer} ${styles.drawerOpen}`}
+            onClick={(e) => {
+              if (e.target.classList.contains(styles.drawerOpen)) {
+                closeDrawer();
+              }
+            }}
+          >
+            <div className={styles.drawerHeader}>
+              <h3>Menu</h3>
+              <button onClick={closeDrawer} className={styles.closeButton}>
+                ×
+              </button>
+            </div>
+            <div className={styles.drawerContent}>
+              {menuItems.map((item, index) => (
+                <div key={index} className={styles.drawerMenuItem}>
+                  {item.link ? (
+                    <Link
+                      to={item.link}
+                      className={styles.drawerNavLink}
+                      onClick={closeDrawer}
+                    >
+                      {item.title}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className={styles.drawerNavLink}
+                      onClick={closeDrawer}
+                    >
+                      {item.title}
+                    </a>
+                  )}
+                  {item.submenu && item.submenu.length > 0 && (
+                    <div className={styles.drawerSubmenu}>
+                      {item.submenu.map((subItem, subIndex) => (
+                        <div
+                          key={subIndex}
+                          className={styles.drawerSubmenuItem}
+                        >
+                          {subItem.link ? (
+                            <Link to={subItem.link} onClick={closeDrawer}>
+                              {subItem.title}
+                            </Link>
+                          ) : (
+                            <a href={subItem.href} onClick={closeDrawer}>
+                              {subItem.title}
+                            </a>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
-        </div>
+        )}
       </nav>
       <div className={styles.blueRectangle}>
         <p className={styles.rectangleText}>{title}</p>
