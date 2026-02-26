@@ -1,0 +1,29 @@
+services:
+  php:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - ./backend:/var/www/html/backend:ro
+    networks:
+      - internal
+
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+      - ./build:/var/www/html/build:ro
+      - ./backend:/var/www/html/backend:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    expose:
+      - "80"
+    networks:
+      - web
+      - internal
+    depends_on:
+      - php
+
+networks:
+  web:
+    external: true
+  internal:
+    driver: bridge
