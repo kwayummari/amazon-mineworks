@@ -31,7 +31,7 @@
     animation: spin 1s linear infinite;
     margin-bottom: 20px;
     display: block;
-    color: #da0b19;
+    color: var(--color-red);
   }
 
   p {
@@ -94,7 +94,7 @@
 }
 
 .breadcrumbLink {
-  color: #da0b19;
+  color: var(--color-red);
   text-decoration: none;
   transition: color 0.3s ease;
 
@@ -129,7 +129,7 @@
 
     i {
       font-size: 16px;
-      color: #da0b19;
+      color: var(--color-red);
     }
   }
 }
@@ -296,7 +296,7 @@
 }
 
 .copy {
-  background: #da0b19;
+  background: var(--color-red);
   color: white;
 
   &:hover {
@@ -347,7 +347,7 @@
 }
 
 .homeButton {
-  background: #da0b19;
+  background: var(--color-red);
 
   &:hover {
     background: #b80915;

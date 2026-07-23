@@ -1,10 +1,10 @@
 .about {
-  background-color: #f3f3ff;
+  background-color: var(--color-bg-alt);
   padding-bottom: 81px;
 }
 .statsContainer {
-  border-radius: 25px;
-  background-color: #da0b19;
+  border-radius: 6px;
+  background: linear-gradient(120deg, var(--color-red) 0%, var(--color-red-600) 100%);
   display: flex;
   margin: -82px auto 0;
   width: 1304px;
@@ -24,7 +24,7 @@
 }
 
 .vl {
-  border-left: 2px solid #ffffff;
+  border-left: 2px solid rgba(255, 255, 255, 0.4);
   height: 50px;
   align-self: center;
   flex-shrink: 0;
@@ -40,15 +40,19 @@
 }
 
 .statLabel {
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 8px;
   line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
 }
 
 .statValue {
-  font-size: 30px;
+  font-family: var(--font-display);
+  font-size: 32px;
   margin-top: 8px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.1;
 }
 
@@ -65,30 +69,52 @@
   .textContent {
     flex: 1;
     padding: 0;
-    color: rgba(0, 1, 84, 0.54);
-    font-size: 25px;
+    color: var(--color-slate);
+    font-size: 18px;
     font-weight: 400;
     max-width: 600px;
 
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--color-red);
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin: 0 0 12px 0;
+
+      &::before {
+        content: "";
+        width: 28px;
+        height: 2px;
+        background: var(--color-red);
+      }
+    }
+
     .title {
-      color: #000154;
-      font-size: 40px;
-      font-weight: 900;
+      color: var(--color-navy);
+      font-size: 38px;
+      font-weight: 600;
+      text-transform: uppercase;
       margin: 0 0 20px 0;
       line-height: 1.2;
     }
 
     .description {
-      letter-spacing: 0.96px;
+      letter-spacing: 0.02em;
       margin: 0 0 36px 0;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .trustedBy {
-      letter-spacing: 1.92px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       margin: 0;
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-navy);
     }
   }
 
@@ -223,7 +249,7 @@
 
   .statsContainer {
     border-radius: 15px;
-    background-color: #da0b19;
+    background-color: var(--color-red);
     display: flex;
     margin: -40px auto 0;
     width: 90%;
@@ -283,7 +309,7 @@
       max-width: 100%;
 
       .title {
-        color: #000154;
+        color: var(--color-navy);
         font-size: 30px;
         font-weight: 900;
         margin: 0 0 16px 0;

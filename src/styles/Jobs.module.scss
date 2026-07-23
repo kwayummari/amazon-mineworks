@@ -1,25 +1,35 @@
 .jobsSection {
-  background-color: #f8f9fa;
+  background-color: var(--color-bg-alt);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 20px;
+  padding: 70px 20px;
   margin-top: 55px;
 }
 
+.eyebrow {
+  color: var(--color-red);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin: 0 0 12px;
+}
+
 .sectionTitle {
-  color: #000154;
-  font: 900 40px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-navy);
+  font: 600 38px var(--font-display);
+  text-transform: uppercase;
   margin: 0;
   text-align: center;
 }
 
 .sectionDescription {
-  color: rgba(0, 1, 84, 0.54);
-  letter-spacing: 1.2px;
+  color: var(--color-slate);
+  letter-spacing: 0.01em;
   text-align: center;
-  margin-top: 20px;
-  font: 400 25px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  margin-top: 16px;
+  font: 400 18px var(--font-body);
   max-width: 600px;
 }
 
@@ -33,7 +43,7 @@
   padding-bottom: 20px;
   max-width: 95%;
   scrollbar-width: thin;
-  scrollbar-color: #000154 #f1f1f1;
+  scrollbar-color: var(--color-navy) #f1f1f1;
 }
 
 .jobsGrid::-webkit-scrollbar {
@@ -46,7 +56,7 @@
 }
 
 .jobsGrid::-webkit-scrollbar-thumb {
-  background: #000154;
+  background: var(--color-navy);
   border-radius: 4px;
 }
 
@@ -56,7 +66,7 @@
 
 .jobItem {
   flex: 0 0 380px;
-  border-radius: 15px;
+  border-radius: 4px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -79,8 +89,10 @@
 }
 
 .jobTitle {
-  color: #000154;
-  font: 700 22px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-navy);
+  font: 500 21px var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
   margin: 0 0 10px 0;
   line-height: 1.3;
 }
@@ -95,28 +107,29 @@
 .jobDepartment,
 .jobLocation,
 .jobType {
-  background-color: #e9ecef;
-  color: #495057;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font: 500 12px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  background-color: var(--color-bg-alt);
+  color: var(--color-navy);
+  border: 1px solid var(--color-border);
+  padding: 4px 10px;
+  border-radius: 2px;
+  font: 600 11px var(--font-body);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.06em;
 }
 
 .jobDepartment {
-  background-color: #d1ecf1;
-  color: #0c5460;
+  border-color: var(--color-navy);
+  color: var(--color-navy);
 }
 
 .jobLocation {
-  background-color: #d4edda;
-  color: #155724;
+  border-color: var(--color-border);
+  color: var(--color-slate);
 }
 
 .jobType {
-  background-color: #fff3cd;
-  color: #856404;
+  border-color: var(--color-red);
+  color: var(--color-red);
 }
 
 .jobContent {
@@ -126,7 +139,7 @@
 
 .jobDescription {
   color: #6c757d;
-  font: 400 14px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 400 14px var(--font-body);
   line-height: 1.5;
   margin: 0 0 10px 0;
   display: -webkit-box;
@@ -137,7 +150,7 @@
 
 .jobSalary {
   color: #28a745;
-  font: 600 14px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 600 14px var(--font-body);
   margin: 0;
 }
 
@@ -186,7 +199,7 @@
 }
 
 .pdfPlaceholder span {
-  font: 500 14px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 500 14px var(--font-body);
 }
 
 .jobActions {
@@ -229,19 +242,21 @@
   justify-content: center;
   flex: 1;
   gap: 8px;
-  background-color: #dc3545;
+  background-color: var(--color-navy);
   color: #fff;
   text-decoration: none;
   padding: 12px 20px;
-  border-radius: 8px;
-  font: 600 14px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  border-radius: 3px;
+  font: 500 13px var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   transition: background-color 0.3s ease, transform 0.2s ease;
   border: none;
   cursor: pointer;
 }
 
 .viewJobBtn:hover {
-  background-color: #c82333;
+  background-color: var(--color-red);
   transform: translateY(-1px);
   color: #fff;
   text-decoration: none;
@@ -253,7 +268,7 @@
 
 .jobDate {
   color: #6c757d;
-  font: 400 12px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 400 12px var(--font-body);
   text-align: center;
   margin: 0;
 }
@@ -299,12 +314,12 @@
 
 .emptyState h3 {
   color: #495057;
-  font: 600 24px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 600 24px var(--font-body);
   margin: 0;
 }
 
 .emptyState p {
-  font: 400 16px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 400 16px var(--font-body);
   margin: 0;
   max-width: 400px;
 }

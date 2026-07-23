@@ -134,7 +134,8 @@ const News = () => {
   if (loading) {
     return (
       <section className={styles.newsSection}>
-        <h2 className={styles.sectionTitle}>News</h2>
+        <p className={styles.eyebrow}>Newsroom</p>
+        <h2 className={styles.sectionTitle}>Latest News</h2>
         <p className={styles.sectionDescription}>
           Find the newest information of our company
         </p>
@@ -151,7 +152,8 @@ const News = () => {
   if (news.length === 0) {
     return (
       <section className={styles.newsSection}>
-        <h2 className={styles.sectionTitle}>News</h2>
+        <p className={styles.eyebrow}>Newsroom</p>
+        <h2 className={styles.sectionTitle}>Latest News</h2>
         <p className={styles.sectionDescription}>
           Find the newest information of our company
         </p>
@@ -166,7 +168,8 @@ const News = () => {
 
   return (
     <section className={styles.newsSection}>
-      <h2 className={styles.sectionTitle}>News</h2>
+      <p className={styles.eyebrow}>Newsroom</p>
+      <h2 className={styles.sectionTitle}>Latest News</h2>
       <p className={styles.sectionDescription}>
         Find the newest information of our company
       </p>

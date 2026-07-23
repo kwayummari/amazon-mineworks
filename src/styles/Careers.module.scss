@@ -4,20 +4,20 @@
 }
 
 .hero {
-  background: linear-gradient(135deg, #000154 0%, #1a1a5e 100%);
+  background: linear-gradient(135deg, var(--color-navy) 0%, #1a1a5e 100%);
   color: white;
   padding: 80px 20px 60px;
   text-align: center;
 }
 
 .hero h1 {
-  font: 900 48px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 900 48px var(--font-body);
   margin: 0 0 20px 0;
   color: white;
 }
 
 .hero p {
-  font: 400 20px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 400 20px var(--font-body);
   margin: 0;
   opacity: 0.9;
   max-width: 600px;
@@ -58,8 +58,8 @@
 }
 
 .jobTitle {
-  color: #000154;
-  font: 700 24px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-navy);
+  font: 700 24px var(--font-body);
   margin: 0 0 15px 0;
 }
 
@@ -74,7 +74,7 @@
 .jobType {
   padding: 6px 12px;
   border-radius: 16px;
-  font: 500 12px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 500 12px var(--font-body);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -101,14 +101,14 @@
 
 .jobDescription {
   color: #6c757d;
-  font: 400 14px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 400 14px var(--font-body);
   line-height: 1.6;
   margin: 0 0 15px 0;
 }
 
 .jobSalary {
   color: #28a745;
-  font: 600 16px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 600 16px var(--font-body);
   margin: 0;
 }
 
@@ -141,7 +141,7 @@
   border: none;
   border-radius: 8px;
   padding: 12px 20px;
-  font: 600 14px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 600 14px var(--font-body);
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -184,7 +184,7 @@
 
 .jobDate {
   color: #6c757d;
-  font: 500 12px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 500 12px var(--font-body);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -206,12 +206,12 @@
 
 .emptyState h3 {
   color: #495057;
-  font: 600 24px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 600 24px var(--font-body);
   margin: 0;
 }
 
 .emptyState p {
-  font: 400 16px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 400 16px var(--font-body);
   margin: 0;
   max-width: 400px;
 }

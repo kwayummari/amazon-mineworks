@@ -1,12 +1,12 @@
 .announcements {
   background-color: #fff;
-  font-family: Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
 }
 
 .hero {
   background-color: #f3f3ff;
-  color: #000154;
+  color: var(--color-navy);
   padding: 100px 0;
   text-align: center;
   position: relative;
@@ -17,16 +17,14 @@
     padding: 0 20px;
 
     h1 {
-      font: 900 40px Jacques Francois, -apple-system, Roboto, Helvetica,
-        sans-serif;
-      color: #000154;
+      font: 900 40px var(--font-body);
+      color: var(--color-navy);
       margin-bottom: 20px;
       text-align: center;
     }
 
     p {
-      font: 400 25px Jacques Francois, -apple-system, Roboto, Helvetica,
-        sans-serif;
+      font: 400 25px var(--font-body);
       color: rgba(0, 1, 84, 0.54);
       letter-spacing: 1.2px;
       text-align: center;
@@ -45,15 +43,15 @@
 }
 
 .sectionTitle {
-  color: #000154;
-  font: 900 40px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-navy);
+  font: 900 40px var(--font-body);
   text-align: center;
   margin: 0;
 }
 
 .sectionDescription {
   color: rgba(0, 1, 84, 0.54);
-  font: 400 25px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 400 25px var(--font-body);
   letter-spacing: 1.2px;
   text-align: center;
   margin-top: 20px;
@@ -78,11 +76,11 @@
 
 .categoryFilter {
   background-color: #f8f9fa;
-  color: #000154;
+  color: var(--color-navy);
   border: 2px solid transparent;
   padding: 10px 20px;
   border-radius: 25px;
-  font: 600 16px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font: 600 16px var(--font-body);
   cursor: pointer;
   transition: all 0.3s ease;
 
@@ -91,9 +89,9 @@
   }
 
   &.active {
-    background-color: #000154;
+    background-color: var(--color-navy);
     color: #fff;
-    border-color: #000154;
+    border-color: var(--color-navy);
   }
 }
 
@@ -125,9 +123,8 @@
     margin-bottom: 20px;
 
     .announcementTitle {
-      color: #000154;
-      font: 900 24px Jacques Francois, -apple-system, Roboto, Helvetica,
-        sans-serif;
+      color: var(--color-navy);
+      font: 900 24px var(--font-body);
       margin: 0 0 15px 0;
       line-height: 1.3;
     }
@@ -141,15 +138,13 @@
 
       .announcementDate {
         color: rgba(0, 1, 84, 0.54);
-        font: 400 16px Jacques Francois, -apple-system, Roboto, Helvetica,
-          sans-serif;
+        font: 400 16px var(--font-body);
       }
 
       .announcementType {
         padding: 5px 15px;
         border-radius: 20px;
-        font: 600 14px Jacques Francois, -apple-system, Roboto, Helvetica,
-          sans-serif;
+        font: 600 14px var(--font-body);
         text-transform: uppercase;
 
         &.financial {
@@ -177,8 +172,7 @@
 
   .announcementSummary {
     color: rgba(0, 1, 84, 0.54);
-    font: 400 16px Jacques Francois, -apple-system, Roboto, Helvetica,
-      sans-serif;
+    font: 400 16px var(--font-body);
     margin: 0 0 25px 0;
     line-height: 1.6;
   }
@@ -189,13 +183,12 @@
     flex-wrap: wrap;
 
     .readMoreBtn {
-      background-color: #000154;
+      background-color: var(--color-navy);
       color: #fff;
       border: none;
       padding: 10px 20px;
       border-radius: 20px;
-      font: 600 14px Jacques Francois, -apple-system, Roboto, Helvetica,
-        sans-serif;
+      font: 600 14px var(--font-body);
       cursor: pointer;
       transition: background-color 0.3s ease;
 
@@ -206,17 +199,16 @@
 
     .downloadBtn {
       background-color: transparent;
-      color: #000154;
-      border: 2px solid #000154;
+      color: var(--color-navy);
+      border: 2px solid var(--color-navy);
       padding: 10px 20px;
       border-radius: 20px;
-      font: 600 14px Jacques Francois, -apple-system, Roboto, Helvetica,
-        sans-serif;
+      font: 600 14px var(--font-body);
       cursor: pointer;
       transition: all 0.3s ease;
 
       &:hover {
-        background-color: #000154;
+        background-color: var(--color-navy);
         color: #fff;
       }
     }
@@ -224,21 +216,19 @@
 }
 
 .ctaSection {
-  background-color: #000154;
+  background-color: var(--color-navy);
   color: #fff;
   padding: 80px 0;
   text-align: center;
 
   .ctaContent {
     h2 {
-      font: 900 40px Jacques Francois, -apple-system, Roboto, Helvetica,
-        sans-serif;
+      font: 900 40px var(--font-body);
       margin: 0 0 20px 0;
     }
 
     p {
-      font: 400 25px Jacques Francois, -apple-system, Roboto, Helvetica,
-        sans-serif;
+      font: 400 25px var(--font-body);
       margin: 0 0 40px 0;
       opacity: 0.9;
     }
@@ -251,13 +241,12 @@
     }
 
     .primaryBtn {
-      background-color: #da0b19;
+      background-color: var(--color-red);
       color: #fff;
       border: none;
       padding: 15px 30px;
       border-radius: 25px;
-      font: 600 18px Jacques Francois, -apple-system, Roboto, Helvetica,
-        sans-serif;
+      font: 600 18px var(--font-body);
       cursor: pointer;
       transition: background-color 0.3s ease;
 
@@ -272,14 +261,13 @@
       border: 2px solid #fff;
       padding: 15px 30px;
       border-radius: 25px;
-      font: 600 18px Jacques Francois, -apple-system, Roboto, Helvetica,
-        sans-serif;
+      font: 600 18px var(--font-body);
       cursor: pointer;
       transition: all 0.3s ease;
 
       &:hover {
         background-color: #fff;
-        color: #000154;
+        color: var(--color-navy);
       }
     }
   }

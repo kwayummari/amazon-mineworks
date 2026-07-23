@@ -209,7 +209,8 @@ const Jobs = () => {
   if (loading) {
     return (
       <section className={styles.jobsSection}>
-        <h2 className={styles.sectionTitle}>Career Opportunities</h2>
+        <p className={styles.eyebrow}>Join Us</p>
+      <h2 className={styles.sectionTitle}>Career Opportunities</h2>
         <div className={styles.loadingSpinner}>
           <i className="bi bi-arrow-clockwise"></i>
           <p>Loading job opportunities...</p>
@@ -221,7 +222,8 @@ const Jobs = () => {
   if (jobs.length === 0) {
     return (
       <section className={styles.jobsSection}>
-        <h2 className={styles.sectionTitle}>Career Opportunities</h2>
+        <p className={styles.eyebrow}>Join Us</p>
+      <h2 className={styles.sectionTitle}>Career Opportunities</h2>
         <div className={styles.emptyState}>
           <i className="bi bi-briefcase"></i>
           <h3>No job openings at the moment</h3>
@@ -233,6 +235,7 @@ const Jobs = () => {
 
   return (
     <section className={styles.jobsSection}>
+      <p className={styles.eyebrow}>Join Us</p>
       <h2 className={styles.sectionTitle}>Career Opportunities</h2>
       <p className={styles.sectionDescription}>
         Join our team and be part of the future of sustainable mining

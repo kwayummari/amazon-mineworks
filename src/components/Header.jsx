@@ -6,6 +6,13 @@ import styles from "./../styles/HeaderNav.module.scss";
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
@@ -157,14 +164,38 @@ const Header = () => {
 
   return (
     <>
-      <ModernCarousel />
-      <header className={styles.header}>
+      <header
+        className={`${styles.header} ${isScrolled ? styles.headerScrolled : ""}`}
+      >
+        <div className={styles.utilityBar}>
+          <div className={styles.utilityLeft}>
+            <a href="tel:+255000000000" className={styles.utilityItem}>
+              <i className="bi bi-telephone-fill"></i> +255 000 000 000
+            </a>
+            <a href="mailto:info@amazonmineworks.co.tz" className={styles.utilityItem}>
+              <i className="bi bi-envelope-fill"></i> info@amazonmineworks.co.tz
+            </a>
+            <span className={styles.utilityItem}>
+              <i className="bi bi-geo-alt-fill"></i> Tanzania &amp; Namibia
+            </span>
+          </div>
+          <div className={styles.utilityRight}>
+            <div className={styles.utilitySocials}>
+              <a href="#" aria-label="Facebook"><i className="bi bi-facebook"></i></a>
+              <a href="#" aria-label="LinkedIn"><i className="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="Twitter"><i className="bi bi-twitter"></i></a>
+            </div>
+            <Link to="/contact-us" className={styles.utilityCta}>
+              Request a Quote
+            </Link>
+          </div>
+        </div>
         <nav className={styles.navigation}>
-          <Link to="/">
+          <Link to="/" className={styles.logo}>
             <img
               loading="lazy"
               src="./images/logo/logo1.png"
-              alt="Company logo"
+              alt="Amazon Mineworks logo"
               className={styles.logoImage}
             />
           </Link>
@@ -175,8 +206,12 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={toggleDrawer} className={styles.menuButton}>
-            &#9776;
+          <button
+            onClick={toggleDrawer}
+            className={styles.menuButton}
+            aria-label="Open menu"
+          >
+            <i className="bi bi-list"></i>
           </button>
 
           {/* Mobile Drawer */}
@@ -238,6 +273,7 @@ const Header = () => {
           )}
         </nav>
       </header>
+      <ModernCarousel />
     </>
   );
 };

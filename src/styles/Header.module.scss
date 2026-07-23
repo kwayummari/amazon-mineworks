@@ -183,7 +183,7 @@
 
 .heroContent {
   border-radius: 18px;
-  background-color: #da0b19;
+  background-color: var(--color-red);
   max-width: 595px;
   margin: 230px 0 -40px 95px;
   padding: 57px 44px 27px;
@@ -212,7 +212,7 @@
   border-radius: 6px;
   margin-top: 54px;
   padding: 17px 17px;
-  background-color: #000154;
+  background-color: var(--color-navy);
   color: #fff;
   font: inherit;
   cursor: pointer;
@@ -245,7 +245,7 @@
 
   i {
     font-size: 20px;
-    color: #000154;
+    color: var(--color-navy);
   }
 }
 
@@ -284,9 +284,9 @@
 }
 
 .activeDot {
-  background: #da0b19;
+  background: var(--color-red);
   transform: scale(1.3);
-  border-color: #da0b19;
+  border-color: var(--color-red);
 }
 
 @media (max-width: 991px) {
@@ -353,7 +353,7 @@
 
   .heroContent {
     border-radius: 15px;
-    background-color: #da0b19;
+    background-color: var(--color-red);
     max-width: 90%;
     margin: 30px auto 50px auto;
     padding: 20px 15px;
@@ -418,7 +418,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: #000154;
+  background: var(--color-navy);
   color: white;
   position: relative;
   z-index: 10000;
@@ -445,13 +445,13 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: #da0b19;
+    color: var(--color-red);
   }
 }
 
 .drawerContent {
   padding: 20px;
-  background: #000154;
+  background: var(--color-navy);
   height: calc(100vh - 80px);
   overflow-y: auto;
   position: relative;
@@ -473,7 +473,7 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: #37aba6;
+    color: var(--color-red);
   }
 }
 
@@ -494,7 +494,7 @@
     transition: color 0.3s ease;
 
     &:hover {
-      color: #37aba6;
+      color: var(--color-red);
     }
   }
 }
@@ -602,7 +602,7 @@
 
     &.activeDot {
       background: #fff;
-      border-color: #da0b19;
+      border-color: var(--color-red);
       transform: scale(1.1);
     }
   }

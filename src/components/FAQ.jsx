@@ -13,7 +13,8 @@ const FAQItem = ({ question, icon }) => (
 
 const FAQ = () => (
   <section className={styles.faqSection}>
-    <h2 className={styles.sectionTitle}>FAQ</h2>
+    <p className={styles.eyebrow}>Got Questions?</p>
+    <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
     <p className={styles.sectionDescription}>Find answers to common inquiries</p>
     <div className={styles.faqList}>
       <FAQItem

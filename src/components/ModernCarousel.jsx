@@ -11,28 +11,31 @@ const ModernCarousel = () => {
     {
       id: 1,
       image: "./images/carousel1.jpeg",
+      kicker: "Est. 2012 · Tanzania & Namibia",
       title: "Integrated Services Provider",
       description:
         "Our activities cover the full construction spectrum and are divided into three main operating divisions – Building Construction, Civil Engineering and Roads and Earthworks.",
-      buttonText: "FIND OUT MORE",
+      buttonText: "Our Services",
       buttonLink: "/services",
     },
     {
       id: 2,
       image: "./images/carousel2.jpeg",
+      kicker: "Drilling Services",
       title: "Exploration & Drilling Excellence",
       description:
         "Advanced exploration and drilling services with state-of-the-art equipment and experienced professionals ensuring precision and safety in every project.",
-      buttonText: "LEARN MORE",
+      buttonText: "Learn More",
       buttonLink: "/exploration-drilling",
     },
     {
       id: 3,
       image: "./images/carousel3.jpeg",
+      kicker: "Mining & Construction",
       title: "Mining & Construction Solutions",
       description:
         "Comprehensive mining and construction solutions delivering excellence, safety, and environmental responsibility across all operations.",
-      buttonText: "DISCOVER MORE",
+      buttonText: "Our Operations",
       buttonLink: "/operations",
     },
   ];
@@ -99,13 +102,20 @@ const ModernCarousel = () => {
             }`}
             style={{ backgroundImage: `url(${slide.image})` }}
           >
+            <div className={styles.scrim} />
             <div className={styles.slideContent}>
               <div className={styles.contentWrapper}>
+                <p className={styles.slideKicker}>{slide.kicker}</p>
                 <h1 className={styles.slideTitle}>{slide.title}</h1>
                 <p className={styles.slideDescription}>{slide.description}</p>
-                <Link to={slide.buttonLink} className={styles.slideButton}>
-                  {slide.buttonText}
-                </Link>
+                <div className={styles.slideActions}>
+                  <Link to={slide.buttonLink} className={styles.slideButton}>
+                    {slide.buttonText}
+                  </Link>
+                  <Link to="/contact-us" className={styles.slideButtonGhost}>
+                    Contact Us
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

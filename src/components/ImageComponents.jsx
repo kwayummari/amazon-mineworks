@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./../styles/ImageComponent.module.scss";
 
 function ImageComponent() {
@@ -8,12 +9,19 @@ function ImageComponent() {
         loading="lazy"
         src="/images/background2.png"
         className={styles.image}
-        alt="Description of the image"
+        alt="Mining equipment at an Amazon Mineworks site"
       />
+      <div className={styles.overlay} />
       <div className={styles.textContainer}>
-        <h1 className={styles.title}>Do you have other questions? <br/>
-        Feel free to reach out to us.</h1>
-        <button className={styles.button}><p className={styles.buttonText}>Contact Us</p></button>
+        <h2 className={styles.title}>
+          Partner with a trusted mining &amp; drilling contractor
+        </h2>
+        <p className={styles.subtitle}>
+          Get in touch with our team to discuss your next project.
+        </p>
+        <Link to="/contact-us" className={styles.button}>
+          Contact Us <i className="bi bi-arrow-right"></i>
+        </Link>
       </div>
     </div>
   );

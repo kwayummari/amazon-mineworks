@@ -1,47 +1,129 @@
 .footer {
-  background-color: #f3f3ff !important;
-  padding-top: 40px;
+  background-color: var(--color-navy-900) !important;
+  padding-top: 56px;
+  color: rgba(255, 255, 255, 0.65);
 }
+
 .logo {
   aspect-ratio: 1.7;
   object-fit: contain;
-  width: 150px;
+  width: 170px;
   max-width: 100%;
+  filter: brightness(0) invert(1);
 }
+
 .tagline {
-  color: #000154;
-  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-top: 16px;
+  max-width: 280px;
 }
+
 .socialIcons {
-  justify-content: space-between;
-  
-  i {
-    color: #000154;
-    padding: 10px;
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: all 0.2s ease;
+  }
+
+  a:hover {
+    background: var(--color-red);
+    border-color: var(--color-red);
   }
 }
+
 .listTitle {
-  padding-left: 20px;
-  font-weight: 700;
+  padding-left: 0;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 22px;
+  position: relative;
+  padding-bottom: 12px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 28px;
+    height: 2px;
+    background: var(--color-red);
+  }
 }
+
 .list {
   list-style: none;
-  padding: 2px;
+  padding: 0;
+  margin-bottom: 12px;
 }
+
 .list:hover {
-  color: #000154;
   cursor: pointer;
 }
+
 .anchor {
-  font-weight: 500;
-  color: #6d767e;
+  font-weight: 400;
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.62);
   text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--color-red);
+  }
 }
-.copyright {
-  color: #000;
-  font-weight: 700;
-}
+
+.copyright,
 .designed {
-  color: #000;
-  font-weight: 700;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 400;
+  font-size: 13.5px;
+}
+
+.designed .anchor {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 600;
+}
+
+.footer :global(.row.copyright) {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px !important;
+  padding: 22px 0;
+}
+
+@media (max-width: 767px) {
+  .ctaInner {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .ctaTitle {
+    font-size: 21px;
+  }
+
+  .tagline {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .socialIcons {
+    justify-content: center;
+  }
 }

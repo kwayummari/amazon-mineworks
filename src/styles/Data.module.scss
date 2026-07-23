@@ -68,9 +68,9 @@
     width: 80%;
     margin-top: 10px;
     padding: 7px 20px;
-    border: 2px solid #000154;
+    border: 2px solid var(--color-navy);
     background: none;
-    color: #000154;
+    color: var(--color-navy);
     font: inherit;
     cursor: pointer;
     display: flex;
@@ -82,7 +82,7 @@
     width: 80%;
     margin-top: 10px;
     padding: 7px 20px;
-    background-color: #000154;
+    background-color: var(--color-navy);
     color: #fff;
     font: inherit;
     cursor: pointer;

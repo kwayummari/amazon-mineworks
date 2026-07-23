@@ -19,7 +19,7 @@
     animation: spin 1s linear infinite;
     margin-bottom: 20px;
     display: block;
-    color: #da0b19;
+    color: var(--color-red);
   }
 
   p {
@@ -87,12 +87,12 @@
   position: relative;
 
   &:hover {
-    border-color: #da0b19;
+    border-color: var(--color-red);
     background: #fef2f2;
   }
 
   &.dragOver {
-    border-color: #da0b19;
+    border-color: var(--color-red);
     background: #fef2f2;
     transform: scale(1.02);
   }
@@ -101,7 +101,7 @@
 .uploadContent {
   i {
     font-size: 48px;
-    color: #da0b19;
+    color: var(--color-red);
     margin-bottom: 16px;
     display: block;
   }
@@ -125,7 +125,7 @@
 }
 
 .uploadButton {
-  background: linear-gradient(135deg, #da0b19 0%, #b80915 100%);
+  background: linear-gradient(135deg, var(--color-red) 0%, #b80915 100%);
   color: white;
   border: none;
   padding: 12px 24px;
@@ -199,7 +199,7 @@
 
   &:focus {
     outline: none;
-    border-color: #da0b19;
+    border-color: var(--color-red);
   }
 }
 

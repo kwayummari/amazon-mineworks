@@ -2,6 +2,19 @@ import React, { useState, useEffect } from "react";
 import databaseService from "../services/realMySQLService";
 import styles from "./../styles/About.module.scss";
 
+const defaultPartners = [
+  { id: 1, image: "./images/BARRICK.png", alt: "Barrick" },
+  { id: 2, image: "./images/bhp.png", alt: "BHP" },
+  { id: 3, image: "./images/blackRock.png", alt: "BlackRock" },
+  { id: 4, image: "./images/katoro.png", alt: "Katoro Gold" },
+  { id: 5, image: "./images/peak.png", alt: "Peak Resources" },
+  { id: 6, image: "./images/shanta.png", alt: "Shanta Gold" },
+  { id: 7, image: "./images/preseus.png", alt: "Perseus Mining" },
+  { id: 8, image: "./images/armdale.png", alt: "Armadale" },
+  { id: 9, image: "./images/volt.png", alt: "Volt Resources" },
+  { id: 10, image: "./images/resources.png", alt: "Resources Partner" },
+];
+
 const About = () => {
   const [partners, setPartners] = useState([]);
 
@@ -48,7 +61,8 @@ const About = () => {
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.textContent}>
-          <h2 className={styles.title}>AMAZON MINEWORKS</h2>
+          <p className={styles.eyebrow}>Who We Are</p>
+          <h2 className={styles.title}>Amazon Mineworks</h2>
           <p className={styles.description}>
             Our activities cover the full construction spectrum and are divided
             into three main operating divisions – Building Construction, Civil
@@ -62,37 +76,29 @@ const About = () => {
         </div>
         <img
           loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/60f2c9fe8bc4a9cbc4f72cacd6760635a6678a2bc50f6b1baf88d210a021e8aa?apiKey=69c943fd599c485fb32c02233b347491&"
+          src="./images/carousel2.jpeg"
           alt="Amazon Mineworks operations"
           className={styles.image}
         />
         <p className={styles.trustedBy1}>Trusted by</p>
       </div>
 
-      {partners.length > 0 ? (
-        <div className={styles.partnersContainer}>
-          <div className={styles.partnersGrid}>
-            {partners.map((partner) => (
+      <div className={styles.partnersContainer}>
+        <div className={styles.partnersGrid}>
+          {(partners.length > 0 ? partners : defaultPartners).map(
+            (partner) => (
               <div key={partner.id} className={styles.partnerItem}>
                 <img
                   src={partner.image}
                   alt={partner.alt}
                   className={styles.partnerLogo}
+                  loading="lazy"
                 />
               </div>
-            ))}
-          </div>
+            )
+          )}
         </div>
-      ) : (
-        <div className={styles.defaultPartnersContainer}>
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ee02162b5d14d8fa125903410643b9a2384bb13f9b575fafda15d4198183fc40?apiKey=69c943fd599c485fb32c02233b347491&"
-            alt="Trusted partners logos"
-            className={styles.partnersLogo}
-          />
-        </div>
-      )}
+      </div>
     </section>
   );
 };

@@ -132,7 +132,7 @@ const SubHeader = ({ title }) => {
   return (
     <header>
       <nav className={styles.navigation}>
-        <Link to="/">
+        <Link to="/" className={styles.logoLink}>
           <img
             loading="lazy"
             src="./images/logo/logo1.png"
@@ -144,8 +144,12 @@ const SubHeader = ({ title }) => {
           {menuItems.map((item, index) => renderMenuItem(item, index))}
         </div>
 
-        <button onClick={toggleDrawer} className={styles.menuButton}>
-          &#9776;
+        <button
+          onClick={toggleDrawer}
+          className={styles.menuButton}
+          aria-label="Open menu"
+        >
+          <i className="bi bi-list"></i>
         </button>
 
         {drawerOpen && (
@@ -209,15 +213,19 @@ const SubHeader = ({ title }) => {
           </div>
         )}
       </nav>
-      <div className={styles.blueRectangle}>
-        <p className={styles.rectangleText}>{title}</p>
+      <div
+        className={styles.banner}
+        style={{ backgroundImage: "url(./images/background.jpeg)" }}
+      >
+        <div className={styles.bannerContent}>
+          <p className={styles.breadcrumb}>
+            <Link to="/">Home</Link>
+            <i className="bi bi-chevron-right"></i>
+            <span>{title}</span>
+          </p>
+          <h1 className={styles.bannerTitle}>{title}</h1>
+        </div>
       </div>
-      <img
-        loading="lazy"
-        src="./images/background.jpeg"
-        alt="Background"
-        className={styles.background}
-      />
     </header>
   );
 };

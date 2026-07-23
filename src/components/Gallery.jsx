@@ -59,6 +59,7 @@ const Gallery = () => {
   if (loading) {
     return (
       <section className={styles.gallery}>
+        <p className={styles.eyebrow}>Our Work</p>
         <h2 className={styles.title}>Gallery</h2>
         <p className={styles.description}>
           A visual journey into the heart of mining excellence
@@ -76,6 +77,7 @@ const Gallery = () => {
   if (galleryImages.length === 0) {
     return (
       <section className={styles.gallery}>
+        <p className={styles.eyebrow}>Our Work</p>
         <h2 className={styles.title}>Gallery</h2>
         <p className={styles.description}>
           A visual journey into the heart of mining excellence
@@ -91,6 +93,7 @@ const Gallery = () => {
 
   return (
     <section className={styles.gallery}>
+      <p className={styles.eyebrow}>Our Work</p>
       <h2 className={styles.title}>Gallery</h2>
       <p className={styles.description}>
         A visual journey into the heart of mining excellence

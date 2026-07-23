@@ -6,31 +6,32 @@ const Footer = () => {
     <footer className={`${styles.footer} footer`}>
       <div className="container">
         <div className="row">
-          <div className="col-md-2 mb-4 text-center text-md-start">
+          <div className="col-md-3 mb-4 text-center text-md-start">
             <img
               src="./images/logo/logo1.png"
               alt="Amazon Mineworks"
               className={styles.logo}
             />
             <p className={styles.tagline}>
-              We are professionals for building constructions
+              A fully integrated mining, drilling and construction services
+              provider operating across Tanzania and Namibia since 2012.
             </p>
             <div className={styles.socialIcons}>
-              <a href="#">
+              <a href="#" aria-label="Facebook">
                 <i className="bi bi-facebook"></i>
               </a>
-              <a href="#">
+              <a href="#" aria-label="LinkedIn">
                 <i className="bi bi-linkedin"></i>
               </a>
-              <a href="#">
+              <a href="#" aria-label="Instagram">
                 <i className="bi bi-instagram"></i>
               </a>
-              <a href="#">
+              <a href="#" aria-label="Twitter">
                 <i className="bi bi-twitter"></i>
               </a>
             </div>
           </div>
-          <div className="col-md-2 footer-links text-center text-md-start">
+          <div className="col-lg-2 col-md-4 col-6 footer-links text-start">
             <h5 className={styles.listTitle}>ABOUT COMPANY</h5>
             <ul>
               <li className={styles.list}>
@@ -50,7 +51,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-md-2 footer-links text-center text-md-start">
+          <div className="col-lg-2 col-md-4 col-6 footer-links text-start">
             <h5 className={styles.listTitle}>COMMODITY</h5>
             <ul>
               <li className={styles.list}>
@@ -70,7 +71,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-md-2 footer-links text-center text-md-start">
+          <div className="col-lg-2 col-md-4 col-6 footer-links text-start">
             <h5 className={styles.listTitle}>MEDIA</h5>
             <ul>
               <li className={styles.list}>
@@ -90,7 +91,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-md-2 footer-links text-center text-md-start">
+          <div className="col-lg-2 col-md-4 col-6 footer-links text-start">
             <h5 className={styles.listTitle}>INVESTORS</h5>
             <ul>
               <li className={styles.list}>
@@ -110,7 +111,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-md-2 footer-links text-center text-md-start">
+          <div className="col-lg-2 col-md-4 col-6 footer-links text-start">
             <h5 className={styles.listTitle}>OTHERS</h5>
             <ul>
               <li className={styles.list}>

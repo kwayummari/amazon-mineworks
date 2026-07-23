@@ -3,36 +3,57 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
-  padding: 48px 80px;
+  padding: 90px 80px 70px;
+
+  .eyebrow {
+    color: var(--color-red);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin: 0 0 12px;
+  }
 
   .title {
-    color: #000154;
-    font-size: 40px;
-    font-weight: 900;
+    color: var(--color-navy);
+    font-family: var(--font-display);
+    font-size: 38px;
+    font-weight: 600;
+    text-transform: uppercase;
     margin: 0;
   }
 
   .description {
-    color: rgba(0, 1, 84, 0.54);
-    font-size: 25px;
-    letter-spacing: 1.2px;
+    color: var(--color-slate);
+    font-size: 18px;
+    letter-spacing: 0.01em;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 16px;
   }
 
   .carousel {
     position: relative;
-    margin-top: 20px;
+    margin-top: 40px;
     width: 100%;
+    max-width: 1320px;
 
     .imageContainer {
       position: relative;
-      height: 700px;
+      height: 620px;
       width: 100%;
       overflow: hidden;
-      border-radius: 50px;
+      border-radius: 6px;
+      box-shadow: var(--shadow-md);
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 1, 40, 0.35), transparent 40%);
+        z-index: 2;
+      }
 
       .galleryImage {
         position: absolute;
@@ -44,7 +65,7 @@
         object-position: center;
         opacity: 0;
         transition: opacity 1s ease-in-out;
-        border-radius: 50px;
+        border-radius: 6px;
       }
 
       .active {
@@ -56,24 +77,24 @@
     .dots {
       display: flex;
       justify-content: center;
-      margin-top: 20px;
+      margin-top: 24px;
 
       .dot {
-        height: 15px;
-        width: 15px;
-        background-color: #c4c4c4;
-        border-radius: 50%;
-        margin: 0 8px;
+        height: 4px;
+        width: 34px;
+        background-color: var(--color-border);
+        border-radius: 2px;
+        margin: 0 5px;
         cursor: pointer;
         transition: background-color 0.3s ease;
 
         &:hover {
-          background-color: #000154;
+          background-color: var(--color-navy-700);
         }
       }
 
       .activeDot {
-        background-color: #000154;
+        background-color: var(--color-red);
       }
     }
   }
@@ -96,7 +117,7 @@
     animation: spin 1s linear infinite;
     margin-bottom: 20px;
     display: block;
-    color: #da0b19;
+    color: var(--color-red);
   }
 
   p {
@@ -147,12 +168,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+    font-family: var(--font-body);
     font-weight: 400;
     padding: 48px 20px;
 
     .title {
-      color: #000154;
+      color: var(--color-navy);
       font-size: 30px;
       margin: 0;
     }
@@ -211,12 +232,12 @@
           transition: background-color 0.3s ease;
 
           &:hover {
-            background-color: #000154;
+            background-color: var(--color-navy);
           }
         }
 
         .activeDot {
-          background-color: #000154;
+          background-color: var(--color-navy);
         }
       }
     }

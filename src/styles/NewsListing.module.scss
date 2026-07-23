@@ -27,7 +27,7 @@
     animation: spin 1s linear infinite;
     margin-bottom: 20px;
     display: block;
-    color: #da0b19;
+    color: var(--color-red);
   }
 
   p {
@@ -94,7 +94,7 @@
 }
 
 .breadcrumbLink {
-  color: #da0b19;
+  color: var(--color-red);
   text-decoration: none;
   transition: color 0.3s ease;
 
@@ -209,7 +209,7 @@
 
     i {
       font-size: 14px;
-      color: #da0b19;
+      color: var(--color-red);
     }
   }
 }
@@ -227,7 +227,7 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: #da0b19;
+    color: var(--color-red);
   }
 }
 
@@ -264,7 +264,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #da0b19;
+  color: var(--color-red);
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
@@ -317,7 +317,7 @@
   align-items: center;
   gap: 8px;
   padding: 12px 24px;
-  background: #da0b19;
+  background: var(--color-red);
   color: white;
   text-decoration: none;
   border-radius: 8px;

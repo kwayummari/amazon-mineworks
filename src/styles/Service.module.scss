@@ -1,147 +1,166 @@
 .services {
   background-color: #fff;
-  font-family: Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
-  padding: 84px 30px 45px;
+  padding: 90px 30px 70px;
+}
+
+.eyebrow {
+  display: block;
+  text-align: center;
+  color: var(--color-red);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin: 0 0 12px;
 }
 
 .sectionTitle {
-  color: #000154;
-  font-size: 40px;
-  font-weight: 900;
+  color: var(--color-navy);
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 600;
+  text-transform: uppercase;
   text-align: center;
   margin: 0;
 }
 
 .sectionDescription {
-  color: rgba(0, 1, 84, 0.54);
-  font-size: 25px;
-  width: 900px;
-  letter-spacing: 1.2px;
+  color: var(--color-slate);
+  font-size: 18px;
+  max-width: 720px;
+  letter-spacing: 0.01em;
   text-align: center;
-  margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 1.7;
+  margin: 20px auto 0;
 }
 
 .servicesList {
-  display: flex;
-  flex-direction: column;
-  gap: 56px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
   margin-top: 56px;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
 
   .serviceItem {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 16px;
-    width: 80%;
-    height: 180px;
+    position: relative;
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 36px 28px 30px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-red);
+
+      .serviceIcon {
+        background: var(--color-red);
+        color: #fff;
+      }
+    }
+
+    .serviceIcon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      background: var(--color-navy);
+      color: #fff;
+      font-size: 26px;
+      margin-bottom: 22px;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
 
     .serviceNumber {
-      border-radius: 15px;
-      background-color: #000154;
-      font-size: 36px;
-      color: #fff;
-      text-align: center;
-      letter-spacing: 2.88px;
-      padding: 15px 35px 22px 35px;
+      position: absolute;
+      top: 30px;
+      right: 26px;
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-border);
+      letter-spacing: 0.05em;
     }
 
-    .serviceContent {
-      border-radius: 20px;
-      background-color: #ddddef;
-      flex-grow: 1;
-      padding: 17px 80px 42px;
-
-      .serviceTitle {
-        color: #000154;
-        font-size: 26px;
-        letter-spacing: 1.08px;
-        text-align: left;
-        margin: 0 0 28px;
-      }
-
-      .serviceDescription {
-        color: rgba(0, 1, 84, 0.54);
-        font-size: 18px;
-        letter-spacing: 0.72px;
-      }
+    .serviceTitle {
+      color: var(--color-navy);
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      text-align: left;
+      line-height: 1.35;
+      margin: 0 0 14px;
     }
+
+    .serviceDescription {
+      color: var(--color-slate);
+      font-size: 15px;
+      line-height: 1.65;
+      letter-spacing: 0.01em;
+      margin: 0;
+    }
+  }
+}
+
+.servicesFooter {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.servicesLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-navy);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--color-red);
+  transition: color 0.2s ease, gap 0.2s ease;
+
+  &:hover {
+    color: var(--color-red);
+    gap: 14px;
   }
 }
 
 @media (max-width: 991px) {
   .services {
-    background-color: #fff;
-    font-family: Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-    font-weight: 400;
-    padding: 40px 0px 45px 0px;
+    padding: 56px 20px 45px;
   }
-  
+
   .sectionTitle {
-    color: #000154;
-    font-size: 30px;
-    text-align: center;
-    margin: 0;
+    font-size: 28px;
   }
-  
+
   .sectionDescription {
-    color: rgba(0, 1, 84, 0.54);
-    font-size: 15px;
-    width: 300px;
-    letter-spacing: 1.2px;
-    text-align: center;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 16px;
+    padding: 0 10px;
   }
-  
+
   .servicesList {
-    display: flex;
-    flex-direction: column;
-    gap: 56px;
-    margin-top: 30px;
-  
-    .serviceItem {
-      display: flex;
-      margin-left: auto;
-      margin-right: auto;
-      gap: 10px;
-      width: 80%;
-      height: 250px;
-  
-      .serviceNumber {
-        border-radius: 10px;
-        background-color: #000154;
-        font-size: 16px;
-        color: #fff;
-        text-align: center;
-        letter-spacing: 2.88px;
-        padding: 10px 10px 0px 10px;
-        height: 40px;
-      }
-  
-      .serviceContent {
-        border-radius: 20px;
-        background-color: #ddddef;
-        flex-grow: 1;
-        padding: 17px 10px 42px;
-  
-        .serviceTitle {
-          color: #000154;
-          font-size: 16px;
-          letter-spacing: 1.08px;
-          text-align: left;
-          margin: 0;
-        }
-  
-        .serviceDescription {
-          color: rgba(0, 1, 84, 0.54);
-          font-size: 15px;
-          letter-spacing: 0.72px;
-        }
-      }
-    }
+    margin-top: 34px;
+    gap: 20px;
   }
-  }
+}
