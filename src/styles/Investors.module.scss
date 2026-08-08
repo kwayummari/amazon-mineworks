@@ -1,588 +1,296 @@
-.investorsPage {
-  min-height: 100vh;
-  background-color: #f8f9fa;
+.page {
+  background: var(--color-bg);
 }
 
-.heroSection {
-  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-700) 100%);
-  color: white;
-  padding: 100px 0 80px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("../../public/images/background2.png") center/cover;
-    opacity: 0.1;
-    z-index: 1;
-  }
+.introSection {
+  padding-block: var(--space-9);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.heroContent {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.heroTitle {
-  font: 700 48px var(--font-body);
-  margin-bottom: 20px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.heroDescription {
-  font: 400 18px var(--font-body);
-  line-height: 1.6;
-  opacity: 0.95;
-}
-
-.investorsContainer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
-
-.tabsContainer {
-  margin-bottom: 40px;
+.contentSection {
+  padding-block: var(--section-pad-y);
 }
 
 .tabs {
   display: flex;
-  background: white;
-  border-radius: 12px;
-  padding: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  overflow-x: auto;
-  gap: 4px;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: var(--space-9);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .tab {
-  background: transparent;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font: 500 14px var(--font-body);
-  color: #6c757d;
-  cursor: pointer;
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 8px;
-  white-space: nowrap;
-  min-width: fit-content;
-
-  &:hover {
-    background: #f8f9fa;
-    color: var(--color-red);
-  }
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: var(--space-4) 0;
+  margin-right: var(--space-7);
+  font-family: var(--font-display);
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
 
   i {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
-.activeTab {
-  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-700) 100%);
-  color: white;
-  box-shadow: 0 2px 8px rgba(55, 171, 166, 0.3);
+.tabActive {
+  color: var(--color-navy);
+  border-bottom-color: var(--color-red);
+}
 
-  &:hover {
-    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-700) 100%);
-    color: white;
+.list {
+  border-top: 1px solid var(--color-border);
+}
+
+.row {
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-border);
+
+  p {
+    color: var(--color-slate);
+    line-height: 1.65;
+    margin: 0 0 var(--space-3);
+    max-width: 70ch;
+  }
+
+  time {
+    font-size: var(--text-micro);
+    color: var(--color-muted);
   }
 }
 
-.contentContainer {
-  background: white;
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  min-height: 500px;
-}
+.rowHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
 
-// Announcements Section
-.announcementsSection {
   h3 {
-    font: 700 28px var(--font-body);
-    color: #2c3e50;
-    margin-bottom: 30px;
+    font-family: var(--font-display);
+    font-size: var(--text-h4);
+    font-weight: 500;
+    color: var(--color-navy);
+    text-transform: none;
+    margin: 0;
   }
 }
 
-.announcementsList {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.announcementCard {
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 25px;
-  transition: all 0.3s ease;
-
-  &:hover {
-    border-color: var(--color-red);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  }
-}
-
-.announcementHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 15px;
-  gap: 15px;
-}
-
-.announcementCard h4 {
-  font: 600 20px var(--font-body);
-  color: #2c3e50;
-  margin: 0;
-  flex: 1;
-}
-
-.announcementType {
-  background: var(--color-red);
-  color: white;
-  padding: 4px 12px;
+.tag {
+  font-size: var(--text-micro);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 10px;
   border-radius: 20px;
-  font: 500 12px var(--font-body);
+  background: rgba(218, 11, 25, 0.1);
+  color: var(--color-red-600);
   white-space: nowrap;
 }
 
-.announcementSummary {
-  font: 400 16px var(--font-body);
-  color: #6c757d;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.announcementFooter {
+.rowFooter {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-
-.announcementDate {
-  font: 500 14px var(--font-body);
-  color: var(--color-red);
-}
-
-.announcementStatus {
-  font: 500 14px var(--font-body);
-  color: #28a745;
-  background: #d4edda;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-
-// Presentations Section
-.presentationsSection {
-  h3 {
-    font: 700 28px var(--font-body);
-    color: #2c3e50;
-    margin-bottom: 30px;
-  }
-}
-
-.presentationsList {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.presentationCard {
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 25px;
-  transition: all 0.3s ease;
-
-  &:hover {
-    border-color: var(--color-red);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  }
-}
-
-.presentationHeader {
-  display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 15px;
-  gap: 15px;
-}
-
-.presentationCard h4 {
-  font: 600 20px var(--font-body);
-  color: #2c3e50;
-  margin: 0;
-  flex: 1;
-}
-
-.presentationType {
-  background: #6c757d;
-  color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font: 500 12px var(--font-body);
-  white-space: nowrap;
-}
-
-.presentationDescription {
-  font: 400 16px var(--font-body);
-  color: #6c757d;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.presentationFooter {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.presentationDate {
-  font: 500 14px var(--font-body);
-  color: var(--color-red);
 }
 
 .downloadBtn {
-  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-700) 100%);
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font: 500 14px var(--font-body);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--color-navy);
+  color: var(--color-navy);
+  border-radius: var(--radius-md);
+  padding: 9px 16px;
+  font-family: var(--font-display);
+  font-size: var(--text-micro);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(55, 171, 166, 0.3);
-  }
-
-  i {
-    font-size: 12px;
+    background: var(--color-navy);
+    color: var(--color-white);
   }
 }
 
-// Governance Section
-.governanceSection {
-  h3 {
-    font: 700 28px var(--font-body);
-    color: #2c3e50;
-    margin-bottom: 30px;
-  }
-}
-
-.governanceContent {
+.governanceGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-9);
 }
 
-.governanceCard {
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 25px;
-  background: #f8f9fa;
+.blockTitle {
+  font-size: var(--text-h4);
+  font-weight: 500;
+  color: var(--color-navy);
+  text-transform: none;
+  margin: 0 0 var(--space-6);
+}
 
-  h4 {
-    font: 600 20px var(--font-body);
-    color: #2c3e50;
-    margin-bottom: 15px;
-  }
-
-  p {
-    font: 400 16px var(--font-body);
-    color: #6c757d;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
+.sectionLede {
+  color: var(--color-slate);
+  line-height: 1.65;
+  margin: 0 0 var(--space-5);
 }
 
 .membersList {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: var(--space-5);
 }
 
-.member {
-  font: 400 14px var(--font-body);
-  color: #495057;
-  padding: 10px;
-  background: white;
-  border-radius: 6px;
-  border-left: 3px solid var(--color-red);
-
-  strong {
-    color: #2c3e50;
-  }
-
-  small {
-    color: #6c757d;
-  }
-}
-
-.governanceList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  li {
-    font: 400 14px var(--font-body);
-    color: #495057;
-    padding: 8px 0;
-    position: relative;
-    padding-left: 20px;
-
-    &::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--color-red);
-      font-weight: bold;
-    }
-  }
-}
-
-// CSR Section
-.csrSection {
-  h3 {
-    font: 700 28px var(--font-body);
-    color: #2c3e50;
-    margin-bottom: 30px;
-  }
-}
-
-.csrContent {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.csrCard {
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 25px;
-  background: #f8f9fa;
-
-  h4 {
-    font: 600 20px var(--font-body);
-    color: #2c3e50;
-    margin-bottom: 15px;
-  }
-
-  p {
-    font: 400 16px var(--font-body);
-    color: #6c757d;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-}
-
-.csrInitiatives {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  li {
-    font: 400 14px var(--font-body);
-    color: #495057;
-    padding: 8px 0;
-    position: relative;
-    padding-left: 20px;
-
-    &::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--color-red);
-      font-weight: bold;
-    }
-  }
-}
-
-// Certifications Section
-.certificationsSection {
-  h3 {
-    font: 700 28px var(--font-body);
-    color: #2c3e50;
-    margin-bottom: 30px;
-  }
-}
-
-.certificationsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.certificationCard {
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-  transition: all 0.3s ease;
-
-  &:hover {
-    border-color: var(--color-red);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  }
-}
-
-.certHeader {
+.memberRow {
   display: flex;
   flex-direction: column;
+  gap: 2px;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+
+  strong {
+    color: var(--color-navy);
+    font-family: var(--font-display);
+    font-size: var(--text-body);
+  }
+
+  span {
+    font-size: var(--text-small);
+    color: var(--color-slate);
+  }
+}
+
+.muted {
+  color: var(--color-muted) !important;
+  font-size: var(--text-micro) !important;
+}
+
+.bulletList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  li {
+    color: var(--color-slate);
+    font-size: var(--text-small);
+    padding-left: 18px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      background: var(--color-red);
+    }
+  }
+}
+
+.certGrid {
+  border-top: 1px solid var(--color-border);
+}
+
+.certRow {
+  display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
-}
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-border);
 
-.certificationCard h4 {
-  font: 600 18px var(--font-body);
-  color: #2c3e50;
-  margin: 0;
-}
-
-.certStatus {
-  background: #28a745;
-  color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font: 500 12px var(--font-body);
-}
-
-.certificationCard p {
-  font: 400 14px var(--font-body);
-  color: #6c757d;
-  margin: 0;
-}
-
-// Contact Section
-.contactSection {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.contactContent {
-  max-width: 600px;
-  margin: 0 auto;
-
-  h2 {
-    font: 700 32px var(--font-body);
-    margin-bottom: 20px;
+  h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-h4);
+    font-weight: 500;
+    color: var(--color-navy);
+    text-transform: none;
+    margin: 0 0 4px;
   }
 
   p {
-    font: 400 18px var(--font-body);
-    line-height: 1.6;
-    margin-bottom: 30px;
-    opacity: 0.9;
+    color: var(--color-slate);
+    font-size: var(--text-small);
+    margin: 0;
   }
 }
 
-.contactInfo {
+.contactSection {
+  background-color: var(--color-navy);
+  background-image: var(--pattern-drill);
+  background-size: var(--pattern-drill-size);
+  padding-block: var(--space-9);
+}
+
+.contactInner {
   display: flex;
-  justify-content: center;
-  gap: 40px;
   flex-wrap: wrap;
-}
-
-.contactItem {
-  display: flex;
   align-items: center;
-  gap: 10px;
-  font: 500 16px var(--font-body);
+  justify-content: space-between;
+  gap: var(--space-6);
 
-  i {
-    font-size: 20px;
-    color: var(--color-red);
+  h2 {
+    color: var(--color-white);
+    font-size: var(--text-h3);
+    font-weight: 500;
+    text-transform: none;
+    margin: 0 0 6px;
+  }
+
+  p {
+    color: var(--color-on-navy-muted);
+    margin: 0;
   }
 }
 
-// Responsive Design
-@media (max-width: 768px) {
-  .heroTitle {
-    font-size: 36px;
-  }
+.contactMethods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
 
-  .heroDescription {
-    font-size: 16px;
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: var(--text-small);
+
+    i {
+      color: var(--color-gold);
+    }
+
+    &:hover {
+      color: var(--color-gold);
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .governanceGrid {
+    grid-template-columns: 1fr;
   }
 
   .tabs {
-    flex-direction: column;
-    gap: 8px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
   }
 
   .tab {
-    justify-content: center;
-  }
-
-  .contentContainer {
-    padding: 20px;
-  }
-
-  .announcementHeader,
-  .presentationHeader {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .announcementFooter,
-  .presentationFooter {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .governanceContent,
-  .csrContent {
-    grid-template-columns: 1fr;
-  }
-
-  .certificationsGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .contactInfo {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .heroSection {
-    padding: 60px 0 40px;
-  }
-
-  .heroTitle {
-    font-size: 28px;
-  }
-
-  .investorsContainer {
-    padding: 40px 15px;
-  }
-
-  .announcementCard,
-  .presentationCard,
-  .governanceCard,
-  .csrCard {
-    padding: 15px;
+    white-space: nowrap;
   }
 }

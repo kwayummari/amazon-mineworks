@@ -1,359 +1,93 @@
-.announcements {
-  background-color: #fff;
-  font-family: var(--font-body);
-  font-weight: 400;
+.page {
+  background: var(--color-bg);
 }
 
-.hero {
-  background-color: #f3f3ff;
-  color: var(--color-navy);
-  padding: 100px 0;
-  text-align: center;
-  position: relative;
-
-  .heroContent {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-
-    h1 {
-      font: 900 40px var(--font-body);
-      color: var(--color-navy);
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    p {
-      font: 400 25px var(--font-body);
-      color: rgba(0, 1, 84, 0.54);
-      letter-spacing: 1.2px;
-      text-align: center;
-      margin-top: 20px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
+.introSection {
+  padding-block: var(--space-9);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.sectionTitle {
-  color: var(--color-navy);
-  font: 900 40px var(--font-body);
-  text-align: center;
-  margin: 0;
-}
-
-.sectionDescription {
-  color: rgba(0, 1, 84, 0.54);
-  font: 400 25px var(--font-body);
-  letter-spacing: 1.2px;
-  text-align: center;
-  margin-top: 20px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.filterSection {
-  background-color: #fff;
-  padding: 40px 0;
-  border-bottom: 1px solid #e9ecef;
-}
-
-.categoryFilters {
+.filters {
   display: flex;
-  gap: 15px;
-  justify-content: center;
   flex-wrap: wrap;
-  margin-top: 20px;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
 }
 
-.categoryFilter {
-  background-color: #f8f9fa;
-  color: var(--color-navy);
-  border: 2px solid transparent;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font: 600 16px var(--font-body);
+.filter {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-family: var(--font-display);
+  font-size: var(--text-micro);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-slate);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
 
   &:hover {
-    background-color: #e9ecef;
-  }
-
-  &.active {
-    background-color: var(--color-navy);
-    color: #fff;
     border-color: var(--color-navy);
   }
 }
 
-.announcementsSection {
-  background-color: #f8f9fa;
-  padding: 80px 0;
+.filterActive {
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+  color: var(--color-white);
 }
 
-.announcementsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
+.listSection {
+  padding-block: var(--section-pad-y);
 }
 
-.announcementCard {
-  background-color: #fff;
-  border-radius: 25px;
-  padding: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.list {
+  border-top: 1px solid var(--color-border);
+}
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+.row {
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-border);
+
+  p {
+    color: var(--color-slate);
+    line-height: 1.65;
+    margin: 0 0 var(--space-3);
+    max-width: 70ch;
   }
 
-  .announcementHeader {
-    margin-bottom: 20px;
-
-    .announcementTitle {
-      color: var(--color-navy);
-      font: 900 24px var(--font-body);
-      margin: 0 0 15px 0;
-      line-height: 1.3;
-    }
-
-    .announcementMeta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-
-      .announcementDate {
-        color: rgba(0, 1, 84, 0.54);
-        font: 400 16px var(--font-body);
-      }
-
-      .announcementType {
-        padding: 5px 15px;
-        border-radius: 20px;
-        font: 600 14px var(--font-body);
-        text-transform: uppercase;
-
-        &.financial {
-          background-color: #d4edda;
-          color: #155724;
-        }
-
-        &.operational {
-          background-color: #cce5ff;
-          color: #004085;
-        }
-
-        &.compliance {
-          background-color: #fff3cd;
-          color: #856404;
-        }
-
-        &.corporate {
-          background-color: #f8d7da;
-          color: #721c24;
-        }
-      }
-    }
-  }
-
-  .announcementSummary {
-    color: rgba(0, 1, 84, 0.54);
-    font: 400 16px var(--font-body);
-    margin: 0 0 25px 0;
-    line-height: 1.6;
-  }
-
-  .announcementActions {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-
-    .readMoreBtn {
-      background-color: var(--color-navy);
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 20px;
-      font: 600 14px var(--font-body);
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: #001a4a;
-      }
-    }
-
-    .downloadBtn {
-      background-color: transparent;
-      color: var(--color-navy);
-      border: 2px solid var(--color-navy);
-      padding: 10px 20px;
-      border-radius: 20px;
-      font: 600 14px var(--font-body);
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: var(--color-navy);
-        color: #fff;
-      }
-    }
+  time {
+    font-size: var(--text-micro);
+    color: var(--color-muted);
   }
 }
 
-.ctaSection {
-  background-color: var(--color-navy);
-  color: #fff;
-  padding: 80px 0;
-  text-align: center;
+.rowHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
 
-  .ctaContent {
-    h2 {
-      font: 900 40px var(--font-body);
-      margin: 0 0 20px 0;
-    }
-
-    p {
-      font: 400 25px var(--font-body);
-      margin: 0 0 40px 0;
-      opacity: 0.9;
-    }
-
-    .ctaButtons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .primaryBtn {
-      background-color: var(--color-red);
-      color: #fff;
-      border: none;
-      padding: 15px 30px;
-      border-radius: 25px;
-      font: 600 18px var(--font-body);
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: #b80915;
-      }
-    }
-
-    .secondaryBtn {
-      background-color: transparent;
-      color: #fff;
-      border: 2px solid #fff;
-      padding: 15px 30px;
-      border-radius: 25px;
-      font: 600 18px var(--font-body);
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: #fff;
-        color: var(--color-navy);
-      }
-    }
+  h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-h4);
+    font-weight: 500;
+    color: var(--color-navy);
+    text-transform: none;
+    margin: 0;
   }
 }
 
-// Responsive Design
-@media (max-width: 768px) {
-  .hero {
-    padding: 60px 0;
-
-    .heroContent {
-      h1 {
-        font-size: 32px;
-      }
-
-      p {
-        font-size: 20px;
-      }
-    }
-  }
-
-  .sectionTitle {
-    font-size: 32px;
-  }
-
-  .sectionDescription {
-    font-size: 20px;
-  }
-
-  .categoryFilters {
-    justify-content: center;
-  }
-
-  .announcementsGrid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .announcementCard {
-    .announcementMeta {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .announcementActions {
-      flex-direction: column;
-    }
-  }
-
-  .ctaContent {
-    .ctaButtons {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    padding: 40px 0;
-
-    .heroContent {
-      h1 {
-        font-size: 28px;
-      }
-
-      p {
-        font-size: 18px;
-      }
-    }
-  }
-
-  .sectionTitle {
-    font-size: 28px;
-  }
-
-  .sectionDescription {
-    font-size: 18px;
-  }
-
-  .announcementCard {
-    padding: 20px;
-  }
-
-  .categoryFilter {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
+.tag {
+  font-size: var(--text-micro);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(218, 11, 25, 0.1);
+  color: var(--color-red-600);
+  white-space: nowrap;
 }

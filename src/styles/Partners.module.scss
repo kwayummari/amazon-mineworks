@@ -1,28 +1,23 @@
-.ListImages {
+.grid {
   display: flex;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  justify-content: space-between;
-}
-.LImage {
-  width: auto;
-  height: 50px;
-  margin-top: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8) var(--space-9);
+  margin-top: var(--space-6);
 }
 
-@media (max-width: 991px) {
-  .ListImages {
-    display: flex;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    justify-content: space-between;
-  }
-  .LImage {
-    width: 20%;
-    height: auto;
+.item {
+  flex-shrink: 0;
+}
+
+.logo {
+  max-width: 130px;
+  max-height: 46px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.55);
+  transition: filter var(--duration-base) var(--ease-out);
+
+  &:hover {
+    filter: grayscale(0%) opacity(1);
   }
 }

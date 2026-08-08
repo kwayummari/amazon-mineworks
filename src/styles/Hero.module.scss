@@ -1,0 +1,215 @@
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--color-navy-900);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.4s var(--ease-out), transform 8s linear;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background-image: var(--pattern-contour),
+    linear-gradient(
+      180deg,
+      rgba(0, 1, 84, 0.28) 0%,
+      rgba(0, 1, 84, 0.1) 32%,
+      rgba(0, 1, 84, 0.6) 100%
+    ),
+    linear-gradient(90deg, rgba(0, 1, 84, 0.4) 0%, rgba(0, 1, 84, 0) 52%);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: 0 clamp(1.25rem, 0.5rem + 3vw, 3rem) var(--space-11);
+}
+
+.pane {
+  display: none;
+  max-width: 720px;
+}
+
+.paneActive {
+  display: block;
+  animation: rise 0.9s var(--ease-out) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kicker {
+  font-family: var(--font-display);
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin: 0 0 var(--space-5);
+}
+
+.title {
+  color: var(--color-white);
+  font-size: var(--text-display);
+  font-weight: 600;
+  line-height: 1.02;
+  text-transform: none;
+  letter-spacing: 0;
+  margin: 0 0 var(--space-5);
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: var(--text-body-lg);
+  line-height: 1.6;
+  max-width: 560px;
+  margin: 0 0 var(--space-7);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.primaryAction {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--color-red);
+  color: var(--color-white);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 30px;
+  border-radius: var(--radius-md);
+  transition: background-color var(--duration-fast) var(--ease-out);
+
+  i {
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  &:hover {
+    background: var(--color-red-600);
+  }
+
+  &:hover i {
+    transform: translateX(3px);
+  }
+}
+
+.secondaryAction {
+  color: var(--color-white);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+
+  &:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+}
+
+.dots {
+  display: flex;
+  gap: 10px;
+  margin-top: var(--space-9);
+}
+
+.dot {
+  width: 28px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.dotActive {
+  background: var(--color-gold);
+}
+
+.scrollCue {
+  position: absolute;
+  right: clamp(1.25rem, 0.5rem + 3vw, 3rem);
+  bottom: var(--space-6);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: var(--text-micro);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 991px) {
+  .hero {
+    min-height: 82vh;
+  }
+
+  .scrollCue {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 74vh;
+    align-items: center;
+  }
+
+  .content {
+    padding-bottom: var(--space-6);
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

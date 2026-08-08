@@ -1,0 +1,217 @@
+.page {
+  background: var(--color-bg);
+}
+
+.introSection {
+  padding-block: var(--space-9);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.introGrid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-7);
+  flex-wrap: wrap;
+}
+
+.intro {
+  font-size: var(--text-body-lg);
+  line-height: 1.7;
+  color: var(--color-slate);
+  max-width: 62ch;
+  margin: 0;
+}
+
+.downloads {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    padding: 8px 0;
+    min-width: 220px;
+    color: var(--color-navy);
+    font-family: var(--font-display);
+    font-size: var(--text-small);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: color var(--duration-fast) var(--ease-out);
+
+    &:hover {
+      color: var(--color-red);
+    }
+  }
+}
+
+.storySection {
+  padding-block: var(--section-pad-y);
+}
+
+.storyBlock {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-9);
+  align-items: center;
+
+  & + & {
+    margin-top: var(--space-11);
+    padding-top: var(--space-11);
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+.storyReverse {
+  direction: rtl;
+
+  > * {
+    direction: ltr;
+  }
+}
+
+.storyImages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+
+  img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+
+  img:nth-child(2) {
+    margin-top: var(--space-7);
+  }
+}
+
+.storyHeading {
+  font-size: var(--text-h2);
+  font-weight: 600;
+  color: var(--color-navy);
+  text-transform: none;
+  margin: 0 0 var(--space-5);
+}
+
+.storyText {
+  color: var(--color-slate);
+  line-height: 1.75;
+  margin: 0 0 var(--space-4);
+}
+
+.disciplinesSection {
+  background: var(--color-bg-alt);
+  padding-block: var(--section-pad-y);
+}
+
+.disciplinesList {
+  border-top: 1px solid var(--color-border);
+}
+
+.disciplineRow {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 40px;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  transition: background-color var(--duration-fast) var(--ease-out), padding-left var(--duration-base) var(--ease-out);
+
+  &:hover {
+    padding-left: var(--space-4);
+    background: var(--color-bg);
+  }
+
+  &:hover .disciplineArrow {
+    background: var(--color-red);
+    color: var(--color-white);
+    transform: rotate(45deg);
+  }
+
+  &:hover .disciplineTitle {
+    color: var(--color-red);
+  }
+}
+
+.disciplineTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: 500;
+  color: var(--color-navy);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.disciplineDescription {
+  color: var(--color-slate);
+  font-size: var(--text-small);
+  line-height: 1.6;
+}
+
+.disciplineArrow {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  color: var(--color-navy);
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.communitySection {
+  padding-block: var(--section-pad-y);
+}
+
+.partnersSection {
+  padding-block: var(--space-9);
+  border-top: 1px solid var(--color-border);
+}
+
+.trustedBy {
+  font-family: var(--font-display);
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .storyBlock {
+    grid-template-columns: 1fr;
+  }
+
+  .storyReverse {
+    direction: ltr;
+  }
+
+  .storyImages {
+    order: -1;
+  }
+
+  .disciplineRow {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .disciplineArrow {
+    display: none;
+  }
+
+  .introGrid {
+    flex-direction: column;
+  }
+}

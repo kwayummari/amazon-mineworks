@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import databaseService from "../services/realMySQLService";
+import PageHero from "../components/PageHero";
+import Container from "../components/ui/Container";
 import styles from "../styles/NewsArticle.module.scss";
+
+const shareTargets = [
+  { key: "facebook", label: "Facebook", icon: "bi-facebook" },
+  { key: "twitter", label: "Twitter", icon: "bi-twitter" },
+  { key: "linkedin", label: "LinkedIn", icon: "bi-linkedin" },
+  { key: "whatsapp", label: "WhatsApp", icon: "bi-whatsapp" },
+  { key: "email", label: "Email", icon: "bi-envelope" },
+];
 
 const NewsArticle = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const [article, setArticle] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -14,8 +23,7 @@ const NewsArticle = () => {
     const loadArticle = async () => {
       try {
         setLoading(true);
-        const articleData = await databaseService.getNewsById(parseInt(id));
-
+        const articleData = await databaseService.getNewsById(parseInt(id, 10));
         if (articleData && articleData.published) {
           setArticle(articleData);
         } else {
@@ -29,9 +37,7 @@ const NewsArticle = () => {
       }
     };
 
-    if (id) {
-      loadArticle();
-    }
+    if (id) loadArticle();
   }, [id]);
 
   const handleShare = async (platform) => {
@@ -39,253 +45,99 @@ const NewsArticle = () => {
     const title = article?.title || "";
     const text = article?.excerpt || "";
 
-    switch (platform) {
-      case "facebook":
-        window.open(
-          `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-            url
-          )}`,
-          "_blank"
-        );
-        break;
-      case "twitter":
-        window.open(
-          `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-            url
-          )}&text=${encodeURIComponent(title)}`,
-          "_blank"
-        );
-        break;
-      case "linkedin":
-        window.open(
-          `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-            url
-          )}`,
-          "_blank"
-        );
-        break;
-      case "whatsapp":
-        window.open(
-          `https://wa.me/?text=${encodeURIComponent(`${title} - ${url}`)}`,
-          "_blank"
-        );
-        break;
-      case "email":
-        window.location.href = `mailto:?subject=${encodeURIComponent(
-          title
-        )}&body=${encodeURIComponent(`${text}\n\nRead more: ${url}`)}`;
-        break;
-      case "copy":
-        try {
-          await navigator.clipboard.writeText(url);
-          alert("Link copied to clipboard!");
-        } catch (err) {
-          // Fallback for older browsers
-          const textArea = document.createElement("textarea");
-          textArea.value = url;
-          document.body.appendChild(textArea);
-          textArea.select();
-          document.execCommand("copy");
-          document.body.removeChild(textArea);
-          alert("Link copied to clipboard!");
-        }
-        break;
-      default:
-        break;
+    const targets = {
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+      twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`,
+      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
+      whatsapp: `https://wa.me/?text=${encodeURIComponent(`${title} - ${url}`)}`,
+      email: `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(`${text}\n\nRead more: ${url}`)}`,
+    };
+
+    if (platform === "email") {
+      window.location.href = targets.email;
+    } else {
+      window.open(targets[platform], "_blank");
     }
   };
 
-  const formatContent = (content) => {
-    return content.split("\n\n").map((paragraph, index) => (
-      <p key={index} className={styles.contentParagraph}>
-        {paragraph}
-      </p>
-    ));
+  const tagsFor = (article) => {
+    if (Array.isArray(article.tags)) return article.tags;
+    if (typeof article.tags === "string") {
+      try {
+        return JSON.parse(article.tags);
+      } catch {
+        return [];
+      }
+    }
+    return [];
   };
 
   if (loading) {
     return (
-      <div className={styles.loadingContainer}>
-        <div className={styles.loadingSpinner}>
-          <i className="bi bi-arrow-clockwise"></i>
-          <p>Loading article...</p>
-        </div>
+      <div className={styles.stateBlock}>
+        <i className="bi bi-arrow-clockwise" aria-hidden="true"></i>
+        <p>Loading article...</p>
       </div>
     );
   }
 
   if (error || !article) {
     return (
-      <div className={styles.errorContainer}>
-        <div className={styles.errorContent}>
-          <i className="bi bi-exclamation-triangle"></i>
-          <h2>Article Not Found</h2>
-          <p>
-            The article you're looking for doesn't exist or is not published.
-          </p>
-          <Link to="/" className={styles.homeButton}>
-            <i className="bi bi-house"></i>
-            Back to Home
-          </Link>
-        </div>
+      <div className={styles.stateBlock}>
+        <i className="bi bi-exclamation-triangle" aria-hidden="true"></i>
+        <h2>Article Not Found</h2>
+        <p>The article you're looking for doesn't exist or is not published.</p>
+        <Link to="/news" className={styles.homeButton}>Back to News</Link>
       </div>
     );
   }
 
   return (
-    <div className={styles.newsArticle}>
-      <div className={styles.articleContainer}>
-        {/* Breadcrumb */}
-        <nav className={styles.breadcrumb}>
-          <Link to="/" className={styles.breadcrumbLink}>
-            Home
-          </Link>
-          <i className="bi bi-chevron-right"></i>
-          <Link to="/news" className={styles.breadcrumbLink}>
-            News
-          </Link>
-          <i className="bi bi-chevron-right"></i>
-          <span className={styles.breadcrumbCurrent}>{article.title}</span>
-        </nav>
+    <div className={styles.page}>
+      <PageHero title={article.title} kicker={article.category} />
 
-        {/* Article Header */}
-        <header className={styles.articleHeader}>
-          <div className={styles.articleMeta}>
-            <div className={styles.articleDate}>
-              <i className="bi bi-calendar"></i>
-              <span>
-                {new Date(article.date).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </span>
-            </div>
-            {article.category && (
-              <div className={styles.articleCategory}>
-                <i className="bi bi-tag"></i>
-                <span>{article.category}</span>
-              </div>
-            )}
-            {article.author && (
-              <div className={styles.articleAuthor}>
-                <i className="bi bi-person"></i>
-                <span>{article.author}</span>
-              </div>
-            )}
-          </div>
+      <Container narrow className={styles.body}>
+        <div className={styles.meta}>
+          <time>
+            {new Date(article.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+          </time>
+          {article.author && <span>{article.author}</span>}
+        </div>
 
-          <h1 className={styles.articleTitle}>{article.title}</h1>
-          <p className={styles.articleExcerpt}>{article.excerpt}</p>
-        </header>
-
-        {/* Article Image */}
         {article.image && (
-          <div className={styles.articleImageContainer}>
-            <img
-              src={article.image}
-              alt={article.title}
-              className={styles.articleImage}
-            />
+          <img src={article.image} alt={article.title} className={styles.heroImage} loading="lazy" />
+        )}
+
+        <div className={styles.content}>
+          {article.content.split("\n\n").map((paragraph) => (
+            <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+          ))}
+        </div>
+
+        {tagsFor(article).length > 0 && (
+          <div className={styles.tags}>
+            {tagsFor(article).map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
           </div>
         )}
 
-        {/* Article Content */}
-        <div className={styles.articleContent}>
-          {formatContent(article.content)}
-        </div>
-
-        {/* Tags */}
-        {(() => {
-          const tags = Array.isArray(article.tags)
-            ? article.tags
-            : typeof article.tags === "string"
-            ? JSON.parse(article.tags)
-            : [];
-          return (
-            tags &&
-            tags.length > 0 && (
-              <div className={styles.articleTags}>
-                <h4>Tags:</h4>
-                <div className={styles.tagsList}>
-                  {tags.map((tag, index) => (
-                    <span key={index} className={styles.tag}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )
-          );
-        })()}
-
-        {/* Share Section */}
-        <div className={styles.shareSection}>
-          <h4>Share this article:</h4>
+        <div className={styles.shareRow}>
+          <span>Share this article:</span>
           <div className={styles.shareButtons}>
-            <button
-              className={`${styles.shareButton} ${styles.facebook}`}
-              onClick={() => handleShare("facebook")}
-              title="Share on Facebook"
-            >
-              <i className="bi bi-facebook"></i>
-              Facebook
-            </button>
-            <button
-              className={`${styles.shareButton} ${styles.twitter}`}
-              onClick={() => handleShare("twitter")}
-              title="Share on Twitter"
-            >
-              <i className="bi bi-twitter"></i>
-              Twitter
-            </button>
-            <button
-              className={`${styles.shareButton} ${styles.linkedin}`}
-              onClick={() => handleShare("linkedin")}
-              title="Share on LinkedIn"
-            >
-              <i className="bi bi-linkedin"></i>
-              LinkedIn
-            </button>
-            <button
-              className={`${styles.shareButton} ${styles.whatsapp}`}
-              onClick={() => handleShare("whatsapp")}
-              title="Share on WhatsApp"
-            >
-              <i className="bi bi-whatsapp"></i>
-              WhatsApp
-            </button>
-            <button
-              className={`${styles.shareButton} ${styles.email}`}
-              onClick={() => handleShare("email")}
-              title="Share via Email"
-            >
-              <i className="bi bi-envelope"></i>
-              Email
-            </button>
-            <button
-              className={`${styles.shareButton} ${styles.copy}`}
-              onClick={() => handleShare("copy")}
-              title="Copy Link"
-            >
-              <i className="bi bi-link-45deg"></i>
-              Copy Link
-            </button>
+            {shareTargets.map((target) => (
+              <button key={target.key} type="button" onClick={() => handleShare(target.key)} title={`Share on ${target.label}`}>
+                <i className={`bi ${target.icon}`} aria-hidden="true"></i>
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Navigation */}
-        <div className={styles.articleNavigation}>
-          <Link to="/news" className={styles.backButton}>
-            <i className="bi bi-arrow-left"></i>
-            Back to News
-          </Link>
-          <Link to="/" className={styles.homeButton}>
-            <i className="bi bi-house"></i>
-            Back to Home
-          </Link>
-        </div>
-      </div>
+        <Link to="/news" className={styles.backLink}>
+          <i className="bi bi-arrow-left" aria-hidden="true"></i>
+          Back to News
+        </Link>
+      </Container>
     </div>
   );
 };

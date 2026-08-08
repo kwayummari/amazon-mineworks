@@ -1,0 +1,82 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  padding: 15px 28px;
+  border: 1px solid transparent;
+  transition: background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+
+  &:hover {
+    transform: translateX(2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+}
+
+.icon {
+  font-size: 14px;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.button:hover .icon {
+  transform: translateX(3px);
+}
+
+.primary {
+  background: var(--color-red);
+  color: var(--color-white);
+  border-color: var(--color-red);
+
+  &:hover {
+    background: var(--color-red-600);
+    border-color: var(--color-red-600);
+  }
+}
+
+.secondary {
+  background: transparent;
+  color: var(--color-navy);
+  border-color: var(--color-navy);
+
+  &:hover {
+    background: var(--color-navy);
+    color: var(--color-white);
+  }
+}
+
+.onDark {
+  background: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.5);
+
+  &:hover {
+    background: var(--color-white);
+    color: var(--color-navy);
+    border-color: var(--color-white);
+  }
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-red);
+  border-color: transparent;
+  padding-inline: 0;
+
+  &:hover {
+    color: var(--color-red-600);
+  }
+}

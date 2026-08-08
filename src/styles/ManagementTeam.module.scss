@@ -1,103 +1,68 @@
-// ManagementTeam.module.scss
-.managementTeam {
-    padding: 50px 0;
-    background-color: #f9f9f9;
-    text-align: center;
-  
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-  
-    .title {
-      font-size: 2.5rem;
-      color: #141e50;
-      margin-bottom: 20px;
-    }
-  
-    .description {
-      font-size: 1.2rem;
-      color: #333;
-      margin-bottom: 40px;
-    }
-  
-    .teamGrid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-  
-    .teamMember {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-  
-      .memberImage {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 15px;
-      }
-  
-      .memberName {
-        font-size: 1.5rem;
-        color: #141e50;
-        margin-bottom: 10px;
-      }
-  
-      .memberRole {
-        font-size: 1.1rem;
-        color: #666;
-        margin-bottom: 10px;
-      }
-  
-      .memberBio {
-        font-size: 1rem;
-        color: #333;
-      }
-    }
+.page {
+  background: var(--color-bg);
+}
+
+.introSection {
+  padding-block: var(--space-9);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.teamSection {
+  padding-block: var(--section-pad-y);
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-7);
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+}
+
+.photo {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin-bottom: var(--space-5);
+  filter: grayscale(15%);
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: 500;
+  color: var(--color-navy);
+  text-transform: none;
+  margin: 0 0 2px;
+}
+
+.role {
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-red);
+  margin: 0 0 var(--space-3);
+}
+
+.bio {
+  color: var(--color-slate);
+  font-size: var(--text-small);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  // Responsive Design
-  @media (max-width: 768px) {
-    .managementTeam {
-      padding: 30px 0;
-  
-      .title {
-        font-size: 2rem;
-      }
-  
-      .description {
-        font-size: 1rem;
-      }
-  
-      .teamGrid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      }
-  
-      .teamMember {
-        padding: 15px;
-  
-        .memberImage {
-          width: 120px;
-          height: 120px;
-        }
-  
-        .memberName {
-          font-size: 1.2rem;
-        }
-  
-        .memberRole {
-          font-size: 1rem;
-        }
-  
-        .memberBio {
-          font-size: 0.9rem;
-        }
-      }
-    }
+}
+
+@media (max-width: 500px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
   }
+}

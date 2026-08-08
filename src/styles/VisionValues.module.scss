@@ -1,0 +1,109 @@
+.page {
+  background: var(--color-bg);
+}
+
+.introSection {
+  padding-block: var(--section-pad-y);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-9);
+}
+
+.statement {
+  font-size: var(--text-h3);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-navy);
+  font-family: var(--font-display);
+  text-transform: none;
+  margin: 0;
+  max-width: 22ch;
+}
+
+.valuesSection {
+  background: var(--color-bg-alt);
+  padding-block: var(--section-pad-y);
+}
+
+.valuesTitle {
+  font-size: var(--text-h2);
+  font-weight: 600;
+  color: var(--color-navy);
+  text-transform: none;
+  margin: 0 0 var(--space-4);
+}
+
+.valuesLede {
+  font-size: var(--text-body-lg);
+  color: var(--color-slate);
+  line-height: 1.7;
+  max-width: 62ch;
+  margin: 0 0 var(--space-8);
+}
+
+.valuesList {
+  border-top: 1px solid var(--color-border);
+}
+
+.valueRow {
+  display: grid;
+  grid-template-columns: 60px 220px 1fr;
+  align-items: baseline;
+  gap: var(--space-6);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.valueNumber {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 300;
+  color: var(--color-border);
+}
+
+.valueTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-red);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.valueDescription {
+  color: var(--color-slate);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 60ch;
+}
+
+.partnersSection {
+  padding-block: var(--space-9);
+}
+
+.trustedBy {
+  font-family: var(--font-display);
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .introGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .valueRow {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+}

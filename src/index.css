@@ -8,6 +8,7 @@
   --color-red: #da0b19;
   --color-red-600: #b8080f;
   --color-gold: #c8a24a;
+  --color-gold-dim: #8f7639;
 
   /* Neutrals */
   --color-ink: #10131f;
@@ -15,26 +16,116 @@
   --color-muted: #6b7280;
   --color-bg: #ffffff;
   --color-bg-alt: #f4f5f9;
+  --color-bg-sunk: #eceef4;
   --color-border: #e3e5ee;
+  --color-border-on-dark: rgba(255, 255, 255, 0.16);
+  --color-white: #ffffff;
+  --color-on-navy-muted: rgba(255, 255, 255, 0.68);
 
-  /* Typography */
+  /* Typography families */
   --font-display: "Oswald", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Fluid type scale — clamp(min, preferred, max) */
+  --text-display: clamp(2.75rem, 2.1rem + 3vw, 5.5rem);
+  --text-h1: clamp(2.25rem, 1.85rem + 1.8vw, 3.75rem);
+  --text-h2: clamp(1.75rem, 1.5rem + 1.1vw, 2.75rem);
+  --text-h3: clamp(1.375rem, 1.24rem + 0.6vw, 1.75rem);
+  --text-h4: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+  --text-body-lg: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-micro: 0.75rem;
+  --text-stat: clamp(2.5rem, 2rem + 2vw, 4rem);
+
+  /* 8px spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3rem;
+  --space-9: 4rem;
+  --space-10: 5rem;
+  --space-11: 6.5rem;
+  --space-12: 8rem;
+
+  /* Section rhythm */
+  --section-pad-y: clamp(4rem, 3rem + 4vw, 8rem);
+  --section-pad-x: clamp(1.25rem, 0.5rem + 3vw, 4rem);
+
+  /* Layout */
+  --container-max: 1360px;
+  --container-narrow: 880px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
 
   /* Elevation */
   --shadow-sm: 0 2px 8px rgba(0, 1, 84, 0.06);
   --shadow-md: 0 10px 30px rgba(0, 1, 84, 0.12);
   --shadow-lg: 0 20px 50px rgba(0, 1, 84, 0.18);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 180ms;
+  --duration-base: 320ms;
+  --duration-slow: 600ms;
+
+  /* Industrial background patterns — CSS-only, for dark/navy sections.
+     Pair each with the matching *-size custom property where present. */
+
+  /* Blast/drill-hole grid — evenly spaced hole markers, like a drill pattern plan */
+  --pattern-drill: radial-gradient(rgba(255, 255, 255, 0.1) 1.4px, transparent 1.6px);
+  --pattern-drill-size: 26px 26px;
+
+  /* Survey blueprint grid — fine crossed hairlines, like a site-plan grid */
+  --pattern-blueprint: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  --pattern-blueprint-size: 42px 42px;
+
+  /* Topographic contours — concentric elevation rings from two offset points */
+  --pattern-contour: repeating-radial-gradient(
+      circle at 12% 18%,
+      transparent 0,
+      transparent 25px,
+      rgba(255, 255, 255, 0.05) 26px,
+      rgba(255, 255, 255, 0.05) 27px,
+      transparent 28px
+    ),
+    repeating-radial-gradient(
+      circle at 90% 85%,
+      transparent 0,
+      transparent 33px,
+      rgba(200, 162, 74, 0.07) 34px,
+      rgba(200, 162, 74, 0.07) 35px,
+      transparent 36px
+    );
+
+  /* Hazard stripe — restrained diagonal accent, used as a thin strip, not a full fill */
+  --pattern-hazard: repeating-linear-gradient(
+    45deg,
+    var(--color-gold) 0,
+    var(--color-gold) 3px,
+    transparent 3px,
+    transparent 16px
+  );
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
   color: var(--color-ink);
+  background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -42,9 +133,48 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   letter-spacing: 0.02em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,0 +1,113 @@
+.section {
+  background: var(--color-bg);
+  padding-block: var(--section-pad-y);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: var(--space-9);
+  align-items: start;
+}
+
+.imageCol {
+  position: relative;
+  position: sticky;
+  top: 120px;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.imageCaption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: var(--space-4);
+  font-size: var(--text-small);
+  color: var(--color-slate);
+
+  i {
+    color: var(--color-red);
+  }
+}
+
+.title {
+  font-size: var(--text-h2);
+  font-weight: 600;
+  color: var(--color-navy);
+  line-height: 1.15;
+  text-transform: none;
+  margin: 0 0 var(--space-5);
+  max-width: 16ch;
+}
+
+.lede {
+  font-size: var(--text-body-lg);
+  line-height: 1.7;
+  color: var(--color-slate);
+  margin: 0 0 var(--space-8);
+  max-width: 56ch;
+}
+
+.valueTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: 0;
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  list-style: none;
+
+  li {
+    font-family: var(--font-display);
+    font-size: var(--text-micro);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--color-red);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 6px 14px;
+  }
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-7);
+  margin-top: var(--space-8);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-navy);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: var(--text-small);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--color-red);
+  transition: color var(--duration-fast) var(--ease-out);
+
+  &:hover {
+    color: var(--color-red);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .imageCol {
+    position: static;
+  }
+}

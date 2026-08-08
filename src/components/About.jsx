@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
 import databaseService from "../services/realMySQLService";
+import Container from "./ui/Container";
+import Eyebrow from "./ui/Eyebrow";
+import StatRow from "./ui/StatRow";
+import Reveal from "./ui/Reveal";
+import IsoBadge from "./ui/IsoBadge";
 import styles from "./../styles/About.module.scss";
 
 const defaultPartners = [
@@ -15,6 +20,13 @@ const defaultPartners = [
   { id: 10, image: "./images/resources.png", alt: "Resources Partner" },
 ];
 
+const stats = [
+  { value: "2012", label: "Founded" },
+  { value: "5", label: "Subsidiaries" },
+  { value: "1,210+", label: "Employees" },
+  { value: "3", label: "Commodities" },
+];
+
 const About = () => {
   const [partners, setPartners] = useState([]);
 
@@ -25,10 +37,7 @@ const About = () => {
         setPartners(partnersData);
       } catch (error) {
         console.error("Error loading partners:", error);
-        // Fallback to localStorage
-        const savedPartners = JSON.parse(
-          localStorage.getItem("partners") || "[]"
-        );
+        const savedPartners = JSON.parse(localStorage.getItem("partners") || "[]");
         setPartners(savedPartners);
       }
     };
@@ -38,55 +47,37 @@ const About = () => {
 
   return (
     <section className={styles.about}>
-      <div className={styles.statsContainer}>
-        <div className={styles.statItem}>
-          <span className={styles.statLabel}>Since</span>
-          <span className={styles.statValue}>2012</span>
+      <Container>
+        <div className={styles.grid}>
+          <Reveal className={styles.textCol}>
+            <Eyebrow>Who We Are</Eyebrow>
+            <h2 className={styles.title}>
+              A fully integrated mining, drilling &amp; construction partner.
+            </h2>
+            <p className={styles.description}>
+              Amazon Mineworks has operated across Tanzania since 2012,
+              covering the full construction spectrum across three operating
+              divisions — Building Construction, Civil Engineering, and Roads &amp;
+              Earthworks — delivered to the standards international mining houses
+              expect from a contractor of record.
+            </p>
+            <IsoBadge className={styles.isoBadge} />
+            <StatRow stats={stats} className={styles.stats} />
+          </Reveal>
+          <Reveal className={styles.imageCol} delay={120}>
+            <img
+              loading="lazy"
+              src="./images/carousel2.jpeg"
+              alt="Amazon Mineworks drilling rig on site"
+              className={styles.image}
+            />
+          </Reveal>
         </div>
-        <div className={styles.vl}></div>
-        <div className={styles.statItem}>
-          <span className={styles.statLabel}>Sub company</span>
-          <span className={styles.statValue}>5</span>
-        </div>
-        <div className={styles.vl}></div>
-        <div className={styles.statItem}>
-          <span className={styles.statLabel}>Total employees</span>
-          <span className={styles.statValue}>1210+</span>
-        </div>
-        <div className={styles.vl}></div>
-        <div className={styles.statItem}>
-          <span className={styles.statLabel}>Commodity</span>
-          <span className={styles.statValue}>3</span>
-        </div>
-      </div>
-      <div className={styles.contentContainer}>
-        <div className={styles.textContent}>
-          <p className={styles.eyebrow}>Who We Are</p>
-          <h2 className={styles.title}>Amazon Mineworks</h2>
-          <p className={styles.description}>
-            Our activities cover the full construction spectrum and are divided
-            into three main operating divisions – Building Construction, Civil
-            Engineering and Roads and Earthworks. Our activities cover the full
-            construction spectrum and are divided into three main operating
-            divisions – Building Construction, Civil Engineering and Roads and
-            Earthworks. Our activities cover the full construction spectrum and
-            are divided into three main operating divisions –
-          </p>
-          <p className={styles.trustedBy}>Trusted by</p>
-        </div>
-        <img
-          loading="lazy"
-          src="./images/carousel2.jpeg"
-          alt="Amazon Mineworks operations"
-          className={styles.image}
-        />
-        <p className={styles.trustedBy1}>Trusted by</p>
-      </div>
 
-      <div className={styles.partnersContainer}>
-        <div className={styles.partnersGrid}>
-          {(partners.length > 0 ? partners : defaultPartners).map(
-            (partner) => (
+        <Reveal className={styles.partnersBlock} delay={80}>
+          <p className={styles.trustedBy}>Trusted By</p>
+          <div className={styles.partnersGrid}>
+            {(partners.length > 0 ? partners : defaultPartners).map((partner) => (
               <div key={partner.id} className={styles.partnerItem}>
                 <img
                   src={partner.image}
@@ -95,10 +86,10 @@ const About = () => {
                   loading="lazy"
                 />
               </div>
-            )
-          )}
-        </div>
-      </div>
+            ))}
+          </div>
+        </Reveal>
+      </Container>
     </section>
   );
 };

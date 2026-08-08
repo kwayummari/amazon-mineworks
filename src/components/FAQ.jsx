@@ -1,43 +1,56 @@
-import React from 'react';
+import React from "react";
+import Container from "./ui/Container";
+import SectionHeading from "./ui/SectionHeading";
 import styles from "./../styles/FAQ.module.scss";
 
-const FAQItem = ({ question, icon }) => (
+const faqs = [
+  {
+    question: "What sets Amazon Mineworks apart in the mining industry?",
+    answer:
+      "We're a fully integrated contractor — drilling, mining and construction under one roof — operating across Tanzania since 2012, and trusted by mining houses including Barrick, BHP and Shanta Gold.",
+  },
+  {
+    question: "What types of road construction do you specialize in?",
+    answer:
+      "End-to-end road construction: planning and site preparation, earthwork, sub-base and base course construction, and pavement — built to support heavy mine-site traffic.",
+  },
+  {
+    question: "How does Amazon Mineworks approach environmental sustainability?",
+    answer:
+      "Sustainability is one of our six core values. Our operations are ISO 14001 certified for environmental management, and every project includes rehabilitation and environmental monitoring programs.",
+  },
+  {
+    question: "What career opportunities are available, and how can I apply?",
+    answer:
+      "Open roles are listed on our Careers page with a downloadable job description for each. Applications are reviewed on a rolling basis as positions open across our Tanzania operations.",
+  },
+  {
+    question: "What is Amazon Mineworks' commitment to safety?",
+    answer:
+      "Safety is our first value, not a policy addendum. We're ISO 45001 certified, and our Tanzania operations recorded zero lost-time injuries in 2024 under a continuous training and hazard-monitoring program.",
+  },
+];
+
+const FAQItem = ({ question, answer }) => (
   <details className={styles.faqItem}>
     <summary className={styles.faqQuestion}>
       {question}
-      <i className="bi bi-arrow-down-circle-fill" />
+      <i className="bi bi-plus-lg" aria-hidden="true"></i>
     </summary>
-    <p className={styles.faqAnswer}>Answer to the question goes here.</p>
+    <p className={styles.faqAnswer}>{answer}</p>
   </details>
 );
 
 const FAQ = () => (
   <section className={styles.faqSection}>
-    <p className={styles.eyebrow}>Got Questions?</p>
-    <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
-    <p className={styles.sectionDescription}>Find answers to common inquiries</p>
-    <div className={styles.faqList}>
-      <FAQItem
-        question="What sets Amazon mineworks apart in mining industry?"
-        icon="https://cdn.builder.io/api/v1/image/assets/TEMP/4cc8e0911fb7e94c2a3e08d9c3dce5a4dc897b00f03c03606bd266a9c8dad7bc?apiKey=69c943fd599c485fb32c02233b347491&"
-      />
-      <FAQItem
-        question="Can you provide more information on types of road you specialize in?"
-        icon="https://cdn.builder.io/api/v1/image/assets/TEMP/b8ddd822b3e58c2f0212b1da8d2713781eecd171fd491b8a03e2e28801484686?apiKey=69c943fd599c485fb32c02233b347491&"
-      />
-      <FAQItem
-        question="How does Amazon mineworks prioritize environmental sustainability?"
-        icon="https://cdn.builder.io/api/v1/image/assets/TEMP/b0b788f5bc51f22dc0dbd24eade7b0fe9ee8908ef39941a2a25e6a8e02c93442?apiKey=69c943fd599c485fb32c02233b347491&"
-      />
-      <FAQItem
-        question="What career opportunities are available at , and how can I apply?"
-        icon="https://cdn.builder.io/api/v1/image/assets/TEMP/d52368490bba539dcbacddfe3dea10f17de97d27ba404655ededbdf77694f791?apiKey=69c943fd599c485fb32c02233b347491&"
-      />
-      <FAQItem
-        question="Elaborate on Amazon mineworks commitment to safety standard & practices?"
-        icon="https://cdn.builder.io/api/v1/image/assets/TEMP/7476fe106b3bcef9101232adfa46c2e17ca8d99b7767b7a126bf8859873b973c?apiKey=69c943fd599c485fb32c02233b347491&"
-      />
-    </div>
+    <Container narrow>
+      <SectionHeading align="center" eyebrow="Got Questions?" title="Frequently Asked Questions" />
+      <div className={styles.faqList}>
+        {faqs.map((faq) => (
+          <FAQItem key={faq.question} {...faq} />
+        ))}
+      </div>
+    </Container>
   </section>
 );
 

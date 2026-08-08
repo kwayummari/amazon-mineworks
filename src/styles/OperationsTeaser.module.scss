@@ -1,0 +1,32 @@
+.section {
+  background-color: var(--color-navy);
+  background-image: var(--pattern-contour);
+  padding-block: var(--section-pad-y);
+}
+
+.stats {
+  margin-top: var(--space-8);
+  padding-top: var(--space-8);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: var(--space-9);
+  color: var(--color-white);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: var(--text-small);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--color-red);
+  transition: color var(--duration-fast) var(--ease-out);
+
+  &:hover {
+    color: var(--color-gold);
+  }
+}

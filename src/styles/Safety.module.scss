@@ -1,0 +1,207 @@
+.page {
+  background: var(--color-bg);
+}
+
+.introSection {
+  padding-block: var(--space-9);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.introGrid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-7);
+  flex-wrap: wrap;
+}
+
+.intro {
+  font-size: var(--text-body-lg);
+  line-height: 1.7;
+  color: var(--color-slate);
+  max-width: 62ch;
+  margin: 0;
+}
+
+.resourceLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  color: var(--color-navy);
+  font-family: var(--font-display);
+  font-size: var(--text-small);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  white-space: nowrap;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--color-red);
+  transition: color var(--duration-fast) var(--ease-out);
+
+  &:hover {
+    color: var(--color-red);
+  }
+}
+
+.milestonesSection {
+  background: var(--color-bg-alt);
+  padding-block: var(--section-pad-y);
+}
+
+.milestonesList {
+  border-top: 1px solid var(--color-border);
+}
+
+.milestoneRow {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-border);
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-h4);
+    font-weight: 500;
+    color: var(--color-navy);
+    text-transform: none;
+    margin: 0 0 4px;
+  }
+
+  p {
+    color: var(--color-slate);
+    font-size: var(--text-small);
+    margin: 0;
+  }
+}
+
+.milestoneYears {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--font-display);
+  font-size: var(--text-stat);
+  font-weight: 600;
+  color: var(--color-red);
+  line-height: 1;
+
+  small {
+    font-size: var(--text-small);
+    font-weight: 500;
+    color: var(--color-muted);
+    text-transform: uppercase;
+  }
+}
+
+.storySection {
+  padding-block: var(--section-pad-y);
+}
+
+.storyBlock {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-9);
+  align-items: center;
+
+  & + & {
+    margin-top: var(--space-11);
+    padding-top: var(--space-11);
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+.storyReverse {
+  direction: rtl;
+
+  > * {
+    direction: ltr;
+  }
+}
+
+.storyImage {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.storyHeading {
+  font-size: var(--text-h2);
+  font-weight: 600;
+  color: var(--color-navy);
+  text-transform: none;
+  margin: 0 0 var(--space-5);
+}
+
+.storyText {
+  color: var(--color-slate);
+  line-height: 1.75;
+  margin: 0 0 var(--space-4);
+}
+
+.initiativesSection {
+  background: var(--color-bg-alt);
+  padding-block: var(--section-pad-y);
+}
+
+.initiativesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8) var(--space-7);
+}
+
+.initiativeItem {
+  padding-top: var(--space-5);
+  border-top: 2px solid var(--color-red);
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-body-lg);
+    font-weight: 500;
+    color: var(--color-navy);
+    text-transform: none;
+    margin: 0 0 var(--space-3);
+  }
+
+  p {
+    color: var(--color-slate);
+    font-size: var(--text-small);
+    line-height: 1.65;
+    margin: 0;
+  }
+}
+
+.communitySection {
+  padding-block: var(--section-pad-y);
+}
+
+@media (max-width: 900px) {
+  .storyBlock {
+    grid-template-columns: 1fr;
+  }
+
+  .storyReverse {
+    direction: ltr;
+  }
+
+  .storyBlock img {
+    order: -1;
+  }
+
+  .initiativesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .initiativesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .milestoneRow {
+    grid-template-columns: 70px 1fr;
+  }
+}

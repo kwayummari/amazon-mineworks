@@ -1,56 +1,67 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from './../styles/Service.module.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import Container from "./ui/Container";
+import SectionHeading from "./ui/SectionHeading";
+import Reveal from "./ui/Reveal";
+import styles from "./../styles/Service.module.scss";
 
-const ServiceItem = ({ icon, number, title, description }) => (
-  <div className={styles.serviceItem}>
-    <div className={styles.serviceIcon}>
-      <i className={`bi ${icon}`}></i>
-    </div>
-    <div className={styles.serviceNumber}>{number}</div>
-    <h3 className={styles.serviceTitle}>{title}</h3>
-    <p className={styles.serviceDescription}>{description}</p>
-  </div>
-);
+const capabilities = [
+  {
+    number: "01",
+    link: "/services",
+    title: "Fully Integrated Range of Mining Services",
+    description:
+      "We have the capacity to offer a fully integrated mining services solution from first stage exploration drilling to delivery of ore to the mill, working across all facets of your project.",
+  },
+  {
+    number: "02",
+    link: "/construction-works",
+    title: "Road Construction",
+    description:
+      "Road construction involves several phases, including planning, site preparation, earthwork, sub-base and base course construction, and pavement.",
+  },
+  {
+    number: "03",
+    link: "/building-works",
+    title: "Bridges Construction",
+    description:
+      "From site inspection and planning to setting the foundation and installing piers, our bridges are engineered to carry live and dead loads and resist natural forces.",
+  },
+  {
+    number: "04",
+    link: "/mine-earthworks",
+    title: "Railway Construction",
+    description:
+      "Track laying and ballasting capability supported by the latest technology, management and engineering know-how — for railways, metro systems and light rail.",
+  },
+];
 
 const Services = () => (
   <section className={styles.services}>
-    <p className={styles.eyebrow}>What We Do</p>
-    <h2 className={styles.sectionTitle}>Our Services</h2>
-    <p className={styles.sectionDescription}>
-      We provide full-service mining, drilling, maintenance and geochemical analysis solutions to customers within the minerals industry.
-    </p>
-    <div className={styles.servicesList}>
-      <ServiceItem
-        icon="bi-gear-wide-connected"
-        number="01"
-        title="Fully Integrated Range of Mining Services"
-        description="We have the capacity to offer a fully integrated mining services solution from first stage exploration drilling to delivery of ore to the mill, working across all facets of your project."
-      />
-      <ServiceItem
-        icon="bi-signpost-split"
-        number="02"
-        title="Road Construction"
-        description="Road construction involves several phases, including planning, site preparation, earthwork, sub-base and base course construction, and pavement."
-      />
-      <ServiceItem
-        icon="bi-bezier2"
-        number="03"
-        title="Bridges Construction"
-        description="From site inspection and planning to setting the foundation and installing piers, our bridges are engineered to carry live and dead loads and resist natural forces."
-      />
-      <ServiceItem
-        icon="bi-train-front"
-        number="04"
-        title="Railway Construction"
-        description="Track laying and ballasting capability supported by the latest technology, management and engineering know-how — for railways, metro systems and light rail."
-      />
-    </div>
-    <div className={styles.servicesFooter}>
-      <Link to="/services" className={styles.servicesLink}>
-        View All Services <i className="bi bi-arrow-right"></i>
-      </Link>
-    </div>
+    <Container>
+      <div className={styles.header}>
+        <SectionHeading eyebrow="What We Do" title="Our Capabilities" />
+        <Link to="/services" className={styles.headerLink}>
+          <span>View All Services</span>
+          <i className="bi bi-arrow-right" aria-hidden="true"></i>
+        </Link>
+      </div>
+
+      <div className={styles.list}>
+        {capabilities.map((item, index) => (
+          <Reveal as="div" key={item.number} delay={index * 60}>
+            <Link to={item.link} className={styles.row}>
+              <span className={styles.number}>{item.number}</span>
+              <span className={styles.rowTitle}>{item.title}</span>
+              <span className={styles.rowDescription}>{item.description}</span>
+              <span className={styles.rowArrow}>
+                <i className="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </span>
+            </Link>
+          </Reveal>
+        ))}
+      </div>
+    </Container>
   </section>
 );
 
