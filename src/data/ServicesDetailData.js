@@ -362,6 +362,70 @@ export const servicesDetailData = {
       { name: "OHSAS 18001:2007", description: "Occupational Health and Safety", metricLabel: "Scope", metricValue: "Safety management", status: "Certified" },
     ],
   },
+  "health": {
+    category: "Safety & OHSEQ",
+    kicker: "Safety & OHSEQ",
+    intro:
+      "Comprehensive occupational health programs safeguarding our workforce across every site — from pre-placement medical screening to ongoing health surveillance in demanding field conditions.",
+    features: [
+      {
+        title: "Medical Screening",
+        description: "Pre-placement and periodic medical examinations ensuring employees are fit for the demands of mining and drilling work.",
+        details: ["Pre-placement exams", "Periodic health checks", "Fitness-to-work assessments", "Return-to-work programs"],
+      },
+      {
+        title: "Occupational Hygiene",
+        description: "Monitoring and control of workplace exposures to dust, noise, vibration and chemical hazards.",
+        details: ["Dust and noise monitoring", "Exposure limit compliance", "PPE program management", "Site hygiene audits"],
+      },
+      {
+        title: "Emergency Medical Response",
+        description: "On-site first aid and emergency medical capability across remote and difficult locations.",
+        details: ["First aid trained crews", "Site medical facilities", "Emergency evacuation plans", "24/7 medical support"],
+      },
+      {
+        title: "Wellness Programs",
+        description: "Health promotion initiatives supporting the physical and mental wellbeing of our national workforce.",
+        details: ["Health education", "Mental health support", "Fatigue management", "Communicable disease prevention"],
+      },
+    ],
+    programs: [
+      { name: "Fitness for Work", description: "Pre-placement and periodic fitness assessments", metricLabel: "Coverage", metricValue: "All field employees", status: "Active" },
+      { name: "Occupational Hygiene Monitoring", description: "Dust, noise and exposure surveillance across sites", metricLabel: "Frequency", metricValue: "Quarterly", status: "Active" },
+    ],
+  },
+  "environment": {
+    category: "Safety & OHSEQ",
+    kicker: "Safety & OHSEQ",
+    intro:
+      "Environmental protection and sustainability programs designed to minimize our footprint across every site we operate — from water management to land rehabilitation.",
+    features: [
+      {
+        title: "Environmental Monitoring",
+        description: "Ongoing monitoring of air, water and soil quality across active operations.",
+        details: ["Water quality testing", "Air quality monitoring", "Soil and land assessments", "Biodiversity surveys"],
+      },
+      {
+        title: "Waste Management",
+        description: "Structured waste management systems reducing environmental impact across site operations.",
+        details: ["Waste segregation and disposal", "Hazardous materials handling", "Recycling initiatives", "Spill prevention and response"],
+      },
+      {
+        title: "Water Management",
+        description: "Responsible water use and management practices protecting local water resources.",
+        details: ["Water use efficiency", "Discharge quality control", "Watershed protection", "Community water access"],
+      },
+      {
+        title: "Land Rehabilitation",
+        description: "Progressive rehabilitation of disturbed land, restoring sites to productive use after operations.",
+        details: ["Progressive rehabilitation", "Native vegetation restoration", "Erosion control", "Closure planning"],
+      },
+    ],
+    programs: [
+      { name: "ISO 14001:2015", description: "Environmental Management Systems", metricLabel: "Scope", metricValue: "Environmental operations", status: "Certified" },
+      { name: "Site Rehabilitation Program", description: "Progressive land rehabilitation across active sites", metricLabel: "Coverage", metricValue: "All active sites", status: "Active" },
+    ],
+  },
   "survey-services": {
     category: "Mining Services",
     kicker: "Mining Services",

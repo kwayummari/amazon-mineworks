@@ -9,7 +9,7 @@
 .stat {
   position: relative;
   padding-left: var(--space-5);
-  border-left: 2px solid var(--color-red);
+  border-left: 2px solid var(--color-accent);
   min-width: 120px;
 }
 
@@ -18,7 +18,7 @@
   font-size: var(--text-stat);
   font-weight: 600;
   line-height: 1;
-  color: var(--color-navy);
+  color: var(--color-ink);
 }
 
 .label {
@@ -31,13 +31,13 @@
 
 .light {
   .stat {
-    border-left-color: var(--color-gold);
+    border-left-color: var(--color-brass);
   }
   .value {
     color: var(--color-white);
   }
   .label {
-    color: var(--color-on-navy-muted);
+    color: var(--color-on-dark-muted);
   }
 }
 

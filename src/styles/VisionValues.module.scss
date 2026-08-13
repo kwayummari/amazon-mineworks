@@ -2,47 +2,80 @@
   background: var(--color-bg);
 }
 
-.introSection {
+/* Vision / Mission — full-bleed dark poster statement. .page has no side padding, so 100% already reaches the viewport edge (no vw-breakout hack needed). */
+.statementSection {
+  width: 100%;
+  background-color: var(--color-ink);
   padding-block: var(--section-pad-y);
-  border-bottom: 1px solid var(--color-border);
 }
 
-.introGrid {
+.statementGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto 1fr;
   gap: var(--space-9);
+  align-items: start;
 }
 
-.statement {
-  font-size: var(--text-h3);
-  font-weight: 500;
-  line-height: 1.4;
-  color: var(--color-navy);
-  font-family: var(--font-display);
-  text-transform: none;
-  margin: 0;
-  max-width: 22ch;
+.statementDivider {
+  align-self: stretch;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.15);
 }
 
-.valuesSection {
-  background: var(--color-bg-alt);
-  padding-block: var(--section-pad-y);
-}
-
-.valuesTitle {
-  font-size: var(--text-h2);
+.statementLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
   font-weight: 600;
-  color: var(--color-navy);
-  text-transform: none;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+  margin: 0 0 var(--space-5);
+
+  &::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--color-accent);
+  }
+}
+
+.statementText {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 1.35rem + 1.8vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-white);
+  max-width: 28ch;
+  margin: 0;
+}
+
+/* Values — manifesto zigzag list */
+.valuesSection {
+  padding-block: var(--section-pad-y) 0;
+}
+
+.valuesLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
   margin: 0 0 var(--space-4);
 }
 
 .valuesLede {
-  font-size: var(--text-body-lg);
-  color: var(--color-slate);
-  line-height: 1.7;
-  max-width: 62ch;
-  margin: 0 0 var(--space-8);
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 500;
+  color: var(--color-ink);
+  line-height: 1.4;
+  max-width: 56ch;
+  margin: 0 0 var(--space-9);
 }
 
 .valuesList {
@@ -50,60 +83,143 @@
 }
 
 .valueRow {
-  display: grid;
-  grid-template-columns: 60px 220px 1fr;
-  align-items: baseline;
-  gap: var(--space-6);
-  padding: var(--space-6) 0;
   border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--duration-base) var(--ease-out);
+
+  &:hover {
+    background: var(--color-bg-alt);
+  }
+}
+
+.valueRowInner {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: var(--space-8);
+  align-items: baseline;
+  padding-block: var(--space-8);
+}
+
+.valueRow:nth-child(even) .valueRowInner {
+  direction: rtl;
+
+  > * {
+    direction: ltr;
+  }
+}
+
+.valueHead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-5);
 }
 
 .valueNumber {
   font-family: var(--font-display);
-  font-size: var(--text-h3);
+  font-size: var(--text-h2);
   font-weight: 300;
+  font-variant-numeric: tabular-nums;
   color: var(--color-border);
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+.valueRow:hover .valueNumber {
+  color: var(--color-accent);
 }
 
 .valueTitle {
   font-family: var(--font-display);
-  font-size: var(--text-h4);
+  font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.5rem);
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--color-red);
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--color-ink);
+  text-transform: none;
   margin: 0;
 }
 
 .valueDescription {
   color: var(--color-slate);
+  font-size: var(--text-body-lg);
   line-height: 1.65;
   margin: 0;
-  max-width: 60ch;
+  max-width: 48ch;
 }
 
 .partnersSection {
   padding-block: var(--space-9);
+  border-top: 1px solid var(--color-border);
 }
 
 .trustedBy {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--text-small);
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-muted);
-  margin: 0;
+  margin: 0 0 var(--space-6);
+}
+
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.marqueeTrack {
+  display: flex;
+  align-items: center;
+  gap: var(--space-9);
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.marquee:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.partnerItem {
+  flex-shrink: 0;
+}
+
+.partnerLogo {
+  max-width: 130px;
+  max-height: 46px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.55);
+  transition: filter var(--duration-base) var(--ease-out);
+
+  &:hover {
+    filter: grayscale(0%) opacity(1);
+  }
 }
 
 @media (max-width: 800px) {
-  .introGrid {
+  .statementGrid {
     grid-template-columns: 1fr;
     gap: var(--space-8);
   }
 
-  .valueRow {
+  .statementDivider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .valueRowInner {
     grid-template-columns: 1fr;
-    gap: var(--space-2);
+    gap: var(--space-4);
+    padding-block: var(--space-6);
+  }
+
+  .valueRow:nth-child(even) .valueRowInner {
+    direction: ltr;
   }
 }

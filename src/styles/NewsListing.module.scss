@@ -54,7 +54,7 @@
   position: absolute;
   top: var(--space-4);
   left: var(--space-4);
-  background: var(--color-navy);
+  background: var(--color-ink);
   color: var(--color-white);
   font-size: var(--text-micro);
   font-weight: 600;
@@ -88,11 +88,11 @@
   margin: 0 0 var(--space-3);
 
   a {
-    color: var(--color-navy);
+    color: var(--color-ink);
     text-decoration: none;
 
     &:hover {
-      color: var(--color-red);
+      color: var(--color-accent);
     }
   }
 }
@@ -113,7 +113,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--color-navy);
+  color: var(--color-ink);
   text-decoration: none;
   font-family: var(--font-display);
   font-size: var(--text-small);
@@ -122,7 +122,7 @@
   letter-spacing: 0.04em;
 
   &:hover {
-    color: var(--color-red);
+    color: var(--color-accent);
   }
 }
 
@@ -139,7 +139,7 @@
   }
 
   h3 {
-    color: var(--color-navy);
+    color: var(--color-ink);
     font-size: var(--text-h4);
     margin: 0 0 8px;
   }
@@ -148,7 +148,7 @@
 .homeButton {
   display: inline-flex;
   margin-top: var(--space-5);
-  color: var(--color-red);
+  color: var(--color-accent);
   text-decoration: none;
   font-family: var(--font-display);
   font-weight: 500;

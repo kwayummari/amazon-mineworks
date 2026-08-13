@@ -9,30 +9,35 @@ const capabilities = [
   {
     number: "01",
     link: "/services",
-    title: "Fully Integrated Range of Mining Services",
+    title: "Fully Integrated Mining Services",
     description:
-      "We have the capacity to offer a fully integrated mining services solution from first stage exploration drilling to delivery of ore to the mill, working across all facets of your project.",
+      "From first-stage exploration drilling to delivery of ore to the mill, we work across every facet of a project.",
+    image: "./images/image1.jpeg",
+    featured: true,
   },
   {
     number: "02",
     link: "/construction-works",
     title: "Road Construction",
     description:
-      "Road construction involves several phases, including planning, site preparation, earthwork, sub-base and base course construction, and pavement.",
+      "Planning, site preparation, earthwork, sub-base and base course construction, and pavement.",
+    image: "./images/image2.jpeg",
   },
   {
     number: "03",
     link: "/building-works",
     title: "Bridges Construction",
     description:
-      "From site inspection and planning to setting the foundation and installing piers, our bridges are engineered to carry live and dead loads and resist natural forces.",
+      "Engineered from site inspection through foundation and piers to carry live and dead loads.",
+    image: "./images/image3.jpeg",
   },
   {
     number: "04",
     link: "/mine-earthworks",
     title: "Railway Construction",
     description:
-      "Track laying and ballasting capability supported by the latest technology, management and engineering know-how — for railways, metro systems and light rail.",
+      "Track laying and ballasting supported by the latest technology and engineering know-how.",
+    image: "./images/image4.jpeg",
   },
 ];
 
@@ -47,15 +52,27 @@ const Services = () => (
         </Link>
       </div>
 
-      <div className={styles.list}>
+      <div className={styles.grid}>
         {capabilities.map((item, index) => (
-          <Reveal as="div" key={item.number} delay={index * 60}>
-            <Link to={item.link} className={styles.row}>
-              <span className={styles.number}>{item.number}</span>
-              <span className={styles.rowTitle}>{item.title}</span>
-              <span className={styles.rowDescription}>{item.description}</span>
-              <span className={styles.rowArrow}>
+          <Reveal
+            as="div"
+            key={item.number}
+            delay={index * 60}
+            className={item.featured ? styles.featuredCell : styles.cell}
+          >
+            <Link
+              to={item.link}
+              className={`${styles.card} ${item.featured ? styles.featured : ""}`}
+              style={{ backgroundImage: `url(${item.image})` }}
+            >
+              <span className={styles.cardScrim} />
+              <span className={styles.cardNumber}>{item.number}</span>
+              <span className={styles.cardArrow}>
                 <i className="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </span>
+              <span className={styles.cardBody}>
+                <span className={styles.cardTitle}>{item.title}</span>
+                <span className={styles.cardDescription}>{item.description}</span>
               </span>
             </Link>
           </Reveal>

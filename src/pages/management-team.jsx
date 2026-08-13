@@ -1,27 +1,33 @@
 import React from "react";
 import { managementTeamData } from "../data/ManagementTeamData";
 import Container from "../components/ui/Container";
-import SectionHeading from "../components/ui/SectionHeading";
 import Reveal from "../components/ui/Reveal";
 import styles from "../styles/ManagementTeam.module.scss";
 
 const Team = () => (
   <div className={styles.page}>
-    <section className={styles.introSection}>
+    <section className={styles.opening}>
       <Container>
-        <SectionHeading eyebrow="Leadership" title={managementTeamData.title} lede={managementTeamData.description} />
+        <p className={styles.openingLabel}>Leadership</p>
+        <h1 className={styles.openingTitle}>{managementTeamData.title}</h1>
+        <p className={styles.openingLede}>{managementTeamData.description}</p>
       </Container>
     </section>
 
-    <section className={styles.teamSection}>
+    <section className={styles.rosterSection}>
       <Container>
-        <div className={styles.teamGrid}>
+        <div className={styles.roster}>
           {managementTeamData.teamMembers.map((member, index) => (
-            <Reveal as="div" className={styles.member} key={member.name} delay={index * 60}>
-              <img loading="lazy" src={member.image} alt={member.name} className={styles.photo} />
-              <h3 className={styles.name}>{member.name}</h3>
-              <p className={styles.role}>{member.role}</p>
-              <p className={styles.bio}>{member.bio}</p>
+            <Reveal as="div" className={styles.rosterRow} key={member.name} delay={index * 60}>
+              <span className={styles.rosterNumber}>{String(index + 1).padStart(2, "0")}</span>
+              <div className={styles.rosterPhoto}>
+                <img loading="lazy" src={member.image} alt={member.name} />
+              </div>
+              <div className={styles.rosterIdentity}>
+                <h3 className={styles.rosterName}>{member.name}</h3>
+                <span className={styles.rosterRole}>{member.role}</span>
+              </div>
+              <p className={styles.rosterBio}>{member.bio}</p>
             </Reveal>
           ))}
         </div>

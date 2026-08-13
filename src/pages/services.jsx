@@ -66,10 +66,10 @@ const Services = () => (
             <h2 className={styles.categoryTitle}>{cat.category}</h2>
             <p className={styles.categoryDescription}>{cat.description}</p>
           </div>
-          <div className={styles.serviceList}>
+          <div className={styles.serviceGrid}>
             {cat.services.map((service, index) => (
-              <Reveal as="div" key={service.link} delay={index * 50}>
-                <Link to={service.link} className={styles.serviceRow}>
+              <Reveal as="div" key={service.link} delay={index * 50} className={styles.serviceCell}>
+                <Link to={service.link} className={styles.serviceCard}>
                   <span className={styles.serviceNumber}>{String(index + 1).padStart(2, "0")}</span>
                   <span className={styles.serviceTitle}>{service.title}</span>
                   <span className={styles.serviceDescription}>{service.description}</span>

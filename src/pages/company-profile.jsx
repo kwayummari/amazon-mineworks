@@ -1,153 +1,272 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import Container from "../components/ui/Container";
-import SectionHeading from "../components/ui/SectionHeading";
-import Reveal from "../components/ui/Reveal";
-import Partners from "../components/Partners";
 import styles from "../styles/CompanyProfile.module.scss";
 
-const disciplines = [
-  { title: "Road Construction", link: "/mine-earthworks", description: "Planning, site preparation, earthwork, sub-base and base course construction, and pavement — built to carry heavy mine-site traffic." },
-  { title: "Bridges Construction", link: "/building-works", description: "From site inspection and planning to setting the foundation and installing piers, engineered to carry live and dead loads and resist natural forces." },
-  { title: "Railway Construction", link: "/construction-works", description: "Track laying and ballasting supported by the latest technology, management and engineering know-how — for railways, metro systems and light rail." },
+const chapters = [
+  { id: "capabilities", num: "01", label: "Capabilities" },
+  { id: "fleet", num: "02", label: "Fleet" },
+  { id: "disciplines", num: "03", label: "Disciplines" },
+  { id: "people", num: "04", label: "People" },
+  { id: "community", num: "05", label: "Community" },
+  { id: "partners", num: "06", label: "Partners" },
 ];
 
-const CompanyProfile = () => (
-  <div className={styles.page}>
-    <section className={styles.introSection}>
-      <Container>
-        <div className={styles.introGrid}>
-          <p className={styles.intro}>
-            We provide full-service mining, drilling, maintenance and geochemical analysis
-            solutions to customers within the minerals industry. Our services extend across the
-            full mining value chain, from initial exploration drilling to load and haul, giving
-            our customers a fully integrated mining services solution built on an unwavering
-            commitment to safety.
-          </p>
-          <div className={styles.downloads}>
-            <button type="button">
-              <span>Company Overview</span>
-              <i className="bi bi-download" aria-hidden="true"></i>
-            </button>
-            <button type="button">
-              <span>Drilling Overview</span>
-              <i className="bi bi-download" aria-hidden="true"></i>
-            </button>
-            <button type="button">
-              <span>Mining Overview</span>
-              <i className="bi bi-download" aria-hidden="true"></i>
-            </button>
+const fleetGroups = [
+  { heading: "Bulldozers", items: ["834", "D9", "D10T"] },
+  { heading: "Dump Trucks", items: ["785", "777"] },
+  { heading: "Excavators", items: ["330", "340", "390", "395", "6020", "6040"] },
+];
+
+const disciplines = [
+  {
+    num: "01",
+    title: "Road Construction",
+    link: "/mine-earthworks",
+    description: "Planning, site preparation, earthwork, sub-base and base course construction, and pavement.",
+    image: "./images/image3.jpeg",
+  },
+  {
+    num: "02",
+    title: "Bridges Construction",
+    link: "/building-works",
+    description: "Site inspection and planning through foundation and piers, engineered to carry live and dead loads.",
+    image: "./images/image4.jpeg",
+  },
+  {
+    num: "03",
+    title: "Railway Construction",
+    link: "/construction-works",
+    description: "Track laying and ballasting for railways, metro systems and light rail.",
+    image: "./images/image7.jpeg",
+  },
+];
+
+const partners = [
+  { image: "./images/BARRICK.png", alt: "Barrick" },
+  { image: "./images/bhp.png", alt: "BHP" },
+  { image: "./images/blackRock.png", alt: "BlackRock" },
+  { image: "./images/katoro.png", alt: "Katoro Gold" },
+  { image: "./images/peak.png", alt: "Peak Resources" },
+  { image: "./images/shanta.png", alt: "Shanta Gold" },
+  { image: "./images/preseus.png", alt: "Perseus Mining" },
+  { image: "./images/armdale.png", alt: "Armadale" },
+  { image: "./images/resources.png", alt: "Resources Partner" },
+];
+
+const CompanyProfile = () => {
+  const [active, setActive] = useState(chapters[0].id);
+  const sectionRefs = useRef({});
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.dataset.chapter);
+          }
+        });
+      },
+      { rootMargin: "-35% 0px -55% 0px", threshold: 0 }
+    );
+
+    Object.values(sectionRefs.current).forEach((node) => node && observer.observe(node));
+    return () => observer.disconnect();
+  }, []);
+
+  const registerSection = (id) => (node) => {
+    sectionRefs.current[id] = node;
+  };
+
+  const jumpTo = (id) => (event) => {
+    event.preventDefault();
+    sectionRefs.current[id]?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  return (
+    <div className={styles.page}>
+      <section className={styles.opening}>
+        <Container className={styles.openingGrid}>
+          <div>
+            <p className={styles.openingLabel}>Company Profile</p>
+            <p className={styles.openingStatement}>
+              We provide full-service mining, drilling, maintenance and geochemical analysis
+              solutions to customers within the minerals industry — a fully integrated service
+              built on an unwavering commitment to safety.
+            </p>
+            <div className={styles.downloads}>
+              <button type="button">
+                <span>Company Overview</span>
+                <i className="bi bi-download" aria-hidden="true"></i>
+              </button>
+              <button type="button">
+                <span>Drilling Overview</span>
+                <i className="bi bi-download" aria-hidden="true"></i>
+              </button>
+              <button type="button">
+                <span>Mining Overview</span>
+                <i className="bi bi-download" aria-hidden="true"></i>
+              </button>
+            </div>
           </div>
+          <div className={styles.openingImage}>
+            <img loading="eager" src="./images/image2.jpeg" alt="Amazon Mineworks equipment on site" />
+          </div>
+        </Container>
+      </section>
+
+      {createPortal(
+        <nav className={styles.rail} aria-label="Page sections">
+          {chapters.map((c) => (
+            <a
+              key={c.id}
+              href={`#${c.id}`}
+              className={`${styles.railLink} ${active === c.id ? styles.railActive : ""}`}
+              onClick={jumpTo(c.id)}
+            >
+              <span className={styles.railNum}>{c.num}</span>
+              <span className={styles.railLabel}>{c.label}</span>
+            </a>
+          ))}
+        </nav>,
+        document.body
+      )}
+
+      <section
+        id="capabilities"
+        data-chapter="capabilities"
+        ref={registerSection("capabilities")}
+        className={`${styles.chapter} ${styles.chapterDark}`}
+      >
+        <div className={styles.chapterImage}>
+          <img loading="lazy" src="./images/image1.jpeg" alt="Amazon Mineworks drilling operation" />
         </div>
-      </Container>
-    </section>
+        <div className={styles.chapterText}>
+          <span className={styles.chapterNum}>01</span>
+          <h2 className={styles.chapterHeading}>Fully Integrated Range of Mining Services</h2>
+          <p className={styles.chapterParagraph}>
+            We have the capacity to offer a fully integrated mining services solution from
+            first-stage exploration drilling to delivery of ore to the mill.
+          </p>
+          <p className={styles.chapterParagraph}>
+            This means we work across all facets of your project — delivering greater
+            management and communication efficiencies, faster identification and
+            implementation of improvements, and a flexible, coordinated approach.
+          </p>
+        </div>
+      </section>
 
-    <section className={styles.storySection}>
-      <Container>
-        <Reveal as="div" className={styles.storyBlock}>
-          <div className={styles.storyImages}>
-            <img loading="lazy" src="./images/image1.jpeg" alt="Amazon Mineworks drilling operation" />
-            <img loading="lazy" src="./images/image2.jpeg" alt="Amazon Mineworks equipment on site" />
+      <section id="fleet" data-chapter="fleet" ref={registerSection("fleet")} className={styles.chapter}>
+        <Container>
+          <span className={styles.chapterNumLight}>02</span>
+          <h2 className={styles.chapterHeadingLight}>Young &amp; Expanding Fleet</h2>
+          <p className={styles.chapterLede}>
+            One of the youngest rig fleets in the industry, with a rapidly growing Heavy Mining
+            Equipment fleet — fitted with the latest technologies for enhanced efficiency, safety
+            and data collection.
+          </p>
+          <div className={styles.fleetGrid}>
+            {fleetGroups.map((group) => (
+              <div key={group.heading} className={styles.fleetGroup}>
+                <p className={styles.fleetHeading}>{group.heading}</p>
+                <ul className={styles.fleetList}>
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-          <div>
-            <h2 className={styles.storyHeading}>Fully Integrated Range of Mining Services</h2>
-            <p className={styles.storyText}>
-              We have the capacity to offer a fully integrated mining services solution from
-              first-stage exploration drilling to delivery of ore to the mill.
-            </p>
-            <p className={styles.storyText}>
-              This means we work across all facets of your project — delivering greater
-              management and communication efficiencies, faster identification and
-              implementation of improvements, and a flexible, coordinated approach that keeps the
-              program on schedule.
-            </p>
-          </div>
-        </Reveal>
+        </Container>
+      </section>
 
-        <Reveal as="div" className={`${styles.storyBlock} ${styles.storyReverse}`} delay={80}>
-          <div className={styles.storyImages}>
-            <img loading="lazy" src="./images/image5.jpeg" alt="Amazon Mineworks heavy equipment" />
-            <img loading="lazy" src="./images/image6.jpeg" alt="Amazon Mineworks fleet" />
-          </div>
-          <div>
-            <h2 className={styles.storyHeading}>Young &amp; Expanding Fleet</h2>
-            <p className={styles.storyText}>
-              Our company operates one of the youngest rig fleets in the industry, while our Heavy
-              Mining Equipment fleet is rapidly growing — now including 834, D9 and D10T
-              bulldozers, 785 and 777 dump trucks, and 330, 340, 390, 395, 6020 and 6040
-              excavators.
-            </p>
-            <p className={styles.storyText}>
-              Our fleet has a reputation for quality and reliability, the result of regular
-              maintenance and upgrades. Equipment is fitted with the latest technologies for
-              enhanced efficiency, safety and data collection.
-            </p>
-          </div>
-        </Reveal>
-      </Container>
-    </section>
-
-    <section className={styles.disciplinesSection}>
-      <Container>
-        <SectionHeading eyebrow="How We Build" title="Construction Disciplines" />
-        <div className={styles.disciplinesList}>
-          {disciplines.map((item, index) => (
-            <Reveal as="div" key={item.title} delay={index * 60}>
-              <Link to={item.link} className={styles.disciplineRow}>
-                <span className={styles.disciplineTitle}>{item.title}</span>
-                <span className={styles.disciplineDescription}>{item.description}</span>
-                <span className={styles.disciplineArrow}>
-                  <i className="bi bi-arrow-up-right" aria-hidden="true"></i>
-                </span>
-              </Link>
-            </Reveal>
+      <section
+        id="disciplines"
+        data-chapter="disciplines"
+        ref={registerSection("disciplines")}
+        className={styles.chapter}
+      >
+        <Container>
+          <span className={styles.chapterNumLight}>03</span>
+          <h2 className={styles.chapterHeadingLight}>Construction Disciplines</h2>
+        </Container>
+        <div className={styles.disciplinePanels}>
+          {disciplines.map((item) => (
+            <Link
+              to={item.link}
+              key={item.title}
+              className={styles.disciplinePanel}
+              style={{ backgroundImage: `url(${item.image})` }}
+            >
+              <span className={styles.disciplinePanelScrim} />
+              <span className={styles.disciplinePanelNum}>{item.num}</span>
+              <span className={styles.disciplinePanelTitle}>{item.title}</span>
+              <span className={styles.disciplinePanelDescription}>{item.description}</span>
+            </Link>
           ))}
         </div>
-      </Container>
-    </section>
+      </section>
 
-    <section className={styles.storySection}>
-      <Container>
-        <Reveal as="div" className={styles.storyBlock}>
-          <div className={styles.storyImages}>
-            <img loading="lazy" src="./images/image8.jpeg" alt="Amazon Mineworks apprenticeship program" />
-            <img loading="lazy" src="./images/image9.png" alt="Amazon Mineworks training" />
-          </div>
-          <div>
-            <h2 className={styles.storyHeading}>Creating Career Opportunities</h2>
-            <p className={styles.storyText}>
+      <section id="people" data-chapter="people" ref={registerSection("people")} className={styles.chapter}>
+        <Container className={styles.peopleGrid}>
+          <div className={styles.peopleText}>
+            <span className={styles.chapterNumLight}>04</span>
+            <h2 className={styles.chapterHeadingLight}>Creating Career Opportunities</h2>
+            <p className={styles.chapterParagraph}>
               Our apprenticeship program provides our national employees with the opportunity to
               travel abroad to complete internationally recognized qualifications — opening
               further career opportunities not just at home, but across Africa and around the
               world.
             </p>
-            <p className={styles.storyText}>
-              This initiative forms part of Amazon Mineworks' ongoing strategy to provide
-              considerable training and professional development for our national employee
-              workforce.
-            </p>
+            <Link to="/careers" className={styles.chapterLink}>
+              <span>View Opportunities</span>
+              <i className="bi bi-arrow-right" aria-hidden="true"></i>
+            </Link>
           </div>
-        </Reveal>
-      </Container>
-    </section>
+          <div className={styles.peopleImage}>
+            <img loading="lazy" src="./images/image8.jpeg" alt="Amazon Mineworks apprenticeship program" />
+          </div>
+        </Container>
+      </section>
 
-    <section className={styles.communitySection}>
-      <Container>
-        <SectionHeading
-          eyebrow="Beyond the Site"
-          title="Local Community Support"
-          lede="We embrace our role in the communities where we work and recognize the impact our operations can have on local society. We strive to develop strong relationships with these communities and build sustainable value in local regions by providing a range of support to residents, local communities and charity organizations."
-        />
-      </Container>
-    </section>
+      <section
+        id="community"
+        data-chapter="community"
+        ref={registerSection("community")}
+        className={`${styles.chapter} ${styles.chapterDark} ${styles.chapterDarkReverse}`}
+      >
+        <div className={styles.chapterText}>
+          <span className={styles.chapterNum}>05</span>
+          <h2 className={styles.chapterHeading}>Local Community Support</h2>
+          <p className={styles.chapterParagraph}>
+            We embrace our role in the communities where we work and recognize the impact our
+            operations can have on local society — building sustainable value through support to
+            residents, local communities and charity organizations.
+          </p>
+        </div>
+        <div className={styles.chapterImage}>
+          <img loading="lazy" src="./images/gallery3.jpeg" alt="Amazon Mineworks community engagement" />
+        </div>
+      </section>
 
-    <section className={styles.partnersSection}>
-      <Container>
-        <p className={styles.trustedBy}>Trusted By</p>
-        <Partners />
-      </Container>
-    </section>
-  </div>
-);
+      <section id="partners" data-chapter="partners" ref={registerSection("partners")} className={styles.chapter}>
+        <Container>
+          <span className={styles.chapterNumLight}>06</span>
+          <h2 className={styles.chapterHeadingLight}>Trusted By</h2>
+          <div className={styles.marquee}>
+            <div className={styles.marqueeTrack}>
+              {[...partners, ...partners].map((partner, index) => (
+                <div key={`${partner.alt}-${index}`} className={styles.partnerItem}>
+                  <img src={partner.image} alt={partner.alt} className={styles.partnerLogo} loading="lazy" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+    </div>
+  );
+};
 
 export default CompanyProfile;

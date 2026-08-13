@@ -45,48 +45,65 @@ const About = () => {
     loadPartners();
   }, []);
 
+  const partnerList = partners.length > 0 ? partners : defaultPartners;
+
   return (
     <section className={styles.about}>
       <Container>
+        <Reveal className={styles.statement}>
+          <Eyebrow>Who We Are</Eyebrow>
+          <h2 className={styles.title}>
+            A fully integrated mining, drilling &amp; construction partner —
+            engineered for the standards international mining houses expect
+            from a contractor of record.
+          </h2>
+        </Reveal>
+
         <div className={styles.grid}>
-          <Reveal className={styles.textCol}>
-            <Eyebrow>Who We Are</Eyebrow>
-            <h2 className={styles.title}>
-              A fully integrated mining, drilling &amp; construction partner.
-            </h2>
+          <Reveal className={styles.textCol} delay={60}>
             <p className={styles.description}>
               Amazon Mineworks has operated across Tanzania since 2012,
               covering the full construction spectrum across three operating
-              divisions — Building Construction, Civil Engineering, and Roads &amp;
-              Earthworks — delivered to the standards international mining houses
-              expect from a contractor of record.
+              divisions — Building Construction, Civil Engineering, and Roads
+              &amp; Earthworks.
             </p>
             <IsoBadge className={styles.isoBadge} />
+          </Reveal>
+          <Reveal className={styles.statCol} delay={120}>
             <StatRow stats={stats} className={styles.stats} />
           </Reveal>
-          <Reveal className={styles.imageCol} delay={120}>
-            <img
-              loading="lazy"
-              src="./images/carousel2.jpeg"
-              alt="Amazon Mineworks drilling rig on site"
-              className={styles.image}
-            />
-          </Reveal>
         </div>
+      </Container>
 
+      <Reveal className={styles.breakBanner} delay={80}>
+        <img
+          loading="lazy"
+          src="./images/gallery1.jpeg"
+          alt="Amazon Mineworks crew and equipment on a Tanzanian mine site"
+          className={styles.breakImage}
+        />
+        <div className={styles.breakCaption}>
+          <i className="bi bi-geo-alt-fill" aria-hidden="true"></i>
+          Site operations — Geita Region, Tanzania
+        </div>
+      </Reveal>
+
+      <Container>
         <Reveal className={styles.partnersBlock} delay={80}>
           <p className={styles.trustedBy}>Trusted By</p>
-          <div className={styles.partnersGrid}>
-            {(partners.length > 0 ? partners : defaultPartners).map((partner) => (
-              <div key={partner.id} className={styles.partnerItem}>
-                <img
-                  src={partner.image}
-                  alt={partner.alt}
-                  className={styles.partnerLogo}
-                  loading="lazy"
-                />
-              </div>
-            ))}
+          <div className={styles.marquee}>
+            <div className={styles.marqueeTrack}>
+              {[...partnerList, ...partnerList].map((partner, index) => (
+                <div key={`${partner.id}-${index}`} className={styles.partnerItem}>
+                  <img
+                    src={partner.image}
+                    alt={partner.alt}
+                    className={styles.partnerLogo}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </Reveal>
       </Container>

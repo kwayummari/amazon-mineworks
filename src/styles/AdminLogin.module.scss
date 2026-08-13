@@ -61,7 +61,7 @@
 
     &:focus {
       outline: none;
-      border-color: var(--color-red);
+      border-color: var(--color-accent);
     }
 
     &:disabled {
@@ -81,7 +81,7 @@
 }
 
 .loginButton {
-  background: linear-gradient(135deg, var(--color-red) 0%, #b80915 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #b80915 100%);
   color: white;
   border: none;
   padding: 14px 24px;

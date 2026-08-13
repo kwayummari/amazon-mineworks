@@ -92,15 +92,15 @@ const ContactUs = () => {
             <div className={styles.info}>
               <div className={styles.methods}>
                 <a href="mailto:info@amazonmineworks.com">
-                  <i className="bi bi-envelope" aria-hidden="true"></i>
+                  <span className={styles.methodIcon}><i className="bi bi-envelope" aria-hidden="true"></i></span>
                   <div><strong>Email Us</strong><span>info@amazonmineworks.com</span></div>
                 </a>
                 <a href="tel:+255221234567">
-                  <i className="bi bi-telephone" aria-hidden="true"></i>
+                  <span className={styles.methodIcon}><i className="bi bi-telephone" aria-hidden="true"></i></span>
                   <div><strong>Call Us</strong><span>+255 22 123 4567</span></div>
                 </a>
                 <span className={styles.methodStatic}>
-                  <i className="bi bi-geo-alt" aria-hidden="true"></i>
+                  <span className={styles.methodIcon}><i className="bi bi-geo-alt" aria-hidden="true"></i></span>
                   <div><strong>Visit Us</strong><span>Dar es Salaam, Tanzania</span></div>
                 </span>
               </div>

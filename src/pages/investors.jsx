@@ -47,6 +47,9 @@ const tabs = [
   { key: "certifications", label: "Certifications", icon: "bi-award" },
 ];
 
+const formatDate = (date) =>
+  new Date(date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+
 const Investors = () => {
   const [searchParams] = useSearchParams();
   const initialTab = tabs.find((tab) => tab.key === searchParams.get("tab"))?.key || "announcements";
@@ -83,36 +86,34 @@ const Investors = () => {
 
           <Reveal key={activeTab} className={styles.panel}>
             {activeTab === "announcements" && (
-              <div className={styles.list}>
+              <div className={styles.cardGrid}>
                 {announcements.map((item) => (
-                  <div className={styles.row} key={item.id}>
-                    <div className={styles.rowHead}>
-                      <h3>{item.title}</h3>
+                  <div className={styles.card} key={item.id}>
+                    <div className={styles.cardHead}>
                       <span className={styles.tag}>{item.type}</span>
+                      <time>{formatDate(item.date)}</time>
                     </div>
+                    <h3>{item.title}</h3>
                     <p>{item.summary}</p>
-                    <time>{new Date(item.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
                   </div>
                 ))}
               </div>
             )}
 
             {activeTab === "presentations" && (
-              <div className={styles.list}>
+              <div className={styles.cardGrid}>
                 {presentations.map((item) => (
-                  <div className={styles.row} key={item.id}>
-                    <div className={styles.rowHead}>
-                      <h3>{item.title}</h3>
+                  <div className={styles.card} key={item.id}>
+                    <div className={styles.cardHead}>
                       <span className={styles.tag}>{item.type}</span>
+                      <time>{formatDate(item.date)}</time>
                     </div>
+                    <h3>{item.title}</h3>
                     <p>{item.description}</p>
-                    <div className={styles.rowFooter}>
-                      <time>{new Date(item.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
-                      <button type="button" className={styles.downloadBtn}>
-                        <i className="bi bi-download" aria-hidden="true"></i>
-                        Download PDF
-                      </button>
-                    </div>
+                    <button type="button" className={styles.downloadBtn}>
+                      <i className="bi bi-download" aria-hidden="true"></i>
+                      Download PDF
+                    </button>
                   </div>
                 ))}
               </div>
@@ -122,11 +123,12 @@ const Investors = () => {
               <div className={styles.governanceGrid}>
                 <div>
                   <h3 className={styles.blockTitle}>Board of Directors</h3>
-                  <div className={styles.membersList}>
+                  <div className={styles.membersGrid}>
                     {governance.members.map((member) => (
-                      <div className={styles.memberRow} key={member.name}>
+                      <div className={styles.memberCard} key={member.name}>
+                        <span className={styles.memberInitial}>{member.name.charAt(0)}</span>
                         <strong>{member.name}</strong>
-                        <span>{member.position}</span>
+                        <span className={styles.memberPosition}>{member.position}</span>
                         <span className={styles.muted}>{member.experience}</span>
                       </div>
                     ))}
@@ -134,9 +136,12 @@ const Investors = () => {
                 </div>
                 <div>
                   <h3 className={styles.blockTitle}>Governance Framework</h3>
-                  <ul className={styles.bulletList}>
+                  <ul className={styles.checkList}>
                     {governance.items.map((item) => (
-                      <li key={item}>{item}</li>
+                      <li key={item}>
+                        <i className="bi bi-check-circle-fill" aria-hidden="true"></i>
+                        {item}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -144,14 +149,17 @@ const Investors = () => {
             )}
 
             {activeTab === "csr" && (
-              <div className={styles.governanceGrid}>
+              <div className={styles.csrGrid}>
                 {csr.map((section) => (
-                  <div key={section.title}>
+                  <div className={styles.csrCard} key={section.title}>
                     <h3 className={styles.blockTitle}>{section.title}</h3>
                     <p className={styles.sectionLede}>{section.description}</p>
-                    <ul className={styles.bulletList}>
+                    <ul className={styles.checkList}>
                       {section.initiatives.map((initiative) => (
-                        <li key={initiative}>{initiative}</li>
+                        <li key={initiative}>
+                          <i className="bi bi-check-circle-fill" aria-hidden="true"></i>
+                          {initiative}
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -162,7 +170,10 @@ const Investors = () => {
             {activeTab === "certifications" && (
               <div className={styles.certGrid}>
                 {certifications.map((cert) => (
-                  <div className={styles.certRow} key={cert.name}>
+                  <div className={styles.certCard} key={cert.name}>
+                    <span className={styles.certIcon}>
+                      <i className="bi bi-patch-check-fill" aria-hidden="true"></i>
+                    </span>
                     <div>
                       <h3>{cert.name}</h3>
                       <p>{cert.description}</p>
@@ -179,8 +190,8 @@ const Investors = () => {
       <section className={styles.contactSection}>
         <Container className={styles.contactInner}>
           <div>
-            <h2>Investor Inquiries</h2>
-            <p>For investor relations inquiries, please contact our team.</p>
+            <p className={styles.contactLabel}>Investor Inquiries</p>
+            <h2>Have a question for our investor relations team?</h2>
           </div>
           <div className={styles.contactMethods}>
             <a href="mailto:investors@amazonmineworks.com">

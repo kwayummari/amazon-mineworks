@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import Container from "../components/ui/Container";
 import SectionHeading from "../components/ui/SectionHeading";
+import Reveal from "../components/ui/Reveal";
 import styles from "../styles/Announcements.module.scss";
 
 const announcements = [
@@ -39,7 +40,7 @@ const Announcements = () => {
                 className={`${styles.filter} ${activeFilter === category.name ? styles.filterActive : ""}`}
                 onClick={() => setActiveFilter(category.name)}
               >
-                {category.name} ({category.count})
+                {category.name} <span className={styles.filterCount}>{category.count}</span>
               </button>
             ))}
           </div>
@@ -48,16 +49,16 @@ const Announcements = () => {
 
       <section className={styles.listSection}>
         <Container>
-          <div className={styles.list}>
-            {visible.map((item) => (
-              <div className={styles.row} key={item.title}>
-                <div className={styles.rowHead}>
-                  <h3>{item.title}</h3>
+          <div className={styles.cardGrid}>
+            {visible.map((item, index) => (
+              <Reveal as="div" className={styles.card} key={item.title} delay={index * 60}>
+                <div className={styles.cardHead}>
                   <span className={styles.tag}>{item.type}</span>
+                  <time>{new Date(item.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
                 </div>
+                <h3>{item.title}</h3>
                 <p>{item.summary}</p>
-                <time>{new Date(item.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
-              </div>
+              </Reveal>
             ))}
           </div>
         </Container>

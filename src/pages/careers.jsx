@@ -4,6 +4,13 @@ import Container from "../components/ui/Container";
 import SectionHeading from "../components/ui/SectionHeading";
 import styles from "../styles/Careers.module.scss";
 
+const highlights = [
+  { icon: "bi-mortarboard", label: "Apprenticeship Program" },
+  { icon: "bi-globe-americas", label: "Career Growth Across Africa" },
+  { icon: "bi-shield-check", label: "Safety-First Culture" },
+  { icon: "bi-graph-up-arrow", label: "Competitive Salaries" },
+];
+
 const JobItem = ({ id, title, department, location, type, salary, description, pdfFile, postedDate, onShare }) => {
   const handleDownloadPDF = () => {
     if (!pdfFile) return;
@@ -24,20 +31,18 @@ const JobItem = ({ id, title, department, location, type, salary, description, p
   };
 
   return (
-    <article className={styles.jobItem}>
-      <div className={styles.jobMain}>
-        <h3 className={styles.jobTitle}>{title}</h3>
-        <div className={styles.jobMeta}>
-          <span>{department}</span>
-          <span>{location}</span>
-          <span>{type}</span>
-          {salary && <span>{salary}</span>}
-        </div>
-        <p className={styles.jobDescription}>{description}</p>
-        <time className={styles.jobDate}>
-          Posted {new Date(postedDate).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
-        </time>
+    <article className={styles.jobCard}>
+      <div className={styles.jobMeta}>
+        <span>{department}</span>
+        <span>{location}</span>
+        <span>{type}</span>
+        {salary && <span>{salary}</span>}
       </div>
+      <h3 className={styles.jobTitle}>{title}</h3>
+      <p className={styles.jobDescription}>{description}</p>
+      <time className={styles.jobDate}>
+        Posted {new Date(postedDate).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+      </time>
       <div className={styles.jobActions}>
         <button onClick={handleDownloadPDF} className={styles.viewJobBtn} disabled={!pdfFile}>
           <i className="bi bi-file-earmark-pdf" aria-hidden="true"></i>
@@ -95,12 +100,25 @@ const Careers = () => {
   return (
     <div className={styles.page}>
       <section className={styles.introSection}>
-        <Container>
-          <SectionHeading
-            eyebrow="Join Us"
-            title="Career Opportunities"
-            lede="Join our team and be part of the future of sustainable mining across Tanzania."
-          />
+        <Container className={styles.introGrid}>
+          <div>
+            <SectionHeading
+              eyebrow="Join Us"
+              title="Career Opportunities"
+              lede="Join our team and be part of the future of sustainable mining across Tanzania."
+            />
+            <ul className={styles.highlights}>
+              {highlights.map((item) => (
+                <li key={item.label}>
+                  <i className={`bi ${item.icon}`} aria-hidden="true"></i>
+                  {item.label}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.introImage}>
+            <img loading="eager" src="./images/LImage2.png" alt="Amazon Mineworks employee on site" />
+          </div>
         </Container>
       </section>
 
@@ -122,7 +140,7 @@ const Careers = () => {
           )}
 
           {!loading && jobs.length > 0 && (
-            <div className={styles.jobsList}>
+            <div className={styles.jobsGrid}>
               {jobs.map((job) => (
                 <JobItem key={job.id} {...job} onShare={handleShare} />
               ))}

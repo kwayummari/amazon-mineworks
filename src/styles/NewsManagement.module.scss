@@ -19,7 +19,7 @@
     animation: spin 1s linear infinite;
     margin-bottom: 20px;
     display: block;
-    color: var(--color-red);
+    color: var(--color-accent);
   }
 
   p {
@@ -74,7 +74,7 @@
   color: #666;
 
   i {
-    color: var(--color-red);
+    color: var(--color-accent);
     font-size: 16px;
   }
 
@@ -167,7 +167,7 @@
 }
 
 .addButton {
-  background: linear-gradient(135deg, var(--color-red) 0%, #b80915 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #b80915 100%);
   color: white;
   border: none;
   padding: 12px 24px;
@@ -278,7 +278,7 @@
 
   &:focus {
     outline: none;
-    border-color: var(--color-red);
+    border-color: var(--color-accent);
   }
 }
 
@@ -340,7 +340,7 @@
   input[type="checkbox"] {
     width: 18px;
     height: 18px;
-    accent-color: var(--color-red);
+    accent-color: var(--color-accent);
   }
 }
 
@@ -370,7 +370,7 @@
 }
 
 .saveButton {
-  background: linear-gradient(135deg, var(--color-red) 0%, #b80915 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #b80915 100%);
   color: white;
   border: none;
   padding: 12px 24px;

@@ -20,7 +20,7 @@
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-gold);
+    outline: 2px solid var(--color-brass);
     outline-offset: 3px;
   }
 }
@@ -47,7 +47,7 @@
   font-size: 7.4px;
   font-weight: 600;
   letter-spacing: 0.03em;
-  fill: var(--color-navy);
+  fill: var(--color-ink);
   text-transform: uppercase;
 }
 
@@ -58,11 +58,11 @@
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  color: var(--color-navy);
+  color: var(--color-ink);
 
   i {
     font-size: 18px;
-    color: var(--color-red);
+    color: var(--color-accent);
   }
 }
 

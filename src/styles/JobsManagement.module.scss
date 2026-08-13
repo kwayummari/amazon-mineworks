@@ -14,7 +14,7 @@
 }
 
 .header h2 {
-  color: var(--color-navy);
+  color: var(--color-ink);
   font: 700 28px var(--font-body);
   margin: 0;
 }
@@ -101,7 +101,7 @@
 }
 
 .formHeader h3 {
-  color: var(--color-navy);
+  color: var(--color-ink);
   font: 600 20px var(--font-body);
   margin: 0;
 }
@@ -158,7 +158,7 @@
 .formGroup select:focus,
 .formGroup textarea:focus {
   outline: none;
-  border-color: var(--color-navy);
+  border-color: var(--color-ink);
 }
 
 .formGroup textarea {
@@ -327,7 +327,7 @@
 }
 
 .jobInfo h4 {
-  color: var(--color-navy);
+  color: var(--color-ink);
   font: 700 18px var(--font-body);
   margin: 0 0 15px 0;
 }

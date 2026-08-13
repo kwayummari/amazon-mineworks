@@ -9,7 +9,7 @@
   justify-content: space-between;
   gap: var(--space-6);
   padding: var(--space-7);
-  background-color: var(--color-navy);
+  background-color: var(--color-ink);
   background-image: var(--pattern-drill);
   background-size: var(--pattern-drill-size);
   overflow: hidden;
@@ -27,17 +27,17 @@
 }
 
 .eyebrow {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--text-small);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-brass);
   margin: 0 0 var(--space-3);
 }
 
 .text {
-  color: var(--color-on-navy-muted);
+  color: var(--color-on-dark-muted);
   line-height: 1.7;
   max-width: 60ch;
   margin: 0;
@@ -49,17 +49,18 @@
   gap: 10px;
   color: var(--color-white);
   text-decoration: none;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--text-small);
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   white-space: nowrap;
   padding-bottom: 4px;
-  border-bottom: 2px solid var(--color-red);
+  border-bottom: 2px solid var(--color-accent);
+  transition: color var(--duration-base) var(--ease-out);
 
   &:hover {
-    color: var(--color-gold);
+    color: var(--color-brass);
   }
 }
 

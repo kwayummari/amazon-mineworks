@@ -38,6 +38,7 @@ const Safety = () => (
             work — across diverse, remote and often difficult locations.
           </p>
           <button type="button" className={styles.resourceLink}>
+            <i className="bi bi-file-earmark-text" aria-hidden="true"></i>
             <span>Golden Safety Rules</span>
             <i className="bi bi-download" aria-hidden="true"></i>
           </button>
@@ -48,17 +49,15 @@ const Safety = () => (
     <section className={styles.milestonesSection}>
       <Container>
         <SectionHeading eyebrow="Track Record" title="Lost Time Injury (LTI) Free Milestones" />
-        <div className={styles.milestonesList}>
+        <div className={styles.milestonesGrid}>
           {milestones.map((milestone, index) => (
-            <Reveal as="div" className={styles.milestoneRow} key={milestone.site} delay={index * 50}>
+            <Reveal as="div" className={styles.milestoneCard} key={milestone.site} delay={index * 50}>
               <span className={styles.milestoneYears}>
                 {milestone.years}
                 <small>Yr{milestone.years !== "1" ? "s" : ""}</small>
               </span>
-              <div>
-                <h3>{milestone.site}</h3>
-                <p>{milestone.location} &middot; LTI-free since {milestone.date}</p>
-              </div>
+              <h3>{milestone.site}</h3>
+              <p>{milestone.location} &middot; LTI-free since {milestone.date}</p>
             </Reveal>
           ))}
         </div>
@@ -68,7 +67,9 @@ const Safety = () => (
     <section className={styles.storySection}>
       <Container>
         <Reveal as="div" className={styles.storyBlock}>
-          <img loading="lazy" src="./images/image3.jpeg" alt="Amazon Mineworks safety leadership" className={styles.storyImage} />
+          <div className={styles.storyImageFrame}>
+            <img loading="lazy" src="./images/image3.jpeg" alt="Amazon Mineworks safety leadership" className={styles.storyImage} />
+          </div>
           <div>
             <h2 className={styles.storyHeading}>Safety Leadership</h2>
             <p className={styles.storyText}>
@@ -87,7 +88,9 @@ const Safety = () => (
         </Reveal>
 
         <Reveal as="div" className={`${styles.storyBlock} ${styles.storyReverse}`} delay={80}>
-          <img loading="lazy" src="./images/image4.jpeg" alt="Amazon Mineworks field team" className={styles.storyImage} />
+          <div className={styles.storyImageFrame}>
+            <img loading="lazy" src="./images/image4.jpeg" alt="Amazon Mineworks field team" className={styles.storyImage} />
+          </div>
           <div>
             <h2 className={styles.storyHeading}>How We Keep Our People Safe</h2>
             <p className={styles.storyText}>
@@ -111,6 +114,7 @@ const Safety = () => (
         <div className={styles.initiativesGrid}>
           {initiatives.map((item, index) => (
             <Reveal as="div" className={styles.initiativeItem} key={item.title} delay={(index % 3) * 60}>
+              <span className={styles.initiativeNumber}>{String(index + 1).padStart(2, "0")}</span>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </Reveal>
@@ -120,12 +124,16 @@ const Safety = () => (
     </section>
 
     <section className={styles.communitySection}>
-      <Container>
+      <Container className={styles.communityInner}>
         <SectionHeading
           eyebrow="Beyond the Site"
           title="Local Community Support"
           lede="We embrace our role in the communities where we work and recognize the impact our operations can have on local society. We strive to develop strong relationships with these communities and build sustainable value in local regions by providing a range of support to residents, local communities and charity organizations."
+          className={styles.communityHeading}
         />
+        <Reveal className={styles.communityImage} delay={80}>
+          <img loading="lazy" src="./images/WhatsApp Image 2024-08-29 at 16.22.53.jpeg" alt="Amazon Mineworks community engagement" />
+        </Reveal>
       </Container>
     </section>
 

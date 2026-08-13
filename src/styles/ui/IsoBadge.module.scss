@@ -6,22 +6,22 @@
   border: 1px solid var(--color-border);
   border-radius: 20px;
   text-decoration: none;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--text-micro);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-navy);
+  color: var(--color-ink);
   transition: border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
 
   i {
-    color: var(--color-red);
+    color: var(--color-accent);
     font-size: 13px;
   }
 
   &:hover {
-    border-color: var(--color-red);
-    color: var(--color-red);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
   }
 }
 
@@ -30,11 +30,11 @@
   border-color: rgba(255, 255, 255, 0.25);
 
   i {
-    color: var(--color-gold);
+    color: var(--color-brass);
   }
 
   &:hover {
-    border-color: var(--color-gold);
-    color: var(--color-gold);
+    border-color: var(--color-brass);
+    color: var(--color-brass);
   }
 }

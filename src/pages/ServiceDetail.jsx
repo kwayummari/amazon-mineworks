@@ -30,6 +30,7 @@ const ServiceDetail = ({ slug }) => {
               </Link>
               {data.resourceLabel && (
                 <button type="button" className={styles.resourceLink}>
+                  <i className="bi bi-file-earmark-text" aria-hidden="true"></i>
                   <span>{data.resourceLabel}</span>
                   <i className="bi bi-download" aria-hidden="true"></i>
                 </button>
@@ -49,7 +50,9 @@ const ServiceDetail = ({ slug }) => {
                 className={`${styles.storyBlock} ${block.reverse ? styles.storyReverse : ""}`}
                 delay={index * 80}
               >
-                <img loading="lazy" src={block.image} alt={block.heading} className={styles.storyImage} />
+                <div className={styles.storyImageFrame}>
+                  <img loading="lazy" src={block.image} alt={block.heading} className={styles.storyImage} />
+                </div>
                 <div>
                   <h2 className={styles.storyHeading}>{block.heading}</h2>
                   {block.paragraphs.map((paragraph) => (
@@ -68,21 +71,19 @@ const ServiceDetail = ({ slug }) => {
         <section className={styles.featuresSection}>
           <Container>
             <SectionHeading eyebrow={data.category} title="What This Service Covers" />
-            <div className={styles.featuresList}>
+            <div className={styles.featuresGrid}>
               {data.features.map((feature, index) => (
-                <Reveal as="div" className={styles.featureRow} key={feature.title} delay={index * 60}>
+                <Reveal as="div" className={styles.featureCard} key={feature.title} delay={index * 60}>
                   <span className={styles.featureNumber}>{String(index + 1).padStart(2, "0")}</span>
-                  <div>
-                    <h3 className={styles.featureTitle}>{feature.title}</h3>
-                    <p className={styles.featureDescription}>{feature.description}</p>
-                    {feature.details && (
-                      <ul className={styles.featureDetails}>
-                        {feature.details.map((detail) => (
-                          <li key={detail}>{detail}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
+                  <h3 className={styles.featureTitle}>{feature.title}</h3>
+                  <p className={styles.featureDescription}>{feature.description}</p>
+                  {feature.details && (
+                    <ul className={styles.featureDetails}>
+                      {feature.details.map((detail) => (
+                        <li key={detail}>{detail}</li>
+                      ))}
+                    </ul>
+                  )}
                 </Reveal>
               ))}
             </div>
@@ -94,22 +95,20 @@ const ServiceDetail = ({ slug }) => {
         <section className={styles.equipmentSection}>
           <Container>
             <SectionHeading eyebrow="Fleet & Equipment" title="Built for the Job" />
-            <div className={styles.equipmentList}>
-              {data.equipment.map((item) => (
-                <div className={styles.equipmentRow} key={item.name}>
-                  <div>
-                    <h3 className={styles.equipmentName}>{item.name}</h3>
-                    <p className={styles.equipmentType}>{item.type}</p>
-                  </div>
+            <div className={styles.equipmentGrid}>
+              {data.equipment.map((item, index) => (
+                <Reveal as="div" className={styles.equipmentCard} key={item.name} delay={index * 60}>
+                  <h3 className={styles.equipmentName}>{item.name}</h3>
+                  <p className={styles.equipmentType}>{item.type}</p>
                   <dl className={styles.specList}>
                     {item.specs.map((spec) => (
-                      <div key={spec.label}>
+                      <div key={spec.label} className={styles.specRow}>
                         <dt>{spec.label}</dt>
                         <dd>{spec.value}</dd>
                       </div>
                     ))}
                   </dl>
-                </div>
+                </Reveal>
               ))}
             </div>
           </Container>
@@ -120,9 +119,9 @@ const ServiceDetail = ({ slug }) => {
         <section className={styles.projectsSection}>
           <Container>
             <SectionHeading eyebrow="Track Record" title="Recent Projects" />
-            <div className={styles.projectsList}>
-              {data.projects.map((project) => (
-                <div className={styles.projectRow} key={project.name}>
+            <div className={styles.projectsGrid}>
+              {data.projects.map((project, index) => (
+                <Reveal as="div" className={styles.projectCard} key={project.name} delay={index * 60}>
                   <div className={styles.projectHead}>
                     <h3>{project.name}</h3>
                     <span
@@ -134,11 +133,11 @@ const ServiceDetail = ({ slug }) => {
                     </span>
                   </div>
                   <div className={styles.projectMeta}>
-                    <span>{project.location}</span>
-                    <span>{project.duration}</span>
-                    <span>{project.scope}</span>
+                    <span><i className="bi bi-geo-alt" aria-hidden="true"></i>{project.location}</span>
+                    <span><i className="bi bi-clock" aria-hidden="true"></i>{project.duration}</span>
+                    <span><i className="bi bi-diagram-3" aria-hidden="true"></i>{project.scope}</span>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </Container>
@@ -149,9 +148,9 @@ const ServiceDetail = ({ slug }) => {
         <section className={styles.projectsSection}>
           <Container>
             <SectionHeading eyebrow="Active Programs" title="Programs & Certifications" />
-            <div className={styles.projectsList}>
-              {data.programs.map((program) => (
-                <div className={styles.projectRow} key={program.name}>
+            <div className={styles.projectsGrid}>
+              {data.programs.map((program, index) => (
+                <Reveal as="div" className={styles.projectCard} key={program.name} delay={index * 60}>
                   <div className={styles.projectHead}>
                     <h3>{program.name}</h3>
                     <span
@@ -164,9 +163,9 @@ const ServiceDetail = ({ slug }) => {
                   </div>
                   <p className={styles.programDescription}>{program.description}</p>
                   <div className={styles.projectMeta}>
-                    <span>{program.metricLabel}: {program.metricValue}</span>
+                    <span>{program.metricLabel}: <strong>{program.metricValue}</strong></span>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </Container>

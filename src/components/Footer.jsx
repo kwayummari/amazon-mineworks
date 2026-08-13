@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Container from "./ui/Container";
-import Button from "./ui/Button";
 import IsoBadge from "./ui/IsoBadge";
 import styles from "../styles/Footer.module.scss";
 
@@ -37,12 +36,16 @@ const Footer = () => (
   <footer className={styles.footer}>
     <div className={styles.ctaBand}>
       <Container className={styles.ctaInner}>
-        <p className={styles.ctaText}>
-          Partner with a trusted mining &amp; drilling contractor.
-        </p>
-        <Button to="/contact-us" variant="primary">
-          Contact Us
-        </Button>
+        <div>
+          <p className={styles.ctaKicker}>Let&apos;s Build Together</p>
+          <p className={styles.ctaText}>
+            Partner with a trusted mining &amp; drilling contractor.
+          </p>
+        </div>
+        <Link to="/contact-us" className={styles.ctaButton}>
+          <span>Contact Us</span>
+          <i className="bi bi-arrow-right" aria-hidden="true"></i>
+        </Link>
       </Container>
     </div>
 
@@ -61,7 +64,7 @@ const Footer = () => (
           <button type="button" aria-label="Instagram"><i className="bi bi-instagram" aria-hidden="true"></i></button>
           <button type="button" aria-label="Twitter"><i className="bi bi-twitter" aria-hidden="true"></i></button>
         </div>
-        <IsoBadge light className={styles.isoBadge} />
+        <IsoBadge className={styles.isoBadge} />
       </div>
 
       {columns.map((column) => (

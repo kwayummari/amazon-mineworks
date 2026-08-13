@@ -23,7 +23,7 @@
   font-family: var(--font-display);
   font-size: var(--text-body-lg);
   font-weight: 500;
-  color: var(--color-navy);
+  color: var(--color-ink);
 
   &::-webkit-details-marker {
     display: none;
@@ -32,7 +32,7 @@
   i {
     flex-shrink: 0;
     font-size: 14px;
-    color: var(--color-red);
+    color: var(--color-accent);
     transition: transform var(--duration-base) var(--ease-out);
   }
 }
