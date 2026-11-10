@@ -1,147 +1,206 @@
 .services {
-  background-color: #fff;
-  font-family: Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  font-weight: 400;
-  padding: 84px 30px 45px;
+  background: var(--color-bg-alt);
+  padding-block: var(--section-pad-y);
 }
 
-.sectionTitle {
-  color: #000154;
-  font-size: 40px;
-  font-weight: 900;
-  text-align: center;
-  margin: 0;
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
 }
 
-.sectionDescription {
-  color: rgba(0, 1, 84, 0.54);
-  font-size: 25px;
-  width: 900px;
-  letter-spacing: 1.2px;
-  text-align: center;
-  margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
+.headerLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-small);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--color-accent);
+  white-space: nowrap;
+  transition: color var(--duration-fast) var(--ease-out);
+
+  &:hover {
+    color: var(--color-accent);
+  }
 }
 
-.servicesList {
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 240px 240px;
+  grid-template-areas: "a a b b" "a a c d";
+  gap: var(--space-5);
+
+  > *:nth-child(1) {
+    grid-area: a;
+  }
+  > *:nth-child(2) {
+    grid-area: b;
+  }
+  > *:nth-child(3) {
+    grid-area: c;
+  }
+  > *:nth-child(4) {
+    grid-area: d;
+  }
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background-color: var(--color-ink);
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  isolation: isolate;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+  transition: border-color var(--duration-base) var(--ease-out);
+}
+
+.card:hover::after {
+  border-color: var(--color-accent);
+}
+
+.cardScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 13, 16, 0.15) 0%,
+    rgba(10, 13, 16, 0.35) 55%,
+    rgba(10, 13, 16, 0.92) 100%
+  );
+  transition: background var(--duration-base) var(--ease-out);
+}
+
+.card:hover .cardScrim {
+  background: linear-gradient(
+    180deg,
+    rgba(181, 89, 31, 0.18) 0%,
+    rgba(10, 13, 16, 0.5) 55%,
+    rgba(10, 13, 16, 0.94) 100%
+  );
+}
+
+.cardNumber {
+  position: absolute;
+  top: var(--space-5);
+  left: var(--space-5);
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.cardArrow {
+  position: absolute;
+  top: var(--space-5);
+  right: var(--space-5);
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--color-white);
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.card:hover .cardArrow {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: rotate(45deg);
+}
+
+.cardBody {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: var(--space-6);
   display: flex;
   flex-direction: column;
-  gap: 56px;
-  margin-top: 56px;
+  gap: 8px;
+}
 
-  .serviceItem {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 16px;
-    width: 80%;
-    height: 180px;
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 600;
+  color: var(--color-white);
+  line-height: 1.1;
+}
 
-    .serviceNumber {
-      border-radius: 15px;
-      background-color: #000154;
-      font-size: 36px;
-      color: #fff;
-      text-align: center;
-      letter-spacing: 2.88px;
-      padding: 15px 35px 22px 35px;
-    }
+.featured .cardTitle {
+  font-size: var(--text-h2);
+}
 
-    .serviceContent {
-      border-radius: 20px;
-      background-color: #ddddef;
-      flex-grow: 1;
-      padding: 17px 80px 42px;
+.cardDescription {
+  font-size: var(--text-small);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 42ch;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height var(--duration-base) var(--ease-out), opacity var(--duration-base) var(--ease-out);
+}
 
-      .serviceTitle {
-        color: #000154;
-        font-size: 26px;
-        letter-spacing: 1.08px;
-        text-align: left;
-        margin: 0 0 28px;
-      }
+.card:hover .cardDescription,
+.featured .cardDescription {
+  max-height: 6em;
+  opacity: 1;
+  margin-top: 2px;
+}
 
-      .serviceDescription {
-        color: rgba(0, 1, 84, 0.54);
-        font-size: 18px;
-        letter-spacing: 0.72px;
-      }
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 300px repeat(2, 200px);
+    grid-template-areas: "a a" "b c" "d d";
+
+    > *:nth-child(4) {
+      grid-area: d;
     }
   }
 }
 
-@media (max-width: 991px) {
-  .services {
-    background-color: #fff;
-    font-family: Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-    font-weight: 400;
-    padding: 40px 0px 45px 0px;
-  }
-  
-  .sectionTitle {
-    color: #000154;
-    font-size: 30px;
-    text-align: center;
-    margin: 0;
-  }
-  
-  .sectionDescription {
-    color: rgba(0, 1, 84, 0.54);
-    font-size: 15px;
-    width: 300px;
-    letter-spacing: 1.2px;
-    text-align: center;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .servicesList {
-    display: flex;
+@media (max-width: 700px) {
+  .header {
     flex-direction: column;
-    gap: 56px;
-    margin-top: 30px;
-  
-    .serviceItem {
-      display: flex;
-      margin-left: auto;
-      margin-right: auto;
-      gap: 10px;
-      width: 80%;
-      height: 250px;
-  
-      .serviceNumber {
-        border-radius: 10px;
-        background-color: #000154;
-        font-size: 16px;
-        color: #fff;
-        text-align: center;
-        letter-spacing: 2.88px;
-        padding: 10px 10px 0px 10px;
-        height: 40px;
-      }
-  
-      .serviceContent {
-        border-radius: 20px;
-        background-color: #ddddef;
-        flex-grow: 1;
-        padding: 17px 10px 42px;
-  
-        .serviceTitle {
-          color: #000154;
-          font-size: 16px;
-          letter-spacing: 1.08px;
-          text-align: left;
-          margin: 0;
-        }
-  
-        .serviceDescription {
-          color: rgba(0, 1, 84, 0.54);
-          font-size: 15px;
-          letter-spacing: 0.72px;
-        }
-      }
-    }
+    align-items: flex-start;
   }
+
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 260px);
+    grid-template-areas: "a" "b" "c" "d";
   }
+
+  .cardDescription {
+    max-height: 6em;
+    opacity: 1;
+  }
+}

@@ -1,274 +1,243 @@
-.careersPage {
-  min-height: 100vh;
-  background-color: #f8f9fa;
+.page {
+  background: var(--color-bg);
 }
 
-.hero {
-  background: linear-gradient(135deg, #000154 0%, #1a1a5e 100%);
-  color: white;
-  padding: 80px 20px 60px;
-  text-align: center;
+.introSection {
+  padding-block: var(--space-9);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.hero h1 {
-  font: 900 48px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  margin: 0 0 20px 0;
-  color: white;
+.introGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-9);
+  align-items: center;
 }
 
-.hero p {
-  font: 400 20px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  margin: 0;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
+.introImage {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 4 / 4.6;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 900ms var(--ease-out);
+  }
+
+  &:hover img {
+    transform: scale(1.045);
+  }
 }
 
-.jobsContainer {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+.highlights {
+  list-style: none;
+  margin: var(--space-8) 0 0;
+  padding: var(--space-7) 0 0;
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-ink);
+    font-size: var(--text-small);
+    font-weight: 500;
+  }
+
+  i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-bg-alt);
+    color: var(--color-accent);
+    font-size: 15px;
+  }
+}
+
+.listSection {
+  padding-block: var(--section-pad-y);
 }
 
 .jobsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
 }
 
 .jobCard {
-  background: white;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e9ecef;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-}
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-7);
+  transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
 
-.jobCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-}
-
-.jobHeader {
-  margin-bottom: 20px;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+  }
 }
 
 .jobTitle {
-  color: #000154;
-  font: 700 24px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  margin: 0 0 15px 0;
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: 600;
+  color: var(--color-ink);
+  text-transform: none;
+  margin: 0 0 var(--space-3);
 }
 
 .jobMeta {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-}
+  margin-bottom: var(--space-4);
 
-.jobDepartment,
-.jobLocation,
-.jobType {
-  padding: 6px 12px;
-  border-radius: 16px;
-  font: 500 12px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.jobDepartment {
-  background-color: #d1ecf1;
-  color: #0c5460;
-}
-
-.jobLocation {
-  background-color: #d4edda;
-  color: #155724;
-}
-
-.jobType {
-  background-color: #fff3cd;
-  color: #856404;
-}
-
-.jobContent {
-  margin-bottom: 20px;
-  flex-grow: 1;
+  span {
+    font-size: var(--text-micro);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--color-accent-600);
+    font-weight: 600;
+    background: rgba(218, 11, 25, 0.08);
+    border-radius: var(--radius-pill);
+    padding: 3px 10px;
+  }
 }
 
 .jobDescription {
-  color: #6c757d;
-  font: 400 14px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  color: var(--color-slate);
+  font-size: var(--text-small);
   line-height: 1.6;
-  margin: 0 0 15px 0;
+  margin: 0 0 var(--space-4);
+  flex: 1;
 }
 
-.jobSalary {
-  color: #28a745;
-  font: 600 16px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  margin: 0;
-}
-
-.jobPreview {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.jobPreview img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.jobDate {
+  display: block;
+  font-size: var(--text-micro);
+  color: var(--color-muted);
+  margin-bottom: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
 }
 
 .jobActions {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 .viewJobBtn {
-  flex: 1;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 20px;
-  font: 600 14px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
+  background: transparent;
+  border: 1px solid var(--color-ink);
+  color: var(--color-ink);
+  border-radius: var(--radius-pill);
+  padding: 11px 20px;
+  font-family: var(--font-body);
+  font-size: var(--text-micro);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
+  white-space: nowrap;
+  transition: background-color var(--duration-base) var(--ease-out), color var(--duration-base) var(--ease-out);
 
-.viewJobBtn:hover:not(:disabled) {
-  background-color: #c82333;
-  transform: translateY(-1px);
-}
+  &:hover:not(:disabled) {
+    background: var(--color-ink);
+    color: var(--color-white);
+  }
 
-.viewJobBtn:disabled {
-  background-color: #6c757d;
-  cursor: not-allowed;
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
 }
 
 .shareButton {
-  background-color: #6c757d;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 50px;
-  font-size: 16px;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  color: var(--color-slate);
+  cursor: pointer;
+  transition: border-color var(--duration-base) var(--ease-out), color var(--duration-base) var(--ease-out);
+
+  &:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
 }
 
-.shareButton:hover {
-  background-color: #545b62;
-  transform: translateY(-1px);
-}
-
-.jobFooter {
-  border-top: 1px solid #e9ecef;
-  padding-top: 15px;
-}
-
-.jobDate {
-  color: #6c757d;
-  font: 500 12px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.emptyState {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 80px 20px;
+.stateBlock {
   text-align: center;
-  color: #6c757d;
-}
+  padding: var(--space-11) 0;
+  color: var(--color-muted);
 
-.emptyState i {
-  font-size: 64px;
-  color: #dee2e6;
-}
-
-.emptyState h3 {
-  color: #495057;
-  font: 600 24px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  margin: 0;
-}
-
-.emptyState p {
-  font: 400 16px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  margin: 0;
-  max-width: 400px;
-}
-
-.loadingSpinner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 80px 20px;
-  color: #6c757d;
-}
-
-.loadingSpinner i {
-  font-size: 32px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding: 60px 20px 40px;
+  i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    margin-bottom: var(--space-5);
+    border-radius: var(--radius-pill);
+    background: var(--color-bg-alt);
+    color: var(--color-accent);
+    font-size: 28px;
   }
 
-  .hero h1 {
-    font-size: 36px;
+  h3 {
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: var(--text-h4);
+    font-weight: 600;
+    margin: 0 0 8px;
   }
 
-  .hero p {
-    font-size: 18px;
+  p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .introGrid {
+    grid-template-columns: 1fr;
   }
 
-  .jobsContainer {
-    padding: 40px 15px;
+  .introImage {
+    order: -1;
+    aspect-ratio: 16 / 10;
   }
 
   .jobsGrid {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .jobCard {
-    padding: 20px;
-  }
-
-  .jobActions {
-    flex-direction: column;
-  }
-
-  .viewJobBtn,
-  .shareButton {
-    width: 100%;
-    justify-content: center;
   }
 }
 
+@media (max-width: 480px) {
+  .highlights {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,120 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-ink-900);
+  padding-block: var(--section-pad-y);
+}
+
+.photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.photoScrim {
+  position: absolute;
+  inset: 0;
+  background-image: var(--pattern-contour),
+    linear-gradient(
+      100deg,
+      rgba(10, 13, 16, 0.96) 0%,
+      rgba(10, 13, 16, 0.82) 40%,
+      rgba(10, 13, 16, 0.4) 68%,
+      rgba(10, 13, 16, 0.18) 100%
+    );
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: var(--space-9);
+  align-items: end;
+}
+
+.textCol {
+  max-width: 620px;
+}
+
+.locations {
+  list-style: none;
+  margin: var(--space-7) 0;
+  padding: var(--space-6) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  i {
+    color: var(--color-brass);
+    margin-top: 4px;
+  }
+}
+
+.locationName {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-h4);
+  color: var(--color-white);
+}
+
+.locationDetail {
+  display: block;
+  font-size: var(--text-small);
+  color: var(--color-on-dark-muted);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-white);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--color-accent);
+  transition: color var(--duration-fast) var(--ease-out);
+
+  &:hover {
+    color: var(--color-brass);
+  }
+}
+
+.statCol {
+  background: var(--color-ink);
+  background-image: var(--pattern-drill);
+  background-size: var(--pattern-drill-size);
+  border: 1px solid var(--color-border-on-dark);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-6);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .statCol {
+    justify-self: start;
+  }
+}

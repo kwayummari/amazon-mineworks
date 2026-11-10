@@ -46,7 +46,7 @@
 
   i {
     font-size: 24px;
-    color: #da0b19;
+    color: var(--color-accent);
   }
 
   span {
@@ -106,8 +106,8 @@
 
   &.active {
     background-color: rgba(218, 11, 25, 0.2);
-    border-left-color: #da0b19;
-    color: #da0b19;
+    border-left-color: var(--color-accent);
+    color: var(--color-accent);
   }
 
   i {

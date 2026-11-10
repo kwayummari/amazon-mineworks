@@ -1,0 +1,102 @@
+.seal {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+  transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out);
+
+  &:hover {
+    transform: scale(1.06);
+    box-shadow: 0 24px 48px rgba(0, 1, 84, 0.28);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-brass);
+    outline-offset: 3px;
+  }
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: spin 22s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ringText {
+  font-family: var(--font-display);
+  font-size: 7.4px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  fill: var(--color-ink);
+  text-transform: uppercase;
+}
+
+.center {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: var(--color-ink);
+
+  i {
+    font-size: 18px;
+    color: var(--color-accent);
+  }
+}
+
+.centerLabel {
+  font-family: var(--font-display);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .seal {
+    width: 62px;
+    height: 62px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .ringText {
+    font-size: 6.6px;
+  }
+
+  .center i {
+    font-size: 15px;
+  }
+
+  .centerLabel {
+    font-size: 6.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring {
+    animation: none;
+  }
+}

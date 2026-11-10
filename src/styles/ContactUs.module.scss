@@ -1,86 +1,40 @@
-.contactUsPage {
-  min-height: 100vh;
-  background-color: #f8f9fa;
+.page {
+  background: var(--color-bg);
 }
 
-.heroSection {
-  background: linear-gradient(135deg, #37aba6 0%, #2a8a85 100%);
-  color: white;
-  padding: 100px 0 80px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("../../public/images/background.jpeg") center/cover;
-    opacity: 0.1;
-    z-index: 1;
-  }
+.introSection {
+  padding-block: var(--space-9);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.heroContent {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
+.formSection {
+  padding-block: var(--section-pad-y);
 }
 
-.heroTitle {
-  font: 700 48px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.heroDescription {
-  font: 400 18px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  line-height: 1.6;
-  opacity: 0.95;
-}
-
-.contentContainer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 20px;
-}
-
-.contactGrid {
+.grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
+  grid-template-columns: 1.3fr 1fr;
+  gap: var(--space-10);
 }
 
-.contactFormSection {
-  background: white;
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-
-  h2 {
-    font: 700 28px Jacques Francois, -apple-system, Roboto, Helvetica,
-      sans-serif;
-    color: #2c3e50;
-    margin-bottom: 30px;
-  }
+.formTitle {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  color: var(--color-ink);
+  text-transform: none;
+  margin: 0 0 var(--space-6);
 }
 
-.contactForm {
+.form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-5);
 }
 
 .formRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: var(--space-5);
 }
 
 .formGroup {
@@ -89,225 +43,164 @@
   gap: 8px;
 
   label {
-    font: 600 14px Jacques Francois, -apple-system, Roboto, Helvetica,
-      sans-serif;
-    color: #2c3e50;
+    font-size: var(--text-small);
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  input,
+  textarea {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    color: var(--color-text);
+    background: var(--color-bg);
+    transition: border-color var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out);
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 4px rgba(218, 11, 25, 0.1);
+    }
+  }
+
+  textarea {
+    resize: vertical;
   }
 }
 
-.formInput,
-.formTextarea {
-  padding: 12px 16px;
-  border: 1px solid #e9ecef;
-  border-radius: 6px;
-  font: 400 14px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  transition: all 0.3s ease;
-  outline: none;
-
-  &:focus {
-    border-color: #37aba6;
-    box-shadow: 0 0 0 3px rgba(55, 171, 166, 0.1);
-  }
-
-  &::placeholder {
-    color: #6c757d;
-  }
-}
-
-.formTextarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.submitBtn {
-  background: linear-gradient(135deg, #37aba6 0%, #2a8a85 100%);
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 6px;
-  font: 600 16px Jacques Francois, -apple-system, Roboto, Helvetica, sans-serif;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  align-self: flex-start;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(55, 171, 166, 0.4);
-  }
-}
-
-.contactInfoSection {
-  h2 {
-    font: 700 28px Jacques Francois, -apple-system, Roboto, Helvetica,
-      sans-serif;
-    color: #2c3e50;
-    margin-bottom: 30px;
-  }
-}
-
-.contactMethods {
+.info {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  margin-bottom: 40px;
+  gap: var(--space-8);
+  padding: var(--space-8);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
 }
 
-.contactMethod {
+.methods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-bottom: var(--space-7);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.methods a,
+.methodStatic {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 20px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  gap: var(--space-4);
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--duration-base) var(--ease-out);
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  strong {
+    display: block;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-size: var(--text-body);
+    font-weight: 600;
   }
 
-  i {
-    font-size: 24px;
-    color: #37aba6;
-    width: 30px;
-    text-align: center;
+  span {
+    color: var(--color-slate);
+    font-size: var(--text-small);
+  }
+}
+
+.methods a:hover {
+  transform: translateX(3px);
+}
+
+.methodIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  color: var(--color-accent);
+  font-size: 17px;
+  transition: background-color var(--duration-base) var(--ease-out), color var(--duration-base) var(--ease-out);
+}
+
+.methods a:hover .methodIcon {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+.block h3 {
+  font-size: var(--text-h4);
+  font-weight: 600;
+  color: var(--color-ink);
+  text-transform: none;
+  margin: 0 0 var(--space-5);
+}
+
+.office {
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
   }
 
   h4 {
-    font: 600 16px Jacques Francois, -apple-system, Roboto, Helvetica,
-      sans-serif;
-    color: #2c3e50;
-    margin: 0 0 5px 0;
+    font-family: var(--font-display);
+    font-size: var(--text-body);
+    font-weight: 500;
+    color: var(--color-ink);
+    text-transform: none;
+    margin: 0 0 4px;
   }
 
   p {
-    font: 400 14px Jacques Francois, -apple-system, Roboto, Helvetica,
-      sans-serif;
-    color: #6c757d;
+    color: var(--color-slate);
+    font-size: var(--text-small);
     margin: 0;
-  }
-}
-
-.officesSection {
-  margin-bottom: 40px;
-
-  h3 {
-    font: 600 20px Jacques Francois, -apple-system, Roboto, Helvetica,
-      sans-serif;
-    color: #2c3e50;
-    margin-bottom: 20px;
-  }
-}
-
-.officeCard {
-  background: white;
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 15px;
-  transition: all 0.3s ease;
-
-  &:hover {
-    border-color: #37aba6;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-
-  h4 {
-    font: 600 16px Jacques Francois, -apple-system, Roboto, Helvetica,
-      sans-serif;
-    color: #2c3e50;
-    margin: 0 0 10px 0;
-  }
-
-  p {
-    font: 400 14px Jacques Francois, -apple-system, Roboto, Helvetica,
-      sans-serif;
-    color: #6c757d;
-    margin: 5px 0;
-  }
-}
-
-.businessHours {
-  h3 {
-    font: 600 20px Jacques Francois, -apple-system, Roboto, Helvetica,
-      sans-serif;
-    color: #2c3e50;
-    margin-bottom: 20px;
+    line-height: 1.5;
   }
 }
 
 .hoursList {
-  background: white;
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
 }
 
-.hoursItem {
+.hoursRow {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid #f8f9fa;
+  font-size: var(--text-small);
+  color: var(--color-slate);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
 
   &:last-child {
     border-bottom: none;
   }
 
   span:first-child {
-    font: 500 14px Jacques Francois, -apple-system, Roboto, Helvetica,
-      sans-serif;
-    color: #2c3e50;
-  }
-
-  span:last-child {
-    font: 400 14px Jacques Francois, -apple-system, Roboto, Helvetica,
-      sans-serif;
-    color: #6c757d;
+    color: var(--color-ink);
+    font-weight: 500;
   }
 }
 
-// Responsive Design
-@media (max-width: 768px) {
-  .heroTitle {
-    font-size: 36px;
-  }
-
-  .heroDescription {
-    font-size: 16px;
-  }
-
-  .contentContainer {
-    padding: 40px 15px;
-  }
-
-  .contactGrid {
+@media (max-width: 900px) {
+  .grid {
     grid-template-columns: 1fr;
-    gap: 40px;
   }
 
   .formRow {
     grid-template-columns: 1fr;
-  }
-
-  .contactFormSection {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .heroSection {
-    padding: 60px 0 40px;
-  }
-
-  .heroTitle {
-    font-size: 28px;
-  }
-
-  .contactMethod {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
   }
 }

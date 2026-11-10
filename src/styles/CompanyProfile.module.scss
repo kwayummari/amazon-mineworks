@@ -1,0 +1,526 @@
+.page {
+  background: var(--color-bg);
+}
+
+.opening {
+  padding-block: var(--space-9) var(--space-10);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.openingGrid {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: var(--space-9);
+  align-items: center;
+}
+
+.openingLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 var(--space-5);
+}
+
+.openingStatement {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--color-ink);
+  margin: 0 0 var(--space-8);
+}
+
+.openingImage {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 4 / 4.6;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 900ms var(--ease-out);
+  }
+
+  &:hover img {
+    transform: scale(1.045);
+  }
+}
+
+.downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    padding: 10px 20px;
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--duration-base) var(--ease-out),
+      border-color var(--duration-base) var(--ease-out), transform var(--duration-base) var(--ease-out);
+
+    i {
+      opacity: 0.55;
+      transition: opacity var(--duration-base) var(--ease-out);
+    }
+
+    &:hover {
+      background: var(--color-white);
+      border-color: var(--color-accent);
+      transform: translateY(-2px);
+    }
+
+    &:hover i {
+      opacity: 1;
+    }
+  }
+}
+
+/* Chapter jump rail — fixed overlay, decoupled from content flow so chapters can be full-bleed */
+.rail {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .rail {
+    position: fixed;
+    left: clamp(1rem, 2vw, 2rem);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .railLink {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--color-muted);
+    transition: color var(--duration-base) var(--ease-out);
+
+    &:hover {
+      color: var(--color-ink);
+    }
+  }
+
+  .railNum {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    width: 18px;
+  }
+
+  .railLabel {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    transition: max-width var(--duration-base) var(--ease-out), opacity var(--duration-base) var(--ease-out);
+  }
+
+  .rail:hover .railLabel {
+    max-width: 140px;
+    opacity: 1;
+  }
+
+  .railActive {
+    color: var(--color-accent);
+  }
+
+  .railActive .railNum {
+    color: var(--color-accent);
+  }
+}
+
+/* Chapters */
+.chapter {
+  scroll-margin-top: 110px;
+  padding-block: var(--section-pad-y);
+}
+
+.chapterNum,
+.chapterNumLight {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.6rem + 1.6vw, 3rem);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: var(--space-4);
+}
+
+.chapterNumLight {
+  color: var(--color-accent);
+}
+
+.chapterHeading,
+.chapterHeadingLight {
+  font-size: var(--text-h1);
+  font-weight: 600;
+  line-height: 1.1;
+  text-transform: none;
+  margin: 0 0 var(--space-5);
+  max-width: 16ch;
+}
+
+.chapterHeadingLight {
+  color: var(--color-ink);
+}
+
+.chapterLede {
+  font-size: var(--text-body-lg);
+  line-height: 1.7;
+  color: var(--color-slate);
+  max-width: 60ch;
+  margin: 0 0 var(--space-8);
+}
+
+.chapterParagraph {
+  line-height: 1.75;
+  margin: 0 0 var(--space-4);
+  max-width: 52ch;
+}
+
+.chapterLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: var(--space-6);
+  color: var(--color-ink);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--color-accent);
+  transition: color var(--duration-base) var(--ease-out);
+
+  &:hover {
+    color: var(--color-accent);
+  }
+}
+
+/* Dark, full-bleed split chapters — .page has no side padding, so 100% is already viewport-width */
+.chapterDark {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  min-height: 560px;
+  padding-block: 0;
+  background: var(--color-ink);
+}
+
+.chapterDarkReverse {
+  .chapterText {
+    order: 1;
+  }
+
+  .chapterImage {
+    order: 2;
+  }
+}
+
+.chapterImage {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.chapterText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2.5rem, 4vw, 5rem);
+  color: var(--color-on-dark-muted);
+
+  .chapterNum {
+    color: var(--color-brass);
+  }
+
+  .chapterHeading {
+    color: var(--color-white);
+  }
+}
+
+/* Fleet spec grid */
+.fleetGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--color-border);
+}
+
+.fleetGroup {
+  padding: var(--space-7) var(--space-6);
+  border-left: 1px solid var(--color-border);
+
+  &:first-child {
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+.fleetHeading {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin: 0 0 var(--space-5);
+}
+
+.fleetList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    font-family: var(--font-display);
+    font-size: var(--text-h3);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-ink);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-border);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+/* Discipline lookbook panels — full-bleed */
+.disciplinePanels {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  min-height: 480px;
+  margin-top: var(--space-8);
+}
+
+.disciplinePanel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-7);
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  overflow: hidden;
+  isolation: isolate;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+
+  &:first-child {
+    border-left: none;
+  }
+}
+
+.disciplinePanelScrim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(0, 1, 84, 0.05) 0%, rgba(0, 1, 84, 0.88) 100%);
+  transition: background var(--duration-base) var(--ease-out);
+}
+
+.disciplinePanel:hover .disciplinePanelScrim {
+  background: linear-gradient(180deg, rgba(218, 11, 25, 0.3) 0%, rgba(0, 1, 84, 0.92) 100%);
+}
+
+.disciplinePanelNum {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: var(--space-3);
+}
+
+.disciplinePanelTitle {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 8px;
+}
+
+.disciplinePanelDescription {
+  position: relative;
+  z-index: 1;
+  font-size: var(--text-small);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 32ch;
+}
+
+/* People chapter */
+.peopleGrid {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  gap: var(--space-9);
+  align-items: center;
+}
+
+.peopleImage {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 3 / 4;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Partners marquee */
+.marquee {
+  overflow: hidden;
+  margin-top: var(--space-8);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.marqueeTrack {
+  display: flex;
+  align-items: center;
+  gap: var(--space-9);
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.marquee:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.partnerItem {
+  flex-shrink: 0;
+}
+
+.partnerLogo {
+  max-width: 130px;
+  max-height: 46px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.55);
+  transition: filter var(--duration-base) var(--ease-out);
+
+  &:hover {
+    filter: grayscale(0%) opacity(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .chapterDark {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .chapterDarkReverse {
+    .chapterText {
+      order: 2;
+    }
+
+    .chapterImage {
+      order: 1;
+    }
+  }
+
+  .chapterImage {
+    min-height: 280px;
+  }
+
+  .fleetGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .fleetGroup {
+    border-left: none;
+    padding-left: 0;
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+
+    &:first-child {
+      padding-top: 0;
+      border-top: none;
+    }
+  }
+
+  .disciplinePanels {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .disciplinePanel {
+    min-height: 280px;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  .peopleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .peopleImage {
+    order: -1;
+    aspect-ratio: 16 / 10;
+  }
+
+  .openingGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .openingImage {
+    order: -1;
+    aspect-ratio: 16 / 10;
+  }
+
+  .openingStatement {
+    font-size: var(--text-h2);
+  }
+}

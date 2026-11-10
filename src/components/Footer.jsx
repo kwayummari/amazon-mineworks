@@ -1,155 +1,116 @@
 import React from "react";
-import styles from "./../styles/Footer.module.scss";
+import { Link } from "react-router-dom";
+import Container from "./ui/Container";
+import IsoBadge from "./ui/IsoBadge";
+import styles from "../styles/Footer.module.scss";
 
-const Footer = () => {
-  return (
-    <footer className={`${styles.footer} footer`}>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-2 mb-4 text-center text-md-start">
-            <img
-              src="./images/logo/logo1.png"
-              alt="Amazon Mineworks"
-              className={styles.logo}
-            />
-            <p className={styles.tagline}>
-              We are professionals for building constructions
-            </p>
-            <div className={styles.socialIcons}>
-              <a href="#">
-                <i className="bi bi-facebook"></i>
-              </a>
-              <a href="#">
-                <i className="bi bi-linkedin"></i>
-              </a>
-              <a href="#">
-                <i className="bi bi-instagram"></i>
-              </a>
-              <a href="#">
-                <i className="bi bi-twitter"></i>
-              </a>
-            </div>
-          </div>
-          <div className="col-md-2 footer-links text-center text-md-start">
-            <h5 className={styles.listTitle}>ABOUT COMPANY</h5>
-            <ul>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Subsidiary Overview</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Organization structure</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Vision and Mission</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Management</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Gallery</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-md-2 footer-links text-center text-md-start">
-            <h5 className={styles.listTitle}>COMMODITY</h5>
-            <ul>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Our Resources</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Specification Details</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Portfolio</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Mining Operations</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Extracted Resources</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-md-2 footer-links text-center text-md-start">
-            <h5 className={styles.listTitle}>MEDIA</h5>
-            <ul>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Our Resources</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Specification Details</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Portfolio</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Mining Operations</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Extracted Resources</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-md-2 footer-links text-center text-md-start">
-            <h5 className={styles.listTitle}>INVESTORS</h5>
-            <ul>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Investors Relations</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Finance Report</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Stock Information</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Event and Presentation</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>News and Updates</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-md-2 footer-links text-center text-md-start">
-            <h5 className={styles.listTitle}>OTHERS</h5>
-            <ul>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Partnership</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Industry Insights</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Legal and Compliance</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Corporate Events</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Terms of service</a>
-              </li>
-              <li className={styles.list}>
-                <a href="#" className={styles.anchor}>Privacy Policy</a>
-              </li>
-            </ul>
-          </div>
+const columns = [
+  {
+    heading: "Company",
+    links: [
+      { title: "Company Profile", to: "/company-profile" },
+      { title: "Vision & Values", to: "/vision-values" },
+      { title: "Management Team", to: "/management-team" },
+      { title: "Careers", to: "/careers" },
+    ],
+  },
+  {
+    heading: "Services",
+    links: [
+      { title: "Services Overview", to: "/services" },
+      { title: "Operations", to: "/operations" },
+      { title: "Safety & OHSEQ", to: "/safety" },
+    ],
+  },
+  {
+    heading: "Investors",
+    links: [
+      { title: "Investor Relations", to: "/investors" },
+      { title: "Announcements", to: "/announcements" },
+      { title: "News & Insights", to: "/news" },
+    ],
+  },
+];
+
+const Footer = () => (
+  <footer className={styles.footer}>
+    <div className={styles.ctaBand}>
+      <Container className={styles.ctaInner}>
+        <div>
+          <p className={styles.ctaKicker}>Let&apos;s Build Together</p>
+          <p className={styles.ctaText}>
+            Partner with a trusted mining &amp; drilling contractor.
+          </p>
         </div>
-        <div className="row copyright mt-2">
-          <div className={`${styles.copyright} col-md-6 text-center text-md-start`}>
-            <p>Copyright Amazon mineworks. All rights Reserved.</p>
-          </div>
-          <div className={`${styles.designed} col-md-6 text-center text-md-end bottom-links`}>
-            <p>
-              Website designed by{" "}
-              <strong>
-                <a href="https://aurorawavelabs.com/" className={styles.anchor}>Aurorawave labs</a>
-              </strong>
-            </p>
-          </div>
+        <Link to="/contact-us" className={styles.ctaButton}>
+          <span>Contact Us</span>
+          <i className="bi bi-arrow-right" aria-hidden="true"></i>
+        </Link>
+      </Container>
+    </div>
+
+    <Container className={styles.grid}>
+      <div className={styles.brandCol}>
+        <Link to="/">
+          <img src="./images/logo/logo1.png" alt="Amazon Mineworks" className={styles.logo} />
+        </Link>
+        <p className={styles.tagline}>
+          A fully integrated mining, drilling and construction services provider
+          operating across Tanzania since 2012.
+        </p>
+        <div className={styles.socials}>
+          <button type="button" aria-label="Facebook"><i className="bi bi-facebook" aria-hidden="true"></i></button>
+          <button type="button" aria-label="LinkedIn"><i className="bi bi-linkedin" aria-hidden="true"></i></button>
+          <button type="button" aria-label="Instagram"><i className="bi bi-instagram" aria-hidden="true"></i></button>
+          <button type="button" aria-label="Twitter"><i className="bi bi-twitter" aria-hidden="true"></i></button>
         </div>
+        <IsoBadge className={styles.isoBadge} />
       </div>
-    </footer>
-  );
-};
+
+      {columns.map((column) => (
+        <div className={styles.linkCol} key={column.heading}>
+          <p className={styles.colHeading}>{column.heading}</p>
+          <ul>
+            {column.links.map((link) => (
+              <li key={link.to}>
+                <Link to={link.to}>{link.title}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+
+      <div className={styles.linkCol}>
+        <p className={styles.colHeading}>Get in Touch</p>
+        <ul className={styles.contactList}>
+          <li>
+            <i className="bi bi-telephone-fill" aria-hidden="true"></i>
+            <a href="tel:+255000000000">+255 000 000 000</a>
+          </li>
+          <li>
+            <i className="bi bi-envelope-fill" aria-hidden="true"></i>
+            <a href="mailto:info@amazonmineworks.co.tz">info@amazonmineworks.co.tz</a>
+          </li>
+          <li>
+            <i className="bi bi-geo-alt-fill" aria-hidden="true"></i>
+            <span>Dar es Salaam, Tanzania</span>
+          </li>
+        </ul>
+      </div>
+    </Container>
+
+    <div className={styles.legalBar}>
+      <Container className={styles.legalInner}>
+        <p>&copy; {new Date().getFullYear()} Amazon Mineworks. All rights reserved.</p>
+        <p>
+          Website by{" "}
+          <a href="https://aurorawavelabs.com/" target="_blank" rel="noreferrer noopener">
+            Aurorawave Labs
+          </a>
+        </p>
+      </Container>
+    </div>
+  </footer>
+);
 
 export default Footer;
