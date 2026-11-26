@@ -13,13 +13,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 // Database configuration
-$host = 'auth-db1373.hstgr.io';
-$dbname = 'u976524705_amazon';
-$username = 'u976524705_amazon';
-$password = 'z$T8zb|>GXA7';
+$host = getenv('DB_HOST') ?: 'db';
+$dbname = getenv('DB_NAME');
+$username = getenv('DB_USER');
+$password = getenv('DB_PASS');
+if ($dbname === false || $username === false || $password === false) {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Database settings are missing from the environment.']);
+    exit;
+}
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password, [
+        PDO::ATTR_TIMEOUT => 5,
+    ]);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Get the action from the request

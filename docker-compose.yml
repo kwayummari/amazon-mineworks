@@ -1,11 +1,31 @@
 services:
+  db:
+    image: mysql:8
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS:?set DB_ROOT_PASS in .env}
+      MYSQL_DATABASE: ${DB_NAME:?set DB_NAME in .env}
+      MYSQL_USER: ${DB_USER:?set DB_USER in .env}
+      MYSQL_PASSWORD: ${DB_PASS:?set DB_PASS in .env}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - internal
+
   php:
     build: .
     restart: unless-stopped
+    environment:
+      DB_HOST: db
+      DB_NAME: ${DB_NAME:?set DB_NAME in .env}
+      DB_USER: ${DB_USER:?set DB_USER in .env}
+      DB_PASS: ${DB_PASS:?set DB_PASS in .env}
     volumes:
       - ./backend:/var/www/html/backend:ro
     networks:
       - internal
+    depends_on:
+      - db
 
   nginx:
     image: nginx:alpine
@@ -27,3 +47,6 @@ networks:
     external: true
   internal:
     driver: bridge
+
+volumes:
+  db_data:
